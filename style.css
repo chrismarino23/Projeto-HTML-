@@ -1,22 +1,33 @@
-.header-style {
-    width: 1440px;
-    height: 128px;
-    flex-shrink: 0;
+#navbar-style {
+  width: 24px; 
+  height: 0px; 
+  left: 880px; 
+  top: 32px; 
+  position: absolute; 
+  transform: rotate(90deg); 
+  transform-origin: 0 0; 
+  border: 1px black solid;
 }
 
-// Carrinho
+/* .header-style {
+     width: 1440px;
+     height: 128px;
+     flex-shrink: 0;
+ } */
 
-// .carrinho { 
+ /* Carrinho */
 
-//     color: black;
-//     font-size: 16px;
-//     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-//     font-weight: 400;
-//     line-height: 24px;
-//     word-wrap: break-word
-// }
+/* .carrinho { 
 
-// Contato
+  color: black;
+  font-size: 16px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+  line-height: 24px;
+  word-wrap: break-word
+} */
+
+/* Contato
 .contato {
     color: black;
     font-size: 16px;
@@ -24,9 +35,9 @@
     font-weight: 400;
     line-height: 24px;
     word-wrap: break-word
-}
+} */
 
-// Onde Encontrar
+/* Onde Encontrar
 .onde-Encontrar {
 color: black;
  font-size: 16px;
@@ -34,10 +45,10 @@ color: black;
  font-weight: 400;
  line-height: 24px;
  word-wrap: break-word
-}
+} */
 
 
-// Produtos
+/* Produtos
 .produtos {
     color: black;
     font-size: 16px;
@@ -46,9 +57,7 @@ color: black;
     line-height: 24px;
     word-wrap: break-word
 }
-
-
-// Divino Sabor
+Divino Sabor
 .divino-sabor{
     color: black;
     font-size: 21px;
@@ -57,7 +66,6 @@ color: black;
     line-height: 31.50px;
     word-wrap: break-word;
 }
-
 .separador-tarja {
     width: 24px; 
     height: 0px; 
@@ -68,3 +76,8 @@ color: black;
     transform-origin: 0 0; 
     border: 1px black solid;
 }
+.menu-topo {
+    display: flex;
+    justify-content: space-between;
+  } */
+
