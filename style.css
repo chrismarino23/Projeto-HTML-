@@ -1,83 +1,120 @@
-#navbar-style {
-  width: 24px; 
-  height: 0px; 
-  left: 880px; 
-  top: 32px; 
-  position: absolute; 
-  transform: rotate(90deg); 
-  transform-origin: 0 0; 
-  border: 1px black solid;
+#navbar { 
+  width: 1870px;
+  height: 128px;
+  flex-shrink: 0;
+  background: #FFE1F8;
+  margin-bottom: 10px; 
+  display: flex;
+  align-items: center;
+  color: #000;
+	padding: 0 15px;
 }
 
-/* .header-style {
-     width: 1440px;
-     height: 128px;
-     flex-shrink: 0;
- } */
+#navbar h1, #navbar ul, #navbar-list li, #navbar nav {
+	display: inline-block;
+}
 
- /* Carrinho */
+#navbar h1 {
+	margin: 0;
+	line-height: 60px;
+	margin-left: 20px;
+  /* margin-right: 100px; */
+}
 
-/* .carrinho { 
+#navbar img {
+	width: 110px;
+  height: 90px;
+  flex-shrink: 0;
+	position: absolute center;
+  /* Opens Sans_Bold_As Typed/H5 21 */
+  font-family: "Open Sans";
+}
 
-  color: black;
+#navbar nav {
+	float: right;
+}
+
+#navbar ul {
+	margin-top: 22px;
+}
+
+#navbar li{
+  font-family: "Open Sans";
   font-size: 16px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-style: normal;
   font-weight: 400;
-  line-height: 24px;
-  word-wrap: break-word
-} */
-
-/* Contato
-.contato {
-    color: black;
-    font-size: 16px;
-    font-family: Open Sans;
-    font-weight: 400;
-    line-height: 24px;
-    word-wrap: break-word
-} */
-
-/* Onde Encontrar
-.onde-Encontrar {
-color: black;
- font-size: 16px;
- font-family: Open Sans;
- font-weight: 400;
- line-height: 24px;
- word-wrap: break-word
-} */
-
-
-/* Produtos
-.produtos {
-    color: black;
-    font-size: 16px;
-    font-family: Open Sans;
-    font-weight: 400;
-    line-height: 24px;
-    word-wrap: break-word
+  /* line-height: 24px; 150% */
+	margin:0 10px;
+  display: flex;
+  align-items: flex-end;
+  float: right;
 }
-Divino Sabor
-.divino-sabor{
-    color: black;
-    font-size: 21px;
-    font-family: Open Sans;
-    font-weight: 700;
-    line-height: 31.50px;
-    word-wrap: break-word;
+
+#navbar li :hover{
+	color: white;
 }
-.separador-tarja {
-    width: 24px; 
-    height: 0px; 
-    left: 741px; 
-    top: 32px; 
-    position: absolute;
-    transform: rotate(90deg); 
-    transform-origin: 0 0; 
-    border: 1px black solid;
+
+#navbar-list li a {
+  
+	text-decoration: none;
+	color: black;
 }
-.menu-topo {
+
+#navbar-list li a:hover {
+	border-bottom: 1px solid white;
+}
+
+  .classe-header {
+    width: 1900px;
+    height: 128px;
+    flex-shrink: 0;
+    background: #FFE1F8;
+    margin-bottom: 10px; 
     display: flex;
-    justify-content: space-between;
-  } */
+  }
 
+  .divino-sabor {
+    width: 110px;
+    height: 90px;
+    flex-shrink: 0;
+    top: 30px;
+    margin-top: 10px;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .img-logo { 
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 165px;
+    margin-right: 30px;
+  }
+
+  .logotipo-divino-sabor {
+    margin-left: 200px;
+    margin-top: 20px;
+    color: #000;
+    /* Opens Sans_Bold_As Typed/H5 21 */
+    font-family: "Open Sans";
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 31.5px; /* 150% */
+  }
+
+  .img-carrinho {
+    margin-top: 50px;
+    margin-left: 600px;
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+    fill: #000;
+  }
+
+  .black-pipe-divisor {
+    margin-left: 10px;
+    margin-top: 2.5%;
+    width: 1px;
+    height: 24px;
+    background: #000;
+  }
