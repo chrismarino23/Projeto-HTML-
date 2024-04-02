@@ -109,18 +109,40 @@
   }
 
   #img-carrinho {
-    margin-top: 0px;
-    margin-left: 400px;
+    margin-top: -15px;
+    margin-left: 650px;
+    margin-right: -20px;
     width: 10px;
     height: 10px;
     flex-shrink: 0;
     fill: #000;
   }
 
-  .black-pipe-divisor {
-    margin-left: 10px;
-    margin-top: 2.5%;
-    width: 1px;
-    height: 24px;
-    background: #000;
+  /* #carrinho_icon :hover{
+    background-color: #FFE1F8;
+    cursor: pointer;
+    color: white;
+  } */
+
+
+  .div_login_done {
+    padding-left: 8%;
+    width: 70px;
+    height: 70px;
+    flex-shrink: 0;
+  }
+
+  .button_login_done {
+    border-radius: 100%;
+  }
+
+  .button_login_done :hover{
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 100%;
+    background-color: white;
+  }
+
+  .img_login_done {
+    align-items: flex center;
   }
