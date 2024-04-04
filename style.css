@@ -1,92 +1,67 @@
-#navbar { 
-  width: 1870px;
-  height: 128px;
-  flex-shrink: 0;
-  background: #FFE1F8;
-  margin-bottom: 10px; 
-  display: flex;
-  align-items: center;
-  color: #000;
-	padding: 0 15px;
-}
-
-#navbar h1, #navbar ul, #navbar-list li, #navbar nav {
-	display: inline-block;
-}
-
-#navbar h1 {
-	margin: 0;
-	line-height: 60px;
-	margin-left: 20px;
-  /* margin-right: 100px; */
-}
-
-/* #navbar img {
-	width: 110px;
-  height: 90px;
-  flex-shrink: 0;
-	position: absolute center;
-  /* Opens Sans_Bold_As Typed/H5 21 */
-/*  font-family: "Open Sans";
- } */
-
-#navbar nav {
-	float: right;
-}
-
-#navbar ul {
-	margin-top: 22px;
-}
-
-#navbar li{
-  font-family: "Open Sans";
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  /* line-height: 24px; 150% */
-	margin:0 10px;
-  display: flex;
-  align-items: flex-end;
-  float: right;
-}
-
-#navbar li :hover{
-	color: white;
-}
-
-#navbar-list li a {
-  
-	text-decoration: none;
-	color: black;
-}
-
-#navbar-list li a:hover {
-	border-bottom: 1px solid white;
-}
-
-  /* .classe-header {
-    width: 1900px;
+  #navbar { 
+    width: 1870px;
+    /* width: 98.5%; */
     height: 128px;
     flex-shrink: 0;
     background: #FFE1F8;
     margin-bottom: 10px; 
     display: flex;
-  } */
+    align-items: center;
+    color: #000;
+    padding: 0 15px;
+  }
 
-  /* .divino-sabor {
-    width: 110px;
-    height: 90px;
-    flex-shrink: 0;
-    top: 30px;
-    margin-top: 10px;
+  #navbar h1, #navbar ul, #navbar-list li, #navbar nav {
     display: flex;
-    align-items: flex-start;
-  } */
+    /* display: inline-block; */
+  }
+
+  #navbar h1 {
+    margin: 0;
+    line-height: 60px;
+    margin-left: 20px;
+  }
+
+
+  #navbar nav {
+    float: right;
+  }
+
+  #navbar ul {
+    margin-top: 22px;
+  }
+
+  #navbar li{
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    /* line-height: 24px; 150% */
+    margin:0 10px;
+    display: flex;
+    align-items: flex-end;
+    float: right;
+  }
+
+  #navbar li :hover{
+    color: white;
+  }
+
+  #navbar-list li a {
+    
+    text-decoration: none;
+    color: black;
+  }
+
+  #navbar-list li a:hover {
+    border-bottom: 1px solid white;
+  }
 
   #img-logo { 
     margin-top: 10px;
     margin-bottom: 10px;
-    padding-left: 165px;
+    /* padding-left: 165px; */
+    padding-left: 5%;
     margin-right: 30px;
     width: 110px;
     height: 90px;
@@ -97,8 +72,8 @@
   }
 
   .logotipo-divino-sabor {
-    margin-left: 200px;
-    margin-top: 20px;
+    margin-left: 3%;
+    /* margin-top: 0%; */
     color: #000;
     /* Opens Sans_Bold_As Typed/H5 21 */
     font-family: "Open Sans";
@@ -109,40 +84,37 @@
   }
 
   #img-carrinho {
-    margin-top: -15px;
-    margin-left: 650px;
-    margin-right: -20px;
+    margin-top: -0.5%;
+    margin-left: 30%;
+    /* margin-right: -20px; */
     width: 10px;
     height: 10px;
     flex-shrink: 0;
     fill: #000;
   }
 
-  /* #carrinho_icon :hover{
-    background-color: #FFE1F8;
-    cursor: pointer;
-    color: white;
-  } */
-
-
   .div_login_done {
-    padding-left: 8%;
+    padding-left: 5%;
+    padding-right: 2%;
     width: 70px;
     height: 70px;
     flex-shrink: 0;
   }
 
-  .button_login_done {
-    border-radius: 100%;
+  .button-login-Done {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    
   }
 
-  .button_login_done :hover{
-    text-decoration: none;
+  .button-login-Done :hover {
     cursor: pointer;
     border-radius: 100%;
-    background-color: white;
+    border: 1px solid white;
   }
 
-  .img_login_done {
-    align-items: flex center;
-  }
+.button-login-Done img {
+    width: 100%;
+    height: 100%;
+} 
