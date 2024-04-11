@@ -73,10 +73,12 @@ body{
   .img-logo { 
     margin-top: 10px;
     margin-bottom: 10px;
+    margin-left: 100%;
+    display: flex;
     /* padding-left: 165px; */
-    padding-left: 5%;
-    margin-left: 5%;
-    margin-right: 30px;
+    /* padding-left: 100%; */
+    /* margin-left: 5%; */
+    /* margin-right: 30px; */
     width: 110px;
     height: 90px;
     flex-shrink: 0;
@@ -86,19 +88,39 @@ body{
   }
 
   .img-logo a {
+
+    margin-left: 25%;
+    width: 110px;
+    height: 90px;
+    display: flex;
     border: 0;
-    margin: 0;
-    padding-left: 5%;
-    margin-left: 5%;
+    padding: 0;
+    /* margin: 0; */
+    text-decoration: none;
+  }
+  
+
+  .divino-sabor-marca { 
+    width: 500px;
+    height: 100px;
+    /* display: inline-block; */
+    display: flex;
+    align-content: center;
+    align-items: center;
+    position: center;
+    margin-left: 10%;
   }
 
-  .logotipo-divino-sabor {
-    margin-left: 3%;
-    /* margin-top: 0%; */
+
+  .divino-sabor-marca h1 {
+    margin-left: 13%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
     color: #000;
     /* Opens Sans_Bold_As Typed/H5 21 */
     font-family: "Open Sans";
-    font-size: 21px;
+    /* font-size: auto; */
     font-style: normal;
     font-weight: 700;
     line-height: 31.5px; /* 150% */
