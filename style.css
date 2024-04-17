@@ -4,13 +4,14 @@ body{
   background-color: #FFC0CB;
   /* background-image: ; */
   height: 3000px;
+  margin: 0;
 }
 
 ::-webkit-scrollbar {
   /* Largura da barra de rolagem */
-  max-width: 55px;
+  max-width: auto;
   /* Tamanho da barra */
-  max-height: 10px;
+  max-height: auto;
   flex-shrink: 0;
   background: var(--SBG-SBG, #FFC1AB);
   /* Cor de fundo da barra */
@@ -29,54 +30,130 @@ body{
 ::-webkit-scrollbar-track {
   background: var(--BG-BG, #FFE1F8);background: var(--BG-BG, #FFE1F8);
   border-radius: 30px;
-  width: 28px;
-  height: 5191px;
+  width: 100vw;
+  height: auto;
   /* Cor do trilho da barra */
 }
 
   .navbar { 
-    /* width: 2050px; */
     border-radius: 0.5% 0.5%;
-    width: 98.5%;
-    height: 110px;
+    width: 100vw;
+    height: auto;
     /* flex-shrink: 1; */
     background: #FFE1F8;
-    /* margin-bottom: 10px;  */
     display: flex;
     align-items: center;
     color: #000;
-    padding: 0 15px;
-  }
-
+    align-items: center;
+    /* flex-direction: column; */
+}
+  
   .link-a {
-    width: 10%;
-    margin-left: 5%;
+    /* width: 10%; */
+    margin-left: 3vw;
   }
 
   .link-a a {
-    margin-left: 30px;    
+    margin-left: 30px;
   }
 
   
-  .navbar h1, .navbar ul, #navbar-list li, .navbarnav {
-    display: flex;  
+  /* .navbar h1, .navbar ul, #navbar-list li, .navbarnav { */
+    /* display: flex;   */
     /* display: inline-block; */
+  /* } */
+
+  
+  .img-logo { 
+    margin-top: -4px;
+    margin-bottom: 10px;
+    /* margin-left: 100%; */
+    display: flex;
+    width: 110px;
+    height: 90px;
+    flex-shrink: 0;
+    position: center;
+    /* Opens Sans_Bold_As Typed/H5 21 */
+    font-family: "Open Sans";
   }
-
-  .navbar h1 {
-    margin: 0;
-    line-height: 60px;
-    /* margin-left: 20px; */
-    margin-left: 5%;
+  
+  .img-logo a {
+    
+    /* margin-left: 25%; */
+    width: 110px;
+    height: 90px;
+    display: flex;
+    border: 0;
+    padding: 0;
+    /* margin: 0; */
+    text-decoration: none;
   }
-
-
+  
+  
+  .divino-sabor-marca { 
+    width: 30vw;
+    height: 10vh;
+    /* display: inline-block; */
+    display: flex;
+    /* align-content: center; */
+    align-items: center;
+    position: center;
+    margin-left: 2vw;
+  }
+  
+  .oleo-script-regular {
+    font-family: "Oleo Script", system-ui;
+  }
+  
+  /* .oleo-script-bold {
+    font-family: "Oleo Script", system-ui;
+    font-weight: 700;
+    font-style: normal;
+  } */
+  
+  
+  .divino-sabor-marca h1 {
+    margin-left: 2vw;
+    /* justify-content: center; */
+    /* align-items: center; */
+    display: flex;
+    color: #000;
+    font-family: "Oleo Script";
+    font-size: 4vw;
+    font-style: normal;
+    font-weight: 100;
+    line-height: 50px;
+    /* height: 100px; */
+    text-align: center;
+	}
+  
+  #img-carrinho {
+    margin-top: 1vh;
+    margin-left: auto;
+    margin-right: 0.5vw;
+    width: 1.5vw;
+    /* height: 10px; */
+    /* flex-shrink: 0; */
+    fill: #000;
+    display: flex;
+    align-items: center;
+  }
+  
+  .carrinho_icon {
+    max-width: 100%;
+    height: auto;
+  }
+  
   .navbar nav {
     float: right;
   }
 
   .navbar ul {
-    margin-top: 22px;
+    /* margin-top: 22px; */
+    padding-left: 0.5vw;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
   }
 
   .navbar li{
@@ -104,80 +181,6 @@ body{
   /* #navbar-list li a:hover {
     border-bottom: 1px solid white;
   } */
-
-  .img-logo { 
-    margin-top: -4px;
-    margin-bottom: 10px;
-    /* margin-left: 100%; */
-    display: flex;
-    width: 110px;
-    height: 90px;
-    flex-shrink: 0;
-    position: center;
-    /* Opens Sans_Bold_As Typed/H5 21 */
-    font-family: "Open Sans";
-  }
-
-  .img-logo a {
-
-    /* margin-left: 25%; */
-    width: 110px;
-    height: 90px;
-    display: flex;
-    border: 0;
-    padding: 0;
-    /* margin: 0; */
-    text-decoration: none;
-  }
-  
-
-  .divino-sabor-marca { 
-    width: 500px;
-    height: 100px;
-    /* display: inline-block; */
-    display: flex;
-    align-content: center;
-    align-items: center;
-    position: center;
-    margin-left: 10%;
-  }
-
-  .oleo-script-regular {
-    font-family: "Oleo Script", system-ui;
-  }
-    
-  /* .oleo-script-bold {
-    font-family: "Oleo Script", system-ui;
-    font-weight: 700;
-    font-style: normal;
-  } */
-  
-
-  .divino-sabor-marca h1 {
-    margin-left: 10%;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    color: #000;
-    font-family: "Oleo Script";
-    font-size: 4em;
-    font-style: normal;
-    font-weight: 100;
-    line-height: 50px;
-    height: 100px;
-    text-align: center;
-  }
-
-  #img-carrinho {
-    margin-top: -0.5%;
-    margin-left: auto;
-    /* margin-right: -20px; */
-    width: 10px;
-    height: 10px;
-    flex-shrink: 0;
-    fill: #000;
-  }
-
   .div_login_done {
     padding-left: 5%;
     padding-right: 2%;
@@ -185,7 +188,7 @@ body{
     height: 70px;
     flex-shrink: 0;
   }
-
+  
   .button-login-Done {
     background-color: transparent;
     border: none;
@@ -205,11 +208,8 @@ body{
 } 
 
 .banner-saito {
-  /* width: 1980px; */
-  width: 99.9%;
-  /* margin-top: auto; */
+  width: 100%;
   height: auto;
-  /* height: 534px; */
   flex-shrink: 0;
   display: flex;
   justify-content: center;
@@ -220,6 +220,7 @@ body{
 
 .banner-saito img{
   width: 100%;
+  height: auto;
 }
 
 .tarja-bottom-banner {
