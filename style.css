@@ -46,6 +46,11 @@ body {
     color: #000;
     align-items: center;
     /* flex-direction: column; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* width: 100%; */
+    z-index: 100;
 }
   
   .link-a {
@@ -119,7 +124,7 @@ body {
     display: flex;
     color: #000;
     font-family: "Oleo Script";
-    font-size: 4vw;
+    font-size: 3vw;
     font-style: normal;
     font-weight: 100;
     line-height: 50px;
@@ -225,7 +230,7 @@ body {
 
 .tarja-bottom-banner {
   width: 100vw;
-  height: 10vh;
+  height: 14vh;
   align-items: center;
   background: #FFE1F8;
 }
@@ -242,7 +247,7 @@ body {
   font-family: "Open Sans";
   font-style: normal;
   flex-direction: row;
-  font-size: 3.5vw;
+  font-size: 3vw;
 }
 
 .div-espaço {
@@ -285,6 +290,15 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;  
+}
+
+.article-1 h2 {
+  font-size: 2.8vw;
+  text-decoration: none;
+  /* line-height: 5vh; */
+  /* font-weight: lighter; */
+  margin-left: 15vw;
+  margin-right: 15vw;
 }
 
 .hr-1 {
