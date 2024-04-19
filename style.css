@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
 
+/* * { 
+  margin: 0;
+  border: 0;
+  padding: 0;
+} */
+
 body {
   background-color: #FFC0CB;
   width: 100vw;
@@ -136,13 +142,13 @@ body {
     margin-top: 1vh;
     margin-left: auto;
     margin-right: 0.5vw;
-    width: 1.5vw;
+    width: 2rem;
     /* height: 10px; */
     /* flex-shrink: 0; */
     fill: #000;
     display: flex;
     align-items: center;
-  }
+}
   
   .carrinho_icon {
     max-width: 100%;
@@ -235,7 +241,7 @@ body {
   background: #FFE1F8;
 }
 
-.tarja-bottom-banner h1{
+.tarja-bottom-banner h1 {
   display: flex;
   width: 100vw;
   height: 100%;
@@ -246,8 +252,9 @@ body {
   align-items: center;
   font-family: "Open Sans";
   font-style: normal;
+  font-weight: 100;
   flex-direction: row;
-  font-size: 3vw;
+  font-size: 2em;
 }
 
 .div-espaço {
@@ -280,7 +287,7 @@ body {
 
 .section-1 h1 {
   color: #000;
-  font-size: 4vw;
+  font-size: 2em;
   line-height: 42px;
   font-weight: normal;
 }
@@ -293,12 +300,14 @@ body {
 }
 
 .article-1 h2 {
-  font-size: 2.8vw;
+  font-size: 1.5em;
   text-decoration: none;
   /* line-height: 5vh; */
   /* font-weight: lighter; */
-  margin-left: 15vw;
-  margin-right: 15vw;
+  margin-left: 30vw;
+  margin-right: 30vw;
+  font-family: "Open Sans";
+  font-weight: 500;
 }
 
 .hr-1 {
@@ -311,4 +320,47 @@ body {
   /* display: flex; */
   /* flex-direction: column; */
   /* justify-content: center; */
+}
+
+
+
+
+
+/* Estilo do Footer */
+.style-footer { 
+  display: flex;
+  margin: 0;
+  background: var(--Brown-Brown, #41271F);
+  height: 30vh;
+  width: 100vw;
+  padding: 20px
+  /* justify-content: space-between; */
+}
+
+/* Div do Footer */
+.container-contact-us { 
+  padding: 4rem;
+  /* height: 20vh;
+  width: 80vw; */
+  width: 100%;
+  display: flex;
+  /* position: flex; */
+  /* justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; */
+  justify-content: space-between;
+  background-color: whitesmoke;
+  
+}
+
+.secao {
+  padding: 1rem;
+  width: 5vw;
+  height: 5vh;
+  background-color: red;
+/* Cada seção ocupa 33.33% da largura do container (100% dividido por 3) */
+  /* flex: 1; */
+  display: flex;
+  text-align: center; /* Alinha o texto no centro da seção */
 }
