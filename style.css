@@ -13,32 +13,30 @@ body {
   margin: 0;
 }
 
+/* Trilho do scroll vertical */
 ::-webkit-scrollbar {
-  /* Largura da barra de rolagem */
   max-width: auto;
-  /* Tamanho da barra */
   max-height: auto;
   flex-shrink: 0;
   background: var(--SBG-SBG, #FFC1AB);
-  /* Cor de fundo da barra */
 }
 
+/* Scroll por cima da barra */
 ::-webkit-scrollbar-thumb {
   flex-shrink: 0;
-  border-radius: 30px; /* Arredondamento do indicador */
-  /* background: var(--SBG-SBG, #FFC1AB); */
-  background-image: url(./img/Group\ 5.png);
+  border-radius: 30px;
+  background: var(--SBG-SBG, #FFC1AB);
+  /* background-image: url(./img/Group 5.png); */
   background-repeat: no-repeat;
-  /* Cor do indicador de rolagem */
-  
 }
 
+/* Trilho de baixo da barra */
 ::-webkit-scrollbar-track {
-  background: var(--BG-BG, #FFE1F8);background: var(--BG-BG, #FFE1F8);
-  border-radius: 30px;
-  width: 100vw;
-  height: auto;
-  /* Cor do trilho da barra */
+    /* background: var(--BG-BG, #FFE1F8); */
+    background: var(--BG-BG, #FFE1F8);
+    border-radius: 30px;
+    /* width: 100vw; */
+    height: auto;
 }
 
   .navbar { 
@@ -331,7 +329,7 @@ body {
   display: flex;
   margin: 0;
   background: var(--Brown-Brown, #41271F);
-  height: 30vh;
+  height: 25vh;
   width: 100vw;
   padding: 20px
   /* justify-content: space-between; */
@@ -339,7 +337,8 @@ body {
 
 /* Div do Footer */
 .container-contact-us { 
-  padding: 4rem;
+  margin: 0;
+  padding: 4rem 7rem;
   /* height: 20vh;
   width: 80vw; */
   width: 100%;
@@ -349,18 +348,49 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center; */
-  justify-content: space-between;
-  background-color: whitesmoke;
+  justify-content:space-around;
+  /* background-color: whitesmoke; */
   
+}
+
+.hr-vertical {
+  /* Propriedades padrão da tag hr */
+  height: 18vh; /* Altura da linha vertical */
+  width: 0.1vw; /* Espessura da linha vertical */
+  background-color: #D9D9D9; /* Cor da linha vertical */
+  margin: 0 auto; /* Centraliza a linha vertical na página */
+  border: 0; /* Remove a borda padrão da tag hr */
 }
 
 .secao {
   padding: 1rem;
-  width: 5vw;
-  height: 5vh;
+  width: 3rem;
+  height: 3rem;
   background-color: red;
 /* Cada seção ocupa 33.33% da largura do container (100% dividido por 3) */
   /* flex: 1; */
   display: flex;
   text-align: center; /* Alinha o texto no centro da seção */
+  /* justify-content: center; */
+}
+
+.secao-1 {
+  margin-right: -2vw;
+}
+
+.secao-2 h2 {
+  color: #FFF;
+  font-family: "Open Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 120% */
+}
+.footer_Logo {
+  /* lightgray 50%; */
+  background-image: cover no-repeat;
+  width: 2rem;
+  height: 2rem;
+  /* flex-shrink: 0; */
+  margin-left: 1.5rem;
 }
