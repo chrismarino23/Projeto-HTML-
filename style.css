@@ -236,21 +236,25 @@ body {
   height: 14vh;
   align-items: center;
   background: #FFE1F8;
+  justify-content: space-around;
+  display: flex;
 }
 
 .tarja-bottom-banner h1 {
+  padding-right: 2rem;
   display: flex;
-  width: 100vw;
+  width: 80vw;
   height: 100%;
   /* background: #FFE1F8; */
   justify-content: center;
   color: #000;
   margin: 0;
-  align-items: center;
+  align-items: inherit;
+  text-align: center;
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 100;
-  flex-direction: row;
+  flex-direction: column;
   font-size: 2em;
 }
 
