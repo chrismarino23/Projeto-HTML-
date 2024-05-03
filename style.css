@@ -387,9 +387,10 @@ body {
 .margin-auto {
   margin: auto;
 }
+
 .section_produtos {
   display: flex;
-  height: 30vh;
+  height: 60vh;
   width: 100%;
   align-items: center;
   justify-content: center;
@@ -399,7 +400,7 @@ body {
 .week-offer {
   background: var(--sbgsbg-1, #FFCDBC);
   height: 5vh;
-  border-radius: 10px;
+  border-radius: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -411,7 +412,7 @@ body {
 
 .card_bolos {
   width: 18%;
-  height: 98%;
+  height: 70%;
   /* margin: 0 2px; */
   /* gap: 1%; */
   background-color: #FFCDBC;
@@ -426,42 +427,125 @@ body {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 319.99px) {
+  .card_bolos {
+    width: 22%;
+    height: 70%;
+  }
+
+  .week-offer {
+    margin: 0 auto;
+  }
+
+  .div_section_produtos {
+    padding: 4%;
+  }
+
+  .section_produtos {
+    height: 20vh;
+    padding-top: 1.5%;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 484.99px) {
+  .card_bolos {
+    width: 22%;
+    height: 70%;
+  }
+
+  .week-offer {
+    margin: 0 auto;
+  }
+
+  .div_section_produtos {
+    padding: 4%;
+  }
+
+  .section_produtos {
+    height: 20vh;
+    padding-top: 1.5%;
+  }
+}
+
+@media (min-width: 485px) and (max-width: 619.99px) {
   .card_bolos {
     width: 25%;
-    height: 60%;
-  }
-
-  .week-offer {
-  margin: 0 auto;
-  }
-}
-
-@media (min-width: 481px) and (max-width: 768px) {
-  .card_bolos {
-    width: 20%;
-    height: 60%;
+    height: 65%;
   }
 
   .week-offer {
     margin: 0 auto;
-    }
+  }
+
+  .div_section_produtos {
+    padding: 1% 4%;
+  }
+
+  .section_produtos {
+    height: 35vh;
+    padding-top: 1.5%;
+  }
 }
 
-@media (min-width: 769px) and (max-width: 999px) {
+@media (min-width: 620px) and (max-width: 768px) {
+  .card_bolos {
+    width: 25%;
+    height: 80%;
+  }
+
+  .week-offer {
+    margin: 0 auto;
+  }
+
+  .div_section_produtos {
+    padding: 0 4%;
+  }
+
+  .section_produtos {
+    height: 30vh;
+    padding-top: 3%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 999.99px) {
   .card_bolos {
     width: 23%;
-    height: 75%;
+    height: 80%;
   }
+
   .week-offer {
     margin: 0 auto;
-    }
+  }
+  
+  .div_section_produtos {
+    padding: 0 4%;
+  }
+
+  .section_produtos {
+    height: 40vh;
+    padding-top: 2%;
+  }
 }
 
-@media (min-width: 1000px) and (max-width: 1440px){
+@media (min-width: 1000px) and (max-width: 1259.99px){
   .card_bolos {
-    width: 18%;
-    height: 98%;
+    width: 19%;
+    height: 78%;
+  }
+
+  .section_produtos {
+    height: 40vh;
+  }
+}
+
+@media (min-width: 1260px) and (max-width: 1440px){
+  .card_bolos {
+    width: 20%;
+    height: 80%;
+  }
+
+  .section_produtos {
+    height: 50vh;
   }
 }
 
