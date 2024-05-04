@@ -400,7 +400,7 @@ body {
 .week-offer {
   background: var(--sbgsbg-1, #FFCDBC);
   height: 5vh;
-  border-radius: 15px;
+  border-radius: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
