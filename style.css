@@ -274,7 +274,7 @@ body {
 .tarja-bottom-banner {
   box-sizing: border-box;
   width: 100%;
-  height: 14vh;
+  height: 10vh;
   align-items: center;
   background: #FFE1F8;
   justify-content: space-around;
@@ -282,7 +282,7 @@ body {
 }
 
 .tarja-bottom-banner h1 {
-  /* padding-right: 2rem; */
+	padding: 1rem 4rem;
   display: flex;
   width: 100%;
   height: auto;
@@ -296,7 +296,7 @@ body {
   font-style: normal;
   font-weight: 100;
   flex-direction: column;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 /* .div-espaço {
@@ -328,22 +328,22 @@ body {
 }
 
 .section-1 { 
-  padding: 6rem 0rem 4rem;
+  padding: 2rem 0rem 4rem;
   display: flex;
   width: 100%;
   background-color: #FFF;
   height: 30vh;
   justify-content: center;
   align-items: center;
-}
 
-.section-1 h1 {
-  margin: 0;
-  color: #000;
-  font-size: 2em;
-  line-height: 1em;
-  font-weight: normal;
-  padding: 1rem;
+  & h1 {
+    margin: 0;
+    color: #000;
+    font-size: 2em;
+    line-height: 1em;
+    font-weight: normal;
+    padding: 1rem;
+  }
 }
 
 .article-1 {
@@ -351,19 +351,23 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;  
+
+  & h2 {
+    font-size: 1.5em;
+    text-decoration: none;
+    padding: 0 10vw;
+    font-family: "Open Sans";
+    font-weight: 500;
+  }
+  & p {
+    font-size: 1.3em;
+    text-decoration: none;
+    padding: 0 10vw;
+    font-family: "Open Sans";
+    font-weight: 500;
+  }
 }
 
-.article-1 h2 {
-  font-size: 1.5em;
-  text-decoration: none;
-  /* line-height: 5vh; */
-  /* font-weight: lighter; */
-  /* margin-left: 30vw; */
-  /* margin-right: 30vw; */
-  padding: 0 15vw;
-  font-family: "Open Sans";
-  font-weight: 500;
-}
 
 .div_section_produtos { 
   box-sizing: border-box;
@@ -397,7 +401,7 @@ body {
   gap: 1%;
 }
 
-.week-offer {
+.sect-tag-card-title {
   background: var(--sbgsbg-1, #FFCDBC);
   height: 5vh;
   border-radius: 30px;
@@ -433,7 +437,7 @@ body {
     height: 70%;
   }
 
-  .week-offer {
+  .sect-tag-card-title {
     margin: 0 auto;
   }
 
@@ -444,6 +448,14 @@ body {
   .section_produtos {
     height: 20vh;
     padding-top: 1.5%;
+  }
+
+  .banner-saito {
+    height: 25vh;
+  }
+
+  .banner-saito img {
+    height: 100%;
   }
 }
 
@@ -453,7 +465,7 @@ body {
     height: 70%;
   }
 
-  .week-offer {
+  .sect-tag-card-title {
     margin: 0 auto;
   }
 
@@ -465,6 +477,14 @@ body {
     height: 20vh;
     padding-top: 1.5%;
   }
+
+  .banner-saito {
+    height: 25vh;
+  }
+
+  .banner-saito img {
+    height: 100%;
+  }
 }
 
 @media (min-width: 485px) and (max-width: 619.99px) {
@@ -473,7 +493,7 @@ body {
     height: 65%;
   }
 
-  .week-offer {
+  .sect-tag-card-title {
     margin: 0 auto;
   }
 
@@ -485,6 +505,14 @@ body {
     height: 35vh;
     padding-top: 1.5%;
   }
+  
+  .banner-saito {
+    height: 25vh;
+  }
+
+  .banner-saito img {
+    height: 100%;
+  }
 }
 
 @media (min-width: 620px) and (max-width: 768px) {
@@ -493,7 +521,7 @@ body {
     height: 80%;
   }
 
-  .week-offer {
+  .sect-tag-card-title {
     margin: 0 auto;
   }
 
@@ -513,7 +541,7 @@ body {
     height: 80%;
   }
 
-  .week-offer {
+  .sect-tag-card-title {
     margin: 0 auto;
   }
   
