@@ -10,10 +10,8 @@
 }
 
 body {
-  background-color: #FFC0CB;
-  /* display: grid; */
-  /* align-items: center; */
-  /* justify-content: space-evenly; */
+  background-color: #FFF;
+
   width: 100%;
   height: auto;
   min-width: fit-content;
@@ -457,6 +455,10 @@ body {
   .banner-saito img {
     height: 100%;
   }
+
+  .section-1 {
+    padding: 4rem 0rem 4rem;
+  }
 }
 
 @media (min-width: 320px) and (max-width: 484.99px) {
@@ -485,6 +487,11 @@ body {
   .banner-saito img {
     height: 100%;
   }
+
+  .section-1 {
+    padding: 4rem 0rem 4rem;
+  }
+
 }
 
 @media (min-width: 485px) and (max-width: 619.99px) {
@@ -512,6 +519,10 @@ body {
 
   .banner-saito img {
     height: 100%;
+  }
+  
+  .section-1 {
+    padding: 4rem 0rem 4rem;
   }
 }
 
