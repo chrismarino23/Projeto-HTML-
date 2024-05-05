@@ -16,6 +16,9 @@
     <title>Divino Sabor - Confeitaria - Home</title>
     <!-- Fim Título -->
 
+    <!-- Link das funcionalidades JS  -->
+    
+    <!-- Links de estilização -->
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
@@ -27,37 +30,48 @@
                 <img src="./img/logo_Image.png" alt="logo_Image" class="img-logo link-a" id="logo_Image_Home">
             </a>
         </div>
-            <div class="divino-sabor-marca">
-                <h1 class=".oleo-script-regular">
-                    Divino Sabor
-                </h1>
-            </div>
-            <!-- Inicio Img Carrinho -->
-            <!-- <div id="img-carrinho">
-                <img src="./img/icon_Cart.png" alt="icon_Cart" class="carrinho_icon">
-            </div> -->
-            <!-- Fim da Img Carrinho -->
-        <span class="material-symbols-outlined">
-            menu
-        </span>
-        <nav>
-            <ul class="navbar-list">
-                <!-- <li><a href="#">Carrinho</a></li> -->
-                <li><a href="./galeria.html">Galeria</a></li>
-                <li><a href="./produtos.html">Produtos</a></li>
-                <li><a href="./onde-encontrar.html">Onde Encontrar</a></li>
-                <li><a href="./contato.html">Contato</a></li>
-            </ul>
-        </nav>
-
-        <!-- Inicio Img Button do Login_Done -->
-        <!-- <div class="div_login_done">
-            <button class="button-login-Done">
-                <img src="./img/btn_Login_Done.png" alt="btn_Login_Done">
-            </button>
+        <div class="divino-sabor-marca">
+            <h1 class=".oleo-script-regular">
+                Divino Sabor
+            </h1>
+        </div>
+        <!-- Inicio Img Carrinho -->
+        <!-- <div id="img-carrinho">
+            <img src="./img/icon_Cart.png" alt="icon_Cart" class="carrinho_icon">
         </div> -->
-        <!-- Fim Img Button do Login_Done -->
-    </header>
+        <!-- Fim da Img Carrinho -->
+        <div id="menu-disp-menores">
+            <nav id="navHamburguer">
+                <ul>
+                    <!-- <li><a href="#">Carrinho</a></li> -->
+                    <li><a href="./galeria.html">Galeria</a></li>
+                    <li><a href="./produtos.html">Produtos</a></li>
+                    <li><a href="./onde-encontrar.html">Onde Encontrar</a></li>
+                    <li><a href="./contato.html">Contato</a></li>
+                </ul>
+            </nav>
+            <button id="btnHamb" class="material-symbols-outlined" onclick="clickMenu()"> menu
+            </button>
+        </div>
+<nav id="menu-disp-maiores">
+    <ul class="navbar-list">
+        <!-- <li><a href="#">Carrinho</a></li> -->
+        <li><a href="./galeria.html">Galeria</a></li>
+        <li><a href="./produtos.html">Produtos</a></li>
+        <li><a href="./onde-encontrar.html">Onde Encontrar</a></li>
+        <li><a href="./contato.html">Contato</a></li>
+    </ul>
+</nav>
+
+<!-- Inicio Img Button do Login_Done -->
+<!-- <div class="div_login_done">
+    <button class="button-login-Done">
+        <img src="./img/btn_Login_Done.png" alt="btn_Login_Done">
+    </button>
+</div> -->
+<!-- Fim Img Button do Login_Done -->
+</header>
+<script src="/script.js"></script>
     <!-- Inicio do banner -->
     <div class="banner-saito" id="id-direct-banner">
         <img src="./img/banner_Saito 2.png" alt="banner-saito">
