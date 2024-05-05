@@ -50,8 +50,7 @@ body {
   .navbar { 
     border-radius: 0.5% 0.5% 2% 2%;
     box-sizing: border-box;
-    justify-content: space-evenly;
-    /* width: 100%; */
+    justify-content: space-between;
     height: 7rem;
     background: rgb(255, 225, 248);
     display: flex;
@@ -61,7 +60,7 @@ body {
     top: 0px;
     left: 0px;
     z-index: 100;
-    padding-right: 2vw;
+    padding-right: 4vw;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px;
 }
   
@@ -112,11 +111,11 @@ body {
   
   
   .divino-sabor-marca { 
-    width: 30vw;
+    /* width: 30vw; */
     height: 10vh;
     display: flex;
     align-items: center;
-    margin-left: 10vw;
+    /* margin-left: 10vw; */
   }
   
   .oleo-script-regular {
@@ -143,11 +142,14 @@ body {
 
   #menu-disp-menores {
     display: none;
+    justify-content: center;
+    padding-left: 2%;
   }
   
   #navHamburguer {
     width: 30%;
     display: none;
+    justify-content: flex-start;
     
     & ul {
       list-style-type: none;
@@ -173,7 +175,7 @@ body {
   }
   
   #btnHamb {
-    margin: auto 0 auto 40%;
+    margin: auto 0 auto 30%;
   }
   .material-symbols-outlined  {
     text-align: center;
@@ -486,6 +488,10 @@ body {
     display: flex;
   }
 
+  .navbar {
+	  height: 8rem;
+  }
+
   .card_bolos {
     width: 22%;
     height: 70%;
@@ -526,6 +532,10 @@ body {
 
   #menu-disp-menores {
     display: flex;
+  }
+
+  .navbar {
+	  height: 8rem;
   }
   
   .card_bolos {
@@ -586,6 +596,10 @@ body {
 
   #menu-disp-menores {
     display: flex;
+  }
+
+  .navbar {
+	  height: 8rem;
   }
 }
 
