@@ -503,6 +503,11 @@ body {
   .section-1 {
     padding: 4rem 0rem 4rem;
   }
+
+  #redirect_arrow {
+    margin-left: -35px;
+  }
+
 }
 
 @media (min-width: 320px) and (max-width: 484.99px) {
@@ -547,6 +552,10 @@ body {
 
   .section-1 {
     padding: 4rem 0rem 4rem;
+  }
+
+  #redirect_arrow {
+    margin-left: -35px;
   }
 
 }
@@ -594,6 +603,10 @@ body {
   .section-1 {
     padding: 4rem 0rem 4rem;
   }
+
+  #redirect_arrow {
+    margin-left: -35px;
+  }
 }
 
 @media (min-width: 620px) and (max-width: 768px) {
@@ -613,6 +626,10 @@ body {
   .section_produtos {
     height: 30vh;
     padding-top: 3%;
+  }
+  
+  #redirect_arrow {
+    margin-left: -35px;
   }
 }
 
@@ -648,6 +665,10 @@ body {
     height: 40vh;
     padding-top: 2%;
   }
+
+  #redirect_arrow {
+    margin-left: -35px;
+  }
 }
 
 @media (min-width: 1000px) and (max-width: 1259.99px){
@@ -679,7 +700,7 @@ body {
   position: relative;
   bottom: 0;
   margin: 0;
-  background: linear-gradient(180deg, rgba(73,44,35,1) 56%, rgba(57,35,28,1) 77%, rgba(40,24,19,1) 86%, rgba(0,0,0,1) 100%);
+  background: linear-gradient(180deg, rgba(65,39,31,1) 56%, rgba(57,35,28,1) 65%, rgba(40,24,19,1) 86%, rgba(0,0,0,1) 100%);
   height: 25vh;
   width: 100%;
   box-sizing: border-box;
@@ -823,6 +844,13 @@ body {
   height: auto;
 }
 
+#store-icon {
+  background-color: transparent;
+  color: black;
+  font-size: 36px;
+  cursor: default;
+}
+
 .sect-onde-encontrar img {
   width: 100%;
   /* height: 0.1rem; */
@@ -832,6 +860,7 @@ body {
 }
 
 .div-onde-encontrar {
+  margin-bottom: 10%;
 	display: block;
     height: 10rem;
     align-content: center;

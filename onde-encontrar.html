@@ -21,27 +21,39 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
-
 <body>
-    <header class="navbar">
-        <div class="link-a">
-            <a href="./index.html">
-                <img src="./img/logo_Image.png" alt="logo_Image" class="img-logo link-a" id="logo_Image_Home">
-            </a>
-        </div>
-        <div class="divino-sabor-marca">
-            <h1 class=".oleo-script-regular">
-                Divino Sabor
-            </h1>
-        </div>
-        <!-- Inicio Img Carrinho -->
-        <!-- <div id="img-carrinho">
+    <header> 
+        <div class="navbar">
+            <div class="link-a">
+                <a href="./index.html">
+                    <img src="./img/logo_Image.png" alt="logo_Image" class="img-logo link-a" id="logo_Image_Home">
+                </a>
+            </div>
+            <div class="divino-sabor-marca">
+                <h1 class=".oleo-script-regular">   
+                    Divino Sabor
+                </h1>
+            </div>
+            <!-- Inicio Img Carrinho -->
+            <!-- <div id="img-carrinho">
             <img src="./img/icon_Cart.png" alt="icon_Cart" class="carrinho_icon">
         </div> -->
-        <!-- Fim da Img Carrinho -->
-        <div id="menu-disp-menores">
-            <nav id="navHamburguer" style="display: none;">
-                <ul>
+            <!-- Fim da Img Carrinho -->
+            <div id="menu-disp-menores">
+                <nav id="navHamburguer" style="display: none;">
+                    <ul>
+                        <!-- <li><a href="#">Carrinho</a></li> -->
+                        <li><a href="./galeria.html">Galeria</a></li>
+                        <li><a href="./produtos.html">Produtos</a></li>
+                        <li><a href="./onde-encontrar.html">Onde Encontrar</a></li>
+                        <li><a href="./contato.html">Contato</a></li>
+                    </ul>
+                </nav>
+                <button id="btnHamb" class="material-symbols-outlined" onclick="clickMenu()"> menu
+                </button>
+            </div>
+            <nav id="menu-disp-maiores">
+                <ul class="navbar-list">
                     <!-- <li><a href="#">Carrinho</a></li> -->
                     <li><a href="./galeria.html">Galeria</a></li>
                     <li><a href="./produtos.html">Produtos</a></li>
@@ -49,27 +61,16 @@
                     <li><a href="./contato.html">Contato</a></li>
                 </ul>
             </nav>
-            <button id="btnHamb" class="material-symbols-outlined" onclick="clickMenu()"> menu
-            </button>
-        </div>
-        <nav id="menu-disp-maiores">
-            <ul class="navbar-list">
-                <!-- <li><a href="#">Carrinho</a></li> -->
-                <li><a href="./galeria.html">Galeria</a></li>
-                <li><a href="./produtos.html">Produtos</a></li>
-                <li><a href="./onde-encontrar.html">Onde Encontrar</a></li>
-                <li><a href="./contato.html">Contato</a></li>
-            </ul>
-        </nav>
 
-        <!-- Inicio Img Button do Login_Done -->
-        <!-- <div class="div_login_done">
+            <!-- Inicio Img Button do Login_Done -->
+            <!-- <div class="div_login_done">
     <button class="button-login-Done">
         <img src="./img/btn_Login_Done.png" alt="btn_Login_Done">
     </button>
 </div> -->
-        <!-- Fim Img Button do Login_Done -->
-    </header>
+            <!-- Fim Img Button do Login_Done -->
+        </div>
+        </header>
 
 
     <div class="btn_whatsApp">
@@ -82,7 +83,10 @@
     <section id="id-sect-place" class="sect-onde-encontrar">
         <!-- <img src="./img/chocolate-fundo.png" alt="chocolate-fundo"> -->
         <article class="div-onde-encontrar oleo-script-regular">
-            <h1>Onde nos encontrar</h1>
+            <section class="sect-tag-card-title">
+                <span id="store-icon" class="material-symbols-outlined">storefront</span>
+                <h1>Onde nos encontrar</h1>
+            </section>
         </article>
         <article class="map-loja">
             <a href="https://www.google.com/maps/place/R.+Dr.+Amadeu+Sachi,+555+-+Vila+Formosa,+Jundia%C3%AD+-+SP,+13214-280/data=!4m2!3m1!1s0x94cf25deeb421b4b:0xfe63c24374efab53?sa=X&ved=1t:242&ictx=111"
