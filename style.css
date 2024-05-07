@@ -675,15 +675,14 @@ body {
 /* Estilo do Footer */
 .style-footer { 
   display: flex;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   position: relative;
   bottom: 0;
   margin: 0;
-  background: var(--Brown-Brown, #41271F);
+  background: linear-gradient(180deg, rgba(73,44,35,1) 56%, rgba(57,35,28,1) 77%, rgba(40,24,19,1) 86%, rgba(0,0,0,1) 100%);
   height: 25vh;
   width: 100%;
   box-sizing: border-box;
-  /* justify-content: space-between;*/
 }
 
 /* Div do Footer */
@@ -747,11 +746,11 @@ body {
   & p img {
     width: 1px;
     height: 1px;
-    opacity: 80%;
+    opacity: 100%;
     border-radius: 50px;
-  
+    
     &:hover {
-      opacity: 100%;
+      opacity: 70%;
     }
   }
 }
@@ -785,11 +784,11 @@ body {
 .secao-3 p img {
   width: 1px;
   height: 1px;
-  opacity: 80%;
-
-
+  opacity: 100%;
+  
+  
   &:hover {
-    opacity: 100%;
+    opacity: 70%;
   }
 }
 
@@ -804,7 +803,7 @@ body {
 }
 
 .copyright-footer {
-  background: var(--Brown-Brown, #41271F);
+  background: transparent;
   display: flex;
   justify-content: center;
   text-align: justify;
@@ -879,6 +878,12 @@ body {
 .map-loja img {
   width: 100%;
   height: auto;
+  box-shadow: 0 5px 45px 10px rgba(0, 0, 0, .15);
+
+  &:hover { 
+    box-shadow: none;
+    opacity: 80%;
+  }
 }
 
 .map-loja-span-a {
@@ -887,18 +892,32 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: blue;
+	text-decoration: none;
+  font-family: system-ui;
+  &:hover {
+    color: black;
+  }
 }
 
-.map-loja-span-a img {
+#redirect_arrow {
+  text-decoration: none;
+  background-color: transparent;
+  color: blue;
   position: relative;
-  height: 1.5rem;
-  width: 1.5rem;
+  font-size: 16px;
   display: flex;
   align-content: baseline;
   flex-wrap: wrap;
   top: -1rem;
   margin-left: -10px;
+
+  &:hover {
+    color: black;
+  }
 }
+
+
 
 #galeria-div-section-produtos:nth-child(1n) {
   padding-top: 0;
