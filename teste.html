@@ -39,14 +39,27 @@
         <button id="btnHamb" class="material-symbols-outlined" onclick="clickMenu()"> Menu
         </button>
       </section>
-      <nav>
+      <nav id="navHamb">
         <ul>
-          <li><a href="./galeria.html">Galeria</a></li>
-          <li><a href="./produtos.html">Produtos<span id="arrow_drop_down" class="material-symbols-outlined">
-            arrow_drop_down
-            </span></a></li>
-          <li><a href="./onde-encontrar.html">Onde Encontrar</a></li>
-          <li><a href="./contato.html">Contato</a></li>
+          <li><a href="./galeria.html"><span id="icon_menus" class="material-symbols-outlined">
+            photo_prints
+            </span>Galeria</a></li>
+            <li><a href="#"><span id="icon_menus" class="material-symbols-outlined">
+                cake
+                </span>Produtos<span id="arrow_drop_down" class="material-symbols-outlined"> arrow_drop_down</span></a>
+                <ul class="submenu">
+                    <li><a href="#">Bolos</a></li>
+                    <li><a href="#">Doces</a></li>
+                    <li><a href="#">Pães</a></li>
+                    <li><a href="#">Tortas</a></li>
+                </ul>
+            </li>
+          <li><a href="./onde-encontrar.html"><span id="icon_menus" class="material-symbols-outlined">
+            store
+            </span>Onde Encontrar</a></li>
+          <li><a href="./contato.html"><span id="icon_menus" class="material-symbols-outlined">
+            group
+            </span>Contato</a></li>
         </ul>
       </nav>
     </header>
@@ -168,12 +181,12 @@
                 <div class="secao secao-2">
                     <h2>
                         Mídias sociais
-                        <p>
+                        <p style="padding: 5% 0;">
                             <a href="https://www.instagram.com/divinosabor.alice/" target="_blank">
                                 <img src="./img/instagram-icon.png" alt="footer_instagram_logo">
                             </a>
                         </p>
-                        <p>
+                        <p style="padding: 5% 0;">
                             <a href="https://api.whatsapp.com/send?1=pt_BR&phone=5511961944937&text=Ol%C3%A1%20vim%20pelo%20site%20do%20Divino%20Sabor%21"
                                 target="_blank">
                                 <img style="border-radius: 0;" src="./img/whatsapp_Icon_Fixed.png"
@@ -205,7 +218,7 @@
             </div>
         </section>
     </footer>
-    <script src="./script.js"></script>
+    <script src="./script_teste.js"></script>
 </body>
 <!-- // -->
 
