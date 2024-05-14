@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+
 @media (max-width: 319.99px) {
 
   #menu-disp-maiores {
@@ -319,6 +321,11 @@ body {
 
 .link-a {
   margin-left: 1vw;
+
+  & img {
+    height: 8.5em;
+    width: 8.5em;
+  }
 }
 
 .img-logo a {
@@ -342,8 +349,9 @@ body {
   & h1 {
     display: flex;
     color: #000;
-    font-family: "Oleo Script";
-    font-size: 2em;
+    /* font-family: "Oleo Script"; */
+    font-family: "Berkshire Swash", serif;
+    font-size: 3em;
     font-style: normal;
     font-weight: 100;
     line-height: 1em;
@@ -364,7 +372,7 @@ body {
 .disp-maiores-navbar {
   border-radius: 0.5% 0.5% 2% 2%;
   box-sizing: border-box;
-  justify-content: space-between;
+  justify-content:space-evenly;
   height: 7rem;
   background: rgb(255, 225, 248);
   display: flex;
@@ -373,27 +381,67 @@ body {
   padding-right: 4vw;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px;
   
-  & li {
+  & ul li {
     font-family: "Open Sans";
-    font-size: 1.2em;
+    font-size: 1.5em;
     line-height: 1em;
     font-style: normal;
     font-weight: 400;
     margin: 0 10px;
-    display: flex;
+    display: inline;
     align-items: flex-end;
-    float: right;
-  
+    position: relative;
+    transition: all 50ms ease-in-out 50ms;
+    /* float: right; */
+    
+    & a {
+      text-decoration: none;
+      color: black;
+      display: inline-block;
+      padding: 10px;
+    }
+
     & :hover {
+      border-radius: 30px;
+      background-color: rgba(65,39,31,1);
       color: white;
+      transition: all 300ms ease-in-out 100ms;
     }
   }
-}
 
+  & ul ul {
+    padding: 20px;
+    display: none;
+    position: absolute;
+    left: 0;
+    /* -- alinha exibicao do submenu em formato coluna abaixo do 'produtos' */
+    
+    & li {
+      font-family: "Open Sans";
+      font-size: 1em;
+      line-height: 0.8em;
+      transition: all 100ms ease-in-out;
 
-.navbar-list li a {
-  text-decoration: none;
-  color: black;
+    }
+    
+    & li a {
+      display:flex;
+      justify-content: center;
+    }
+    & li a:hover {
+      background-color: rgba(65,39,31,1);
+    }
+  }
+  
+  & ul li:hover ul {
+    
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: rgb(255, 225, 248);
+    border-radius: 30px;
+    transition: all 1s ease-in-out 3s;
+  }
 }
 
 .banner-saito {
