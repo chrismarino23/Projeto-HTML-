@@ -373,7 +373,6 @@ body {
   font-family: "Oleo Script", system-ui;
 }
 
-
 .disp-maiores-navbar {
   border-radius: 0.5% 0.5% 2% 2%;
   box-sizing: border-box;
@@ -399,6 +398,9 @@ body {
     position: relative;
     transition: all 100ms ease-in;
     /* float: right; */
+    & :last-child {
+      padding-right: 25px;
+    }
 
     & a {
       text-decoration: none;
@@ -413,14 +415,14 @@ body {
       color: white;
       transition: all 100ms ease-in;
     
-      #arrow_drop_down {
+      & #arrow_drop_down, #icon_menus {
         color: white;
       }
     }
   }
 
   & ul ul {
-    padding: 20px;
+    padding: 10px !important;
     display: none;
     position: absolute;
     left: 0;
@@ -433,6 +435,7 @@ body {
     }
 
     & li a {
+      padding: 10px !important;
       display: flex;
       justify-content: center;
     }
@@ -443,7 +446,6 @@ body {
   }
 
   & ul li:hover ul {
-
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -536,10 +538,7 @@ nav {
       color: white;
       background-color: rgba(65,39,31,1);
       
-      & #icon_menus {
-        color: white;
-      }
-      & #arrow_drop_down {
+      & #icon_menus, #arrow_drop_down  {
         color: white;
       }
     }
