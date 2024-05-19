@@ -422,13 +422,15 @@ body {
   }
 
   & ul ul {
-    padding: 10px !important;
+    padding: 0px !important;
     display: none;
     position: absolute;
     left: 0;
     /* -- alinha exibicao do submenu em formato coluna abaixo do 'produtos' */
 
     & li {
+      width: 100%;
+      padding: 10px !important;
       font-family: "Open Sans";
       font-size: 1em;
       line-height: 0.8em;
@@ -450,7 +452,7 @@ body {
     justify-content: center;
     flex-wrap: wrap;
     background: rgb(255, 225, 248);
-    border-radius: 30px;
+    border-radius: 20px;
   }
 }
 /* .banner-container {
@@ -609,6 +611,7 @@ nav ul li:hover ul.submenu {
 #icon_menus {
   background-color: transparent;
   color: black;
+  padding: 5px !important;
 }
 
 .banner-container {
