@@ -14,75 +14,103 @@
         content="Divino Sabor é uma confeitaria artesanal com doces e salgados caseiros incríveis. Venha experimentar!">
 
     <!-- Início Título -->
-    <title>Divino Sabor - Confeitaria - Home</title>
+    <title>Divino Sabor - Confeitaria - Onde Encontrar</title>
 
     <!-- Links de estilização -->
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="/Style/style.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
+
 <body>
-    <header> 
-        <div class="navbar">
+    <header class="header-position">
+        <div id="menu-disp-menores">
+            <section class="sct-header">
+                <div>
+                    <a href="/index.html">
+                        <img src="/img/DS-Alice.png" alt="logo_Image">
+                    </a>
+                </div>
+                <div class="divino-sabor-marca">
+                    <h1 class=".oleo-script-regular">
+                        Divino Sabor
+                    </h1>
+                </div>
+                <button id="btnHamb" class="material-symbols-outlined" onclick="clickMenu()"> Menu
+                </button>
+            </section>
+            <nav id="navHamb" class="menuNav">
+                <ul>
+                    <li><a href="./contato.html"><span id="icon_menus" class="material-symbols-outlined">
+                                group
+                            </span>Contato</a></li>
+                    <li><a href="./galeria.html"><span id="icon_menus" class="material-symbols-outlined">
+                                photo_prints
+                            </span>Galeria</a></li>
+                    <li><a href="./onde-encontrar.html"><span id="icon_menus" class="material-symbols-outlined">
+                                store
+                            </span>Onde Encontrar</a></li>
+                    <li><a href="#"><span id="icon_menus" class="material-symbols-outlined">
+                                cake
+                            </span>Produtos<span id="arrow_drop_down" class="material-symbols-outlined">
+                                arrow_drop_down</span></a>
+                        <ul class="submenu">
+                            <li><a href="#">Bolos</a></li>
+                            <li><a href="#">Doces</a></li>
+                            <li><a href="#">Pães</a></li>
+                            <li><a href="#">Tortas</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Dispositivos Mariores -->
+        <div id="menu-disp-maiores" class="disp-maiores-navbar">
             <div class="link-a">
                 <a href="./index.html">
-                    <img src="./img/logo_Image.png" alt="logo_Image" class="img-logo link-a" id="logo_Image_Home">
+                    <img src="/img/DS-Alice.png" alt="logo_Image" class="img-logo link-a" id="logo_Image_Home">
                 </a>
             </div>
             <div class="divino-sabor-marca">
-                <h1 class=".oleo-script-regular">   
+                <h1 class=".oleo-script-regular">
                     Divino Sabor
                 </h1>
             </div>
-            <!-- Inicio Img Carrinho -->
-            <!-- <div id="img-carrinho">
-            <img src="./img/icon_Cart.png" alt="icon_Cart" class="carrinho_icon">
-        </div> -->
-            <!-- Fim da Img Carrinho -->
-            <div id="menu-disp-menores">
-                <nav id="navHamburguer" style="display: none;">
-                    <ul>
-                        <!-- <li><a href="#">Carrinho</a></li> -->
-                        <li><a href="./galeria.html">Galeria</a></li>
-                        <li><a href="./produtos.html">Produtos</a></li>
-                        <li><a href="./onde-encontrar.html">Onde Encontrar</a></li>
-                        <li><a href="./contato.html">Contato</a></li>
-                    </ul>
-                </nav>
-                <button id="btnHamb" class="material-symbols-outlined" onclick="clickMenu()"> menu
-                </button>
-            </div>
-            <nav id="menu-disp-maiores">
-                <ul class="navbar-list">
-                    <!-- <li><a href="#">Carrinho</a></li> -->
-                    <li><a href="./galeria.html">Galeria</a></li>
-                    <li><a href="./produtos.html">Produtos</a></li>
-                    <li><a href="./onde-encontrar.html">Onde Encontrar</a></li>
-                    <li><a href="./contato.html">Contato</a></li>
+            <menu>
+                <ul>
+                    <li><a href="./contato.html"><span id="icon_menus" class="material-symbols-outlined">
+                                group
+                            </span>Contato</a></li>
+                    <li><a href="./galeria.html"><span id="icon_menus" class="material-symbols-outlined">
+                                photo_prints
+                            </span>Galeria</a></li>
+                    <li><a style="text-decoration: underline black;"  href="./onde-encontrar.html"><span id="icon_menus" class="material-symbols-outlined">
+                                store
+                            </span>Onde Encontrar</a></li>
+                    <li><a href="#"><span id="icon_menus" class="material-symbols-outlined">
+                                cake
+                            </span>Produtos<span id="arrow_drop_down" class="material-symbols-outlined">
+                                arrow_drop_down</span></a>
+                        <ul class="submenu">
+                            <li><a href="#">Bolos</a></li>
+                            <li><a href="#">Doces</a></li>
+                            <li><a href="#">Pães</a></li>
+                            <li><a href="#">Tortas</a></li>
+                        </ul>
+                    </li>
                 </ul>
-            </nav>
-
-            <!-- Inicio Img Button do Login_Done -->
-            <!-- <div class="div_login_done">
-    <button class="button-login-Done">
-        <img src="./img/btn_Login_Done.png" alt="btn_Login_Done">
-    </button>
-</div> -->
-            <!-- Fim Img Button do Login_Done -->
+            </menu>
         </div>
-        </header>
-
-
+    </header>
     <div class="btn_whatsApp">
         <a href="https://api.whatsapp.com/send?1=pt_BR&phone=5511961944937&text=Ol%C3%A1%20vim%20pelo%20site%20do%20Divino%20Sabor%21"
             target="_blank">
             <button></button>
         </a>
     </div>
-
     <section id="id-sect-place" class="sect-onde-encontrar">
-        <!-- <img src="./img/chocolate-fundo.png" alt="chocolate-fundo"> -->
-        <article class="div-onde-encontrar oleo-script-regular">
+        <!-- <img src="/img/chocolate-fundo.png" alt="chocolate-fundo"> -->
+        <article class="div-onde-encontrar">
             <section class="sect-tag-card-title">
                 <span id="store-icon" class="material-symbols-outlined">storefront</span>
                 <h1>Onde nos encontrar</h1>
@@ -91,7 +119,7 @@
         <article class="map-loja">
             <a href="https://www.google.com/maps/place/R.+Dr.+Amadeu+Sachi,+555+-+Vila+Formosa,+Jundia%C3%AD+-+SP,+13214-280/data=!4m2!3m1!1s0x94cf25deeb421b4b:0xfe63c24374efab53?sa=X&ved=1t:242&ictx=111"
                 target="_blank">
-                <img src="./img/mapa-loja.png" alt="">
+                <img src="/img/mapa-loja.png" alt="">
             </a>
         </article>
         <span class="map-loja-span">
@@ -101,7 +129,7 @@
                 <p style="text-decoration: underline;">R. Dr. Amadeu Sacchi, n 555 - Vila Formosa (Hortolândia) -
                     Jundiaí - SP - 13214-280</p>
                 <span id="redirect_arrow" class="material-symbols-outlined">open_in_new</span>
-                <!-- <img src="./img/abrir.png" alt="redirecionamento-link"> -->
+                <!-- <img src="/img/abrir.png" alt="redirecionamento-link"> -->
             </a>
         </span>
     </section>
@@ -111,7 +139,7 @@
             <div class="container-contact-us">
                 <div class="secao">
                     <a href="#id-direct-banner">
-                        <img src="./img/footer_Logo.png" alt="footer_Logo" style="margin-top: 2vh;">
+                        <img src="/img/footer_Logo.png" alt="footer_Logo" style="margin-top: 2vh;">
                     </a>
                 </div>
                 <div class="secao secao-2">
@@ -119,13 +147,13 @@
                         Mídias sociais
                         <p>
                             <a href="https://www.instagram.com/divinosabor.alice/" target="_blank">
-                                <img src="./img/instagram-icon.png" alt="footer_instagram_logo">
+                                <img style="border-radius: 0;" src="/img/instagram-icon.png" alt="footer_instagram_logo">
                             </a>
                         </p>
                         <p>
                             <a href="https://api.whatsapp.com/send?1=pt_BR&phone=5511961944937&text=Ol%C3%A1%20vim%20pelo%20site%20do%20Divino%20Sabor%21"
                                 target="_blank">
-                                <img style="border-radius: 0;" src="./img/whatsapp_Icon_Fixed.png"
+                                <img style="border-radius: 0;" src="/img/whatsapp_Icon_Fixed.png"
                                     alt="footer_Whats_Logo">
                             </a>
                         </p>
@@ -139,14 +167,9 @@
                     <p id="footer_dev_prof">FrontEnd Developer </p>
                     <p>
                         <a href="https://www.linkedin.com/in/crystopher-marino-1b0b1b168/" target="_blank">
-                            <img src="./img/icon_Linkedin.png" alt="secao-3_linkedin_logo">
+                            <img src="/img/icon_Linkedin.png" alt="secao-3_linkedin_logo">
                         </a>
                     </p>
-                    <!-- <p>Thomas Roncoleta - Desing / UX 
-                            <a href="https://www.linkedin.com/in/david-henrique-b5704526b/" target="_blank">
-                                <img src="./img/icon_Linkedin.png" alt="secao-3_linkedin_logo">
-                            </a>
-                        </p> -->
                 </div>
             </div>
             <div class="copyright-footer">
@@ -154,7 +177,7 @@
             </div>
         </section>
     </footer>
-    <script src="./script.js"></script>
+    <script src="/Js/script.js"></script>
 </body>
 <!-- Fim do Body -->
 

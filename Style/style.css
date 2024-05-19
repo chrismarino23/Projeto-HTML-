@@ -202,10 +202,6 @@ body {
   #menu-disp-menores {
     display: block !important;
   }
-
-  .disp-maiores-navbar {
-    height: 8rem;
-  }
 }
 
 @media (min-width: 769px) and (max-width: 999.99px) {
@@ -254,7 +250,7 @@ body {
   }
 }
 
-/* Trilho do scroll vertical */
+/* Trilho do scroll horizontal */
 ::-webkit-scrollbar {
   width: 12px;
   height: auto;
@@ -263,14 +259,12 @@ body {
   margin-right: 5px;
 }
 
-/* Scroll por cima da barra */
+/* Scroll por cima da barra (vertical) */
 ::-webkit-scrollbar-thumb {
   width: 16px;
   height: auto;
-  background: var(--SBG-SBG, #FFC1AB);
-  /* background-repeat: no-repeat; */
+  background-color: rgba(65,39,31,1);
   border-radius: 10px;
-  /* border-radius: 30px; */
 }
 
 /* Trilho de baixo da barra */
@@ -291,6 +285,7 @@ body {
   top: 0px;
   left: 0px;
   z-index: 100;
+  background-color: transparent;
 }
 
 
@@ -475,18 +470,16 @@ body {
 /* Dispositivos Menores */
 
 #menu-disp-menores {
-  border-radius: 0.5% 0.5% 2% 2%;
   display: none;
   justify-content: center;
   background: var(--BG-BG, #FFE1F8);
   box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px;
-
-  /* padding-left: 1%; */
+  border-radius: 0.5% 0.5% 6% 6%;
 }
 
 
 .sct-header {
-  border-radius: 0.5% 0.5% 2% 2%;
+  border-radius: 0.5% 0.5% 6% 6%;
   align-items: center;
   display: flex;
   justify-content: space-evenly;
@@ -534,7 +527,6 @@ nav {
     border-top: 2px solid white;
     
     &:hover {
-      text-decoration: underline;
       justify-content: center;
       border-radius: 30px;
       color: white;
@@ -726,7 +718,7 @@ nav ul li:hover ul.submenu {
   width: 100%;
   height: 10vh;
   align-items: center;
-  background: #FFE1F8;
+  background-color: rgba(65, 39, 31, 1);
   justify-content: space-around;
   display: flex;
 
@@ -737,11 +729,11 @@ nav ul li:hover ul.submenu {
     height: auto;
     /* background: #FFE1F8; */
     justify-content: center;
-    color: #000;
+    color: white;
     margin: 0;
     align-items: inherit;
     text-align: center;
-    font-family: "Open Sans";
+    font-family: "Questrial", sans-serif;
     font-style: normal;
     font-weight: 400;
     flex-direction: column;
@@ -784,7 +776,7 @@ nav ul li:hover ul.submenu {
   }
 }
 
-.section-1 {
+.section-bottom-banner {
   padding: 2rem 0rem 4rem;
   display: flex;
   width: 100%;
@@ -803,17 +795,21 @@ nav ul li:hover ul.submenu {
   }
 }
 
-.article-1 {
+.article-bottom-banner{
   justify-items: column;
   align-items: center;
   justify-content: center;
   text-align: center;
 
+  & h1 {
+    font-family: "Berkshire Swash", serif;
+  }
+
   & h2 {
     font-size: 1.5em;
     text-decoration: none;
     padding: 0 10vw;
-    font-family: "Open Sans";
+    font-family: "Questrial", sans-serif;
     font-weight: 500;
   }
 
@@ -821,11 +817,10 @@ nav ul li:hover ul.submenu {
     font-size: 1.3em;
     text-decoration: none;
     padding: 0 10vw;
-    font-family: "Open Sans";
+    font-family: "Questrial", sans-serif;
     font-weight: 500;
   }
 }
-
 
 .div_section_produtos {
   box-sizing: border-box;
@@ -842,7 +837,7 @@ nav ul li:hover ul.submenu {
     justify-content: center;
     text-align: center;
     font-size: 1.5em;
-    font-family: system-ui;
+    font-family: "Questrial", sans-serif;
   }
 }
 
@@ -871,6 +866,11 @@ nav ul li:hover ul.submenu {
   margin: 2% auto;
   gap: 4%;
   box-shadow: 0 5px 45px 10px rgba(0, 0, 0, .15);
+
+  & h1 {
+    font-family: "Questrial", sans-serif;
+    font-weight: 200;
+  }
 }
 
 .card_bolos {
@@ -959,7 +959,7 @@ nav ul li:hover ul.submenu {
 
   & h2 {
     color: #FFF;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: "Questrial", sans-serif;
     font-size: 1em;
     font-style: normal;
     font-weight: 700;
@@ -989,7 +989,7 @@ nav ul li:hover ul.submenu {
   & h3 {
     margin-top: 0;
     color: #FFF;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: "Questrial", sans-serif;
     font-size: 0.9em;
     font-style: normal;
     /* font-weight: 700; */
@@ -999,7 +999,7 @@ nav ul li:hover ul.submenu {
   & p {
     font-size: 1em;
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Questrial", sans-serif;
     
     & img {
       width: 1px;
