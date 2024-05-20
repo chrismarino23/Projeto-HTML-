@@ -417,12 +417,12 @@ body {
   }
 
   & ul ul {
-    padding: 0px !important;
+    padding: 5px !important;
     display: none;
     position: absolute;
     left: 0;
     /* -- alinha exibicao do submenu em formato coluna abaixo do 'produtos' */
-
+    
     & li {
       width: 100%;
       padding: 10px !important;
@@ -512,8 +512,6 @@ nav {
   & ul li {
     position: relative;
     display: inline-block;
-
-
   }
 
   & ul li a {
@@ -760,7 +758,7 @@ nav ul li:hover ul.submenu {
   background-color: #000;
 }
 
-#sect-title-procura {
+#sect-title-cardapio {
   display: flex;
   align-items: center;
   font-size: 1em;
@@ -770,7 +768,6 @@ nav ul li:hover ul.submenu {
 
   & span {
     background-color: transparent;
-    color: black;
     font-size: 40px;
     cursor: default;
   }
@@ -855,7 +852,7 @@ nav ul li:hover ul.submenu {
 }
 
 .sect-tag-card-title {
-  background: var(--sbgsbg-1, #FFCDBC);
+  background-color: rgba(65, 39, 31, 1);
   height: 5vh;
   border-radius: 30px;
   display: flex;
@@ -866,7 +863,17 @@ nav ul li:hover ul.submenu {
   margin: 2% auto;
   gap: 4%;
   box-shadow: 0 5px 45px 10px rgba(0, 0, 0, .15);
-
+  & p {
+    color: white;
+  }
+  & span {
+    cursor: default !important;
+    font-size: 1.8em;
+    /* font-weight: 900; */
+    /* background-color: white; */
+    /* color: rgba(65, 39, 31, 1); */
+    color: white;
+  }
   & h1 {
     font-family: "Questrial", sans-serif;
     font-weight: 200;
@@ -876,7 +883,7 @@ nav ul li:hover ul.submenu {
 .card_bolos {
   width: 18%;
   height: 70%;
-  background-color: #FFCDBC;
+  background: rgb(255, 225, 248);
   border-radius: 10%;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 
@@ -890,6 +897,59 @@ nav ul li:hover ul.submenu {
   }
 }
 
+.card-sect-interno-top {
+  display: block;
+  text-align: center;
+  height: 8rem;
+
+  & span {
+    color: rgba(65, 39, 31, 1);
+    display: block;
+    text-align: start !important;
+    padding: 5px 0 10px 10px;
+  }
+  & a {
+    display: block;
+    align-items: center;
+    text-align: center;
+    object-fit: contain;
+    
+    & img {
+      display: block;
+      margin: auto;
+      text-align: center;
+      padding: 0.5rem;
+      height: 5rem;
+      width: 8rem;
+      background-color: transparent;
+    }
+  }
+
+}
+
+.card-sect-interno-bottom {
+  text-align: center;  
+  font-family: "Questrial", sans-serif;
+  font-size: 0.8em;
+  & h2 {
+    font-weight: 200;
+    color: rgba(65, 39, 31, 1);
+  }
+
+  & a {
+    text-decoration: none;
+    padding: 8px;
+    color: white;
+    background-color: rgba(65, 39, 31, 1);
+    border-radius: 10px;
+    &:hover {
+      color: rgba(65, 39, 31, 1);
+      border: solid 1px rgba(65, 39, 31, 1);
+      cursor: pointer;
+      background-color: transparent;
+    }
+  }
+}
 /* Estilo do Footer */
 .style-footer {
   display: flex;
