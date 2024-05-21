@@ -1,3 +1,6 @@
-Corrigir Imagens do BANNER
-
 Alterar cor dos cards e title section main.
+
+AJUSTES PARA DISPOSITIVOS MENORES
+- Imagens do Banner
+- bolinhas indicador
+- Título de Bem vindo
