@@ -1,7 +1,21 @@
 const imagens = document.querySelectorAll('.banner-container img');
 const btnHamb = document.getElementById('btnHamb');
 const navHamburguer = document.getElementById('navHamburguer');
-// const menuNav = document.querySelector('.menuNav');
+
+function mostrarAlerta() {
+  document.getElementById("meuAlerta").style.display = "block";
+}
+
+function fecharAlerta() {
+  document.getElementById("meuAlerta").style.transition = "opacity 0.3s ease-in-out";
+  document.getElementById("meuAlerta").classList.add("hidden");
+  setTimeout(function() {
+      document.getElementById("meuAlerta").style.display = "none";
+  }, 300); // Tempo em milissegundos (0.3s = 300ms)
+}
+
+window.onload = mostrarAlerta;
+
 
 let textoAtual = 'Menu';
 btnHamb.addEventListener('click', () => {

@@ -1,6 +1,20 @@
-Alterar cor dos cards e title section main.
+TO DO 
+
+AJUSTES PARA DISPOSITIVOS MAIORES
+- 
 
 AJUSTES PARA DISPOSITIVOS MENORES
 - Imagens do Banner
 - bolinhas indicador
 - Título de Bem vindo
+- Alert 
+
+AMBOS DISPOSITIVOS 
+- Replicar JS de alerta nas demais telas além da Home
+- Página de Galeria
+- Direcionamento do ul li a > produtos
+- Página Onde nos Encontrar
+- Analisar possibilidade de deixar cada style.css e script.js dentro de sua respectiva página de aplicação
+
+DONE 
+Alterar cor dos cards e title section main. 
