@@ -1,7 +1,7 @@
 TO DO 
 
 AJUSTES PARA DISPOSITIVOS MAIORES
-- 
+-  Finalizar tela de Produtos e Contato.
 
 AJUSTES PARA DISPOSITIVOS MENORES
 - Imagens do Banner
@@ -18,3 +18,22 @@ AMBOS DISPOSITIVOS
 
 DONE 
 Alterar cor dos cards e title section main. 
+Adicionado Modal para alerta inciial da página.
+
+
+REMOVIDOS: 
+
+
+        <!-- <div id="meuAlerta" class="alerta">
+            <div>
+                <h1>Sejam bem-vindos!</h1>
+                <p>No momento só estamos aceitando pedidos via WhatsApp</p>
+                <button onclick="fecharAlerta()">Ok</button>
+            </div>
+        </div> -->
+
+        <!-- <div class="banner-saito" id="id-direct-banner">
+        <img src="./img/Donuts.png" alt="banner-saito">
+     </div> -->
+
+     

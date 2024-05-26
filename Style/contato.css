@@ -14,9 +14,8 @@ body {
   min-width: fit-content;
   min-height: 10rem;
   margin: 0;
-  padding: 0 !important;
-  /* margin-right: 1.5vw; */
-  overflow-x: hidden !important;
+  margin-right: 1.5vw;
+  overflow-x: hidden;
 }
 
 /* Smaller Smarphones */
@@ -39,14 +38,6 @@ body {
     margin-left: -35px;
   }
 
-  .sect-flex-products {
-    padding: 0 !important;
-  }
-
-  .card-products {
-    max-width: 169px !important;
-  }
-
 }
 
 /* Tablets & Larger Smartphones */
@@ -63,14 +54,6 @@ body {
 
   .sect-tag-card-title {
     margin: 0 auto;
-  }
-
-  .sect-flex-products {
-    padding: 0;
-  }
-
-  .card-products {
-    max-width: 169px !important;
   }
 
   #redirect_arrow {
@@ -154,7 +137,7 @@ body {
 
   & h5 {
     font-family: "Berkshire Swash", serif;
-    font-size: 2em;
+    font-size: 1.5em;
   }
   & p {
     font-size: 1.5em;
@@ -499,34 +482,90 @@ nav ul li:hover ul.submenu {
   padding: 5px !important;
 }
 
-.carousel-indicators li {
-  /* background-color: rgba(65,39,31,1) !important; */
-  background-color: rgba(65,39,31,1) !important;
-  opacity: 0.5;
+.banner-container {
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+  position: relative;
+  
+  & img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30rem;
+    transition: opacity 0.5s ease-in-out;
+  }
+}
+
+.banner-container img:nth-child(1) {
+  display: block;
+  opacity: 1;
+}
+
+.banner-container img:not(:nth-child(1)) {
+  opacity: 0;
+}
+
+.banner-anterior, .banner-proximo {
+  position: absolute;
+  /* top: 50%; */
+  transform: translateY(-50%);
+  /* padding: 10px; */
+  background-color: rgba(65,39,31,1);
+  color: white;
+  border: none;
+  cursor: pointer;
+  & span:hover {
+      border: none;
+      color: black;
+      background: rgb(255, 225, 248);
+  }
+}
+
+.banner-anterior {
+  left: 20px;
+  top: 35%;
+}
+
+.banner-proximo {
+  right: 20px;
+  top: 35%;
+}
+
+.btn-banner {
+  border-radius: 50%;
+  color: black;
+  display: grid;
+  align-content: center;
+}
+
+.indicadores {
+  position: absolute;
+  width: 10%;
+  bottom: 20px;
+  left: 50%;
+  gap: 5%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+}
+
+.indicador {
+  width: 20px; /* Largura da bolinha */
+  height: 20px; /* Altura da bolinha */
+  border-radius: 50%;
+  background-color: rgba(65,39,31,1);
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Animação de transição de cor */
+  
   &:hover {
-    background-color: white !important;
+    background: rgb(255, 225, 248);
   }
 }
 
-.carousel-indicators .active {
-  opacity: 100% !important;
-}
-
-.carousel-control-next {
-right: 10px !important;
-}
-
-.carousel-control-prev , .carousel-control-next {
-  width: 10% !important;
-  & #icon-seta {
-    color: rgba(65,39,31,1);
-    font-size: 3rem;
-    font-weight: 600;
-  }
-}
-
-.carousel-indicators {
-  margin: 0 auto !important;
+.indicador.ativo {
+  background-color: white;
 }
 
 .material-symbols-outlined  {
@@ -549,53 +588,6 @@ right: 10px !important;
   padding: 0;
 }
 
-.tarja-bottom-banner {
-  box-sizing: border-box;
-  width: 100%;
-  /* height: 10vh; */
-  align-items: center;
-  background-color: rgba(65, 39, 31, 1);
-  justify-content: space-around;
-  display: flex;
-  border-radius: 15px;
-
-  & h1 {
-    padding: 1rem 4rem;
-    display: flex;
-    width: 100%;
-    height: auto;
-    /* background: #FFE1F8; */
-    justify-content: center;
-    color: white;
-    margin: 0;
-    align-items: inherit;
-    text-align: center;
-    font-family: "Questrial", sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    flex-direction: column;
-    font-size: 1.5em;
-  }
-}
-
-.div-espaco-hr {
-  box-sizing: border-box;
-  background-color: white;
-  display: flex;
-  height: 5px;
-  align-items: center;
-  justify-content: center;
-  /* margin: 4%; */
-}
-
-.div-espaco-cinza {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 1px;
-  width: 80%;
-  background-color: #000;
-}
 
 #sect-title-cardapio {
   display: flex;
@@ -631,195 +623,6 @@ right: 10px !important;
   }
 }
 
-.article-bottom-banner{
-  justify-items: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-
-  & h1 {
-    font-family: "Berkshire Swash", serif;
-  }
-
-  & h2 {
-    font-size: 1.5em;
-    text-decoration: none;
-    padding: 0 10vw;
-    font-family: "Questrial", sans-serif;
-    font-weight: 500;
-  }
-
-  & p {
-    font-size: 1.3em;
-    text-decoration: none;
-    padding: 0 10vw;
-    font-family: "Questrial", sans-serif;
-    font-weight: 500;
-  }
-}
-
-.margin-auto {
-  margin: auto;
-}
-
-.div_section_produtos {
-  box-sizing: border-box;
-  width: 100%;
-  padding: 0.3rem 0.3rem;
-  margin-right: 1rem;
-  background-color: #FFF;
-  margin-top: 0;
-  padding: 1% 5%;
-
-  & p {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    font-size: 1.5em;
-    font-family: "Questrial", sans-serif;
-  }
-}
-
-/* .section_produtos {
-  display: flex;
-  height: 60vh;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  gap: 1%;
-} */
-
-.sect-tag-card-title {
-  background-color: rgba(65, 39, 31, 1);
-  /* height: 5vh; */
-  border-radius: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 3%;
-  width: 80%;
-  margin: 2% auto;
-  gap: 4%;
-  box-shadow: 0 5px 45px 10px rgba(0, 0, 0, .15);
-  & p {
-    color: white;
-    /* font-size: 2.2em; */
-  }
-  & span {
-    cursor: default !important;
-    font-size: 1.8em;
-    color: white !important;
-  }
-  & h1 {
-    font-family: "Questrial", sans-serif;
-    font-weight: 200;
-    color: white;
-    margin: 0;
-  }
-}
-
-.sect-flex-products {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  /* margin: 0 auto; */
-  padding: 2rem;
-  background-color: white;
-  gap: 1%;
-}
-
-.card-products {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  max-width: 400px;
-  border-radius: 30px;
-  padding: 10px;
-  flex: 1 0 250px;
-  background: rgb(255, 225, 248);
-  margin: 0 2px 4px;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px;
-  transition: box-shadow 0.3s ease;
-  & span {
-    font-family: "Questrial", sans-serif;
-    color: rgba(65, 39, 31, 1);
-    font-weight: 700;
-  } 
-  & a {
-    & img {
-      width: 100%; 
-      /* height: 150px; */
-      transform: scale(0.5);
-      object-fit: cover; /* Mantém a proporção da imagem e preenche o espaço disponível */
-      box-shadow: none;
-      &:hover {
-        transform: scale(1.2);
-        transition: transform 0.5s ease-in-out;
-      }
-    }
-  }
-  &  p {
-    font-family: "Questrial", sans-serif;
-    font-size: 1em;
-    padding: 10px;
-    margin: 2rem auto;
-    background-color: rgba(65, 39, 31, 1);
-    color: white;
-    border-radius: 13px;
-    display: block;
-    &:hover {
-      cursor: default;
-      box-shadow: none;
-    }
-  }
-}
-
-.card-products-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  max-width: 400px;
-  border-radius: 30px;
-  padding: 10px;
-  flex: 1 0 250px;
-  background: rgb(255, 225, 248);
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px;
-  transition: box-shadow 0.3s ease;
-  & span {
-    font-family: "Questrial", sans-serif;
-    color: rgba(65, 39, 31, 1);
-    font-weight: 700;
-  } 
-  &:hover {
-    transform: scale(1.3);
-    transition: transform 0.5s ease-in-out;
-  }
-
-  & a {
-    & img {
-      width: 100%; 
-      /* height: 150px; */
-      /* transform: scale(0.5); */
-      object-fit: cover; /* Mantém a proporção da imagem e preenche o espaço disponível */
-      box-shadow: none;
-    }
-  }
-  &  p {
-    font-family: "Questrial", sans-serif;
-    font-size: 1em;
-    padding: 10px;
-    margin: 2rem auto;
-    background-color: rgba(65, 39, 31, 1);
-    color: white;
-    border-radius: 13px;
-    display: block;
-    &:hover {
-      cursor: default;
-      box-shadow: none;
-    }
-  }
-}
 
 /* Estilo do Footer */
 .style-footer {
@@ -975,23 +778,6 @@ right: 10px !important;
   }
 }
 
-/* Tela Onde Encontrar */
-.sect-onde-encontrar {
-  display: block;
-  justify-content: space-evenly;
-  box-sizing: border-box;
-  align-items: center;
-  width: 100%;
-  height: auto;
-
-  & img {
-    width: 100%;
-    /* height: 0.1rem; */
-    justify-items: center;
-    display: flex;
-  
-  }
-}
 
 #store-icon {
   background-color: transparent;
@@ -999,136 +785,4 @@ right: 10px !important;
   /* font-size: 36px; */
   font-size: 1.2em;
   cursor: default;
-}
-
-.div-onde-encontrar {
-  margin-bottom: 10%;
-  display: block;
-  height: 10rem;
-  align-content: center;
-  text-align: center;
-  font-size: 2em;
-  line-height: 1.2em;
-}
-
-.onde-encontrar h1 {
-  margin: 0;
-  display: inline-flex;
-  /* font-family: "Oleo Script", system-ui; */
-  font-size: 3em;
-  font-style: normal;
-}
-
-.map-loja {
-  display: flex;
-  height: auto;
-  align-items: center;
-  /* align-content: center; */
-  text-align: center;
-  justify-content: center;
-}
-
-.map-loja-span {
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  height: 10vh;
-}
-
-.map-loja a {
-  display: flex;
-  height: auto;
-  width: 80%;
-  align-items: center;
-  align-content: center;
-  text-align: center;
-  justify-content: center;
-}
-
-.map-loja img {
-  width: 100%;
-  height: auto;
-  box-shadow: 0 5px 45px 10px rgba(0, 0, 0, .15);
-
-  &:hover {
-    box-shadow: none;
-    opacity: 80%;
-  }
-}
-
-.map-loja-span-a {
-  height: 10vh;
-  width: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: blue;
-  text-decoration: none;
-  font-family: system-ui;
-
-  &:hover {
-    color: black;
-    & #redirect_arrow {
-      color: black;
-    }
-  }
-}
-
-#redirect_arrow {
-  text-decoration: none;
-  background-color: transparent;
-  color: blue;
-  position: relative;
-  font-size: 16px;
-  display: flex;
-  align-content: baseline;
-  flex-wrap: wrap;
-  top: -1rem;
-  margin-left: -10px;
-
-  &:hover {
-    color: black;
-  }
-}
-/* Fim da estilização da tela de 'Onde Encontrar' */
-
-/* Tela de Produtos */
-#galeria-div-section-produtos:nth-child(1n) {
-  padding-top: 0;
-}
-
-#sec-section_produtos {
-  display: flex;
-  position: relative;
-  flex-wrap: wrap;
-  padding: 2vh 0 2vh;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-
-.galeria_card_bolos {
-  height: 20%;
-  margin-bottom: 1px;
-}
-
-.padding-10p {
-  padding: 10%;
-}
-
-.gal-div-espaco-hr-card {
-  box-sizing: border-box;
-  background-color: white;
-  display: flex;
-  display: block;
-  height: 3vh;
-}
-
-.galeria-div-espaco-card {
-  display: block;
-  height: 50%;
-  width: 80%;
-  background-color: white;
 }
