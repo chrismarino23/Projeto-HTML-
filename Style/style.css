@@ -2,6 +2,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
 
+:root {
+  --font_padrão: font-family: "Questrial", sans-serif;
+  --brown: rgba(65, 39, 31, 1);
+  --smooth_pink: rgb(255, 225, 248);
+}
+
 * {
   border: 0;
   padding: 0;
@@ -49,6 +55,7 @@ body {
     & a {
       & img {
         transform: scale(1) !important;
+
         &:hover {
           transform: scale(1.2) !important;
         }
@@ -63,6 +70,7 @@ body {
 
   .card-products-gallery {
     max-width: 185px !important;
+
     & p {
       padding: 4px !important;
     }
@@ -126,6 +134,12 @@ body {
   #menu-disp-menores {
     display: block !important;
   }
+
+  .divino-sabor-marca {
+    & h1 {
+      font-size: 1.8em !important;
+    }
+  }
 }
 
 /* Laptops, Larger Tablets in Landscape and small desktops */
@@ -186,7 +200,6 @@ body {
 
 .div-pag {
   display: block;
-  /* background: var(--BG-BG, #FFE1F8); */
 }
 
 .modal-content {
@@ -487,7 +500,6 @@ nav ul li:hover ul.submenu {
     position: relative;
     align-items: center;
     flex-direction: column;
-    /* margin: 0; */
   }
 
   & li {
@@ -757,6 +769,9 @@ nav ul li:hover ul.submenu {
   gap: 1%;
   margin: 1% 0;
   padding: 0 2%;
+  & :hover {
+    border: none !important;
+  }
 }
 
 
@@ -805,6 +820,7 @@ nav ul li:hover ul.submenu {
     border-radius: 13px;
     display: block;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px;
+
     &:hover {
       cursor: default;
       box-shadow: none;
@@ -845,6 +861,14 @@ nav ul li:hover ul.submenu {
       object-fit: cover;
       /* Mantém a proporção da imagem e preenche o espaço disponível */
       box-shadow: none;
+
+      & :hover {
+        border: none;
+      }
+    }
+
+    & :hover {
+      border: none;
     }
   }
 
@@ -1016,8 +1040,45 @@ nav ul li:hover ul.submenu {
 }
 
 /* Gallery */
+
+.btn {
+  width: 100%;
+}
+
+.btn-link:hover {
+  text-decoration: none !important;
+  opacity: 80%;
+}
+
+.btn-link.focus, .btn-link:focus {
+  text-decoration: none !important;
+}
+
+.div-desciption-gallery {
+  display: block; 
+  text-align: justify; 
+  padding: 2rem; 
+  section {
+    font-family: var(--font_padrão);
+    color: var(--brown) !important;
+    margin: 0 auto;
+    
+    ul {
+      text-align: justify;
+
+      li {
+        margin: 1rem;
+      }
+    }
+  }
+}
+
+.hov-cursor-point:hover {
+  cursor: pointer !important;
+}
+
 .alert-warning {
-	text-align: center;
+  text-align: center;
 }
 
 .nav-tabs .nav-item.show .nav-link,
@@ -1029,28 +1090,36 @@ nav ul li:hover ul.submenu {
 }
 
 .nav-tabs .nav-link {
-	border-radius: 15px 15px 0 0 !important;
-	background: rgb(255, 225, 248);
+  border-radius: 15px 15px 0 0 !important;
+  background: rgb(255, 225, 248);
   border: 1px solid black;
   text-decoration: none;
- 
+}
+
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+  border: solid 1px black !important;
 }
 
 .container-gallery {
   padding: 2rem 1rem 1rem;
+
   & a {
-    color: rgba(65,39,31,1);
-  
-  &:hover {
-    color: black;
-    border: solid 1px black !important;
-  }
+    color: rgba(65, 39, 31, 1);
+
+    &:hover {
+      color: black;
+    }
   }
 }
 
 .aba-subtitle {
   color: white;
-  font-size: 2em !important;
+  font-size: 1.8em !important;
+  padding: 0.2rem;
+
+  & span {
+    padding: 0;
+  }
 }
 
 /* end of Gallery */
