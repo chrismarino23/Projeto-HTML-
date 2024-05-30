@@ -3,9 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
 
 :root {
-  --font_padrão: font-family: "Questrial", sans-serif;
+  --font_padrão: "Questrial", sans-serif;
   --brown: rgba(65, 39, 31, 1);
   --smooth_pink: rgb(255, 225, 248);
+  --font_title: "Berkshire Swash", serif;
   --box_shadow: 0 5px 45px 10px rgba(0, 0, 0, .15);
 }
 
@@ -22,12 +23,16 @@ body {
   min-height: 10rem;
   margin: 0;
   padding: 0 !important;
-  /* margin-right: 1.5vw; */
   overflow-x: hidden !important;
+  font-family: var(--font_padrão) !important;
 }
 
 /* Smaller Smarphones */
 @media only screen and (max-width: 480px) {
+
+  .artc-sobre-titulo {
+    display: block !important;
+  }
 
   #menu-disp-maiores {
     display: none;
@@ -85,6 +90,14 @@ body {
 
 /* Tablets & Larger Smartphones */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
+
+  .artc-sobre-titulo {
+    display: block !important;
+  }
+
+  .div-img-sobre img {
+    max-width: 60% !important;
+  }
 
   #menu-disp-maiores {
     display: none;
@@ -176,10 +189,6 @@ body {
     margin-left: -35px;
   }
 
-  .div-artct-sobre-titulo span {
-    text-align: center !important;
-  }
-
 }
 
 /* Larger desktops and monitors */
@@ -198,16 +207,9 @@ body {
     max-width: 80%;
   }
 
-  .div-artct-sobre-titulo span {
-    text-align: center !important;
-  }
-
 }
 
 @media only screen and (min-width: 1280px) {
-  .div-artct-sobre-titulo span {
-      text-align: center !important;
-    }
 
   .div-img-sobre img {
     max-width: 60% !important;
@@ -227,7 +229,7 @@ body {
 ::-webkit-scrollbar-thumb {
   width: 16px;
   height: auto;
-  background-color: rgba(65, 39, 31, 1);
+  background-color: var(--brown);
   border-radius: 10px;
 }
 
@@ -248,6 +250,7 @@ body {
   border: 5px solid rgba(65, 39, 31, 1) !important;
   border-radius: 15px !important;
   color: rgba(65, 39, 31, 1) !important;
+  text-align: center;
 
   & h5 {
     font-family: "Berkshire Swash", serif;
@@ -260,13 +263,13 @@ body {
   }
 
   & button {
-    background-color: rgba(65, 39, 31, 1);
+    background-color: var(--brown);
     font-size: 1.5em;
     color: white;
     border-radius: 15px;
 
     & span {
-      color: rgba(65, 39, 31, 1);
+      color: var(--brown);
     }
   }
 }
@@ -338,7 +341,7 @@ body {
 
   & h1 {
     display: flex;
-    color: rgba(65, 39, 31, 1);
+    color: var(--brown);
     font-family: "Berkshire Swash", serif;
     font-size: 3em;
     font-style: normal;
@@ -348,16 +351,12 @@ body {
   }
 }
 
-.oleo-script-regular {
-  font-family: "Oleo Script", system-ui;
-}
-
 .disp-maiores-navbar {
   border-radius: 0.5% 0.5% 2% 2%;
   box-sizing: border-box;
   justify-content: space-evenly;
   height: 7rem;
-  background: rgb(255, 225, 248);
+  background: var(--smooth_pink);
   display: flex;
   color: rgb(0, 0, 0);
   align-items: center;
@@ -380,7 +379,7 @@ body {
 
     & a {
       text-decoration: none;
-      color: rgba(65, 39, 31, 1);
+      color: var(--brown);
       font-weight: 600;
       display: inline-block;
       padding: 5px 10px 5px;
@@ -392,7 +391,7 @@ body {
 
     & :hover {
       border-radius: 30px;
-      background-color: rgba(65, 39, 31, 1);
+      background-color: var(--brown);
       color: white;
       transition: all 100ms ease-in;
 
@@ -426,8 +425,8 @@ body {
     }
 
     & li a:hover {
-      background: rgb(255, 225, 248);
-      color: rgba(65, 39, 31, 1);
+      background: var(--smooth_pink);
+      color: var(--brown);
     }
   }
 
@@ -435,8 +434,8 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    /* background: rgb(255, 225, 248); */
-    background-color: rgba(65, 39, 31, 1);
+    /* background: var(--smooth_pink); */
+    background-color: var(--brown);
     border-radius: 20px;
   }
 }
@@ -458,7 +457,6 @@ body {
   padding: 10px;
   background: var(--BG-BG, #FFE1F8);
   box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px;
-
 
   & a img {
     width: 6em;
@@ -504,7 +502,7 @@ nav {
       justify-content: center;
       border-radius: 30px;
       color: white !important;
-      background-color: rgba(65, 39, 31, 1);
+      background-color: var(--brown);
 
       & #icon_menus,
       #arrow_drop_down {
@@ -565,13 +563,13 @@ nav ul li:hover ul.submenu {
   border: none;
   font-size: 46px;
   background-color: transparent;
-  color: rgba(65, 39, 31, 1);
+  color: var(--brown);
   height: 5%;
-  box-shadow: 0 5px 45px 10px rgba(0, 0, 0, .15);
+  box-shadow: var(--box_shadow);
 
   &:hover {
     color: white;
-    background-color: rgba(65, 39, 31, 1);
+    background-color: var(--brown);
   }
 }
 
@@ -579,6 +577,10 @@ nav ul li:hover ul.submenu {
   background-color: transparent;
   color: black;
   padding: 5px !important;
+}
+
+.carousel {
+  background-color: var(--smooth_pink);
 }
 
 .carousel-indicators li {
@@ -604,7 +606,7 @@ nav ul li:hover ul.submenu {
   width: 10% !important;
 
   & #icon-seta {
-    color: rgba(65, 39, 31, 1);
+    color: var(--brown);
     font-size: 3rem;
     font-weight: 600;
   }
@@ -645,7 +647,7 @@ nav ul li:hover ul.submenu {
   box-sizing: border-box;
   width: 100%;
   align-items: center;
-  background-color: rgba(65, 39, 31, 1);
+  background-color: var(--brown);
   justify-content: space-around;
   display: flex;
   border-radius: 15px;
@@ -660,7 +662,7 @@ nav ul li:hover ul.submenu {
     margin: 0;
     align-items: inherit;
     text-align: center;
-    font-family: "Questrial", sans-serif;
+    font-family: var(--font_padrão);
     font-style: normal;
     font-weight: 400;
     flex-direction: column;
@@ -733,7 +735,7 @@ nav ul li:hover ul.submenu {
     font-size: 1.5em;
     text-decoration: none;
     padding: 0 10vw;
-    font-family: "Questrial", sans-serif;
+    font-family: var(--font_padrão);
     font-weight: 500;
   }
 
@@ -741,7 +743,7 @@ nav ul li:hover ul.submenu {
     font-size: 1.3em;
     text-decoration: none;
     padding: 0 10vw;
-    font-family: "Questrial", sans-serif;
+    font-family: var(--font_padrão);
     font-weight: 500;
   }
 }
@@ -762,7 +764,7 @@ nav ul li:hover ul.submenu {
     justify-content: center;
     text-align: center;
     font-size: 1.5em;
-    font-family: "Questrial", sans-serif;
+    font-family: var(--font_padrão);
   }
 }
 
@@ -775,12 +777,11 @@ nav ul li:hover ul.submenu {
   width: 100%;
   margin: 2% auto;
   gap: 4%;
-  background-color: rgba(65, 39, 31, 1);
-  box-shadow: 0 5px 45px 10px rgba(0, 0, 0, .15);
+  background-color: var(--brown);
+  box-shadow: var(--box_shadow);
 
   & p {
     color: white;
-    /* font-size: 2.2em; */
   }
 
   & span {
@@ -790,7 +791,7 @@ nav ul li:hover ul.submenu {
   }
 
   & h1 {
-    font-family: "Questrial", sans-serif;
+    font-family: var(--font_padrão);
     font-weight: 200;
     color: white;
     margin: 0;
@@ -824,14 +825,14 @@ nav ul li:hover ul.submenu {
   border-radius: 30px;
   padding: 10px;
   flex: 1 0 250px;
-  background: rgb(255, 225, 248);
+  background: var(--smooth_pink);
   margin: 0 2px 4px;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px;
   transition: box-shadow 0.3s ease;
 
   & span {
-    font-family: "Questrial", sans-serif;
-    color: rgba(65, 39, 31, 1);
+    font-family: var(--font_padrão);
+    color: var(--brown);
     font-weight: 700;
   }
 
@@ -851,11 +852,11 @@ nav ul li:hover ul.submenu {
   }
 
   & p {
-    font-family: "Questrial", sans-serif;
+    font-family: var(--font_padrão);
     font-size: 1em;
     padding: 5px;
     margin: 1rem auto;
-    background-color: rgba(65, 39, 31, 1);
+    background-color: var(--brown);
     color: white;
     border-radius: 13px;
     display: block;
@@ -865,8 +866,8 @@ nav ul li:hover ul.submenu {
       cursor: default;
       box-shadow: none;
       background-color: transparent;
-      color: rgba(65, 39, 31, 1);
-      border: solid 2px rgba(65, 39, 31, 1);
+      color: var(--brown);
+      border: solid 2px var(--brown);
     }
   }
 }
@@ -880,13 +881,13 @@ nav ul li:hover ul.submenu {
   border-radius: 30px;
   padding: 10px;
   flex: 1 0 250px;
-  background: rgb(255, 225, 248);
+  background: var(--smooth_pink);
   box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px;
   transition: box-shadow 0.3s ease;
 
   & span {
-    font-family: "Questrial", sans-serif;
-    color: rgba(65, 39, 31, 1);
+    font-family: var(--font_padrão);
+    color: var(--brown);
     font-weight: 700;
   }
 
@@ -913,11 +914,11 @@ nav ul li:hover ul.submenu {
   }
 
   & p {
-    font-family: "Questrial", sans-serif;
+    font-family: var(--font_padrão);
     font-size: 1em;
     padding: 10px;
     margin: 2rem auto 0;
-    background-color: rgba(65, 39, 31, 1);
+    background-color: var(--brown);
     color: white;
     border-radius: 13px;
     display: block;
@@ -993,7 +994,7 @@ nav ul li:hover ul.submenu {
 
   & h2 {
     color: #FFF;
-    font-family: "Questrial", sans-serif;
+    font-family: var(--font_padrão);
     font-size: 1em;
     font-style: normal;
     font-weight: 700;
@@ -1027,7 +1028,7 @@ nav ul li:hover ul.submenu {
   & h3 {
     margin-top: 0;
     color: #FFF;
-    font-family: "Questrial", sans-serif;
+    font-family: var(--font_padrão);
     font-size: 0.9em;
     /* font-style: normal; */
     /* font-weight: 700; */
@@ -1037,7 +1038,7 @@ nav ul li:hover ul.submenu {
   & p {
     font-size: 1em;
     margin: 0;
-    font-family: "Questrial", sans-serif;
+    font-family: var(--font_padrão);
 
     & img {
       width: 1px;
@@ -1131,7 +1132,7 @@ nav ul li:hover ul.submenu {
 
 .nav-tabs .nav-link {
   border-radius: 15px 15px 0 0 !important;
-  background: rgb(255, 225, 248);
+  background: var(--smooth_pink);
   border: 1px solid black;
   text-decoration: none;
 }
@@ -1144,7 +1145,7 @@ nav ul li:hover ul.submenu {
   padding: 2rem 1rem 1rem;
 
   & a {
-    color: rgba(65, 39, 31, 1);
+    color: var(--brown);
 
     &:hover {
       color: black;
@@ -1187,9 +1188,11 @@ nav ul li:hover ul.submenu {
   font-family: var(--font_padrão);
   & h3 {
     margin-bottom: 10%;
+    font-family: var(--font_title);
+    color: var(--brown);
   }
   span {
-    text-align: justify;
+    text-align: center;
   }
 
 }
@@ -1302,7 +1305,7 @@ nav ul li:hover ul.submenu {
   padding: 2rem;
   width: 100%;
   height: auto;
-  box-shadow: 0 5px 45px 10px rgba(0, 0, 0, .15);
+  box-shadow: var(--box_shadow);
 
   &:hover {
     box-shadow: none;
