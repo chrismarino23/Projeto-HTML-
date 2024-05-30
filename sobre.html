@@ -84,7 +84,7 @@
                 </div>
                 <menu>
                     <ul>
-                        <li><a style="text-decoration: underline black;" href="./sobre.html"><span id="icon_menus" class="material-symbols-outlined">
+                        <li><a href="./sobre.html"><span id="icon_menus" class="material-symbols-outlined">
                                     group
                                 </span>Sobre</a></li>
                         <li><a href="./galeria.html"><span id="icon_menus" class="material-symbols-outlined">
@@ -125,57 +125,75 @@
                 <h1>Sobre</h1>
             </section>
         </div>
-        <section>
-            <article>
-                <h3>Sobre nós: </h3>
-                <span>Desperte os sentidos e prepare-se para uma experiência doce inesquecível!
 
-                    Na Divino Sabor, transformamos sonhos em bolos deliciosos, feitos com amor e ingredientes
-                    frescos de
-                    alta qualidade. Somos apaixonados por criar bolos sob encomenda para celebrar os momentos mais
-                    especiais da vida, desde aniversários e casamentos até eventos corporativos e confraternizações.
+        <section class="section-sobre">
 
-                    Nossos bolos:
+            <article class="artc-sobre-titulo">
+                <div class="div-artct-sobre-titulo">
+                    <h3>
+                        Divino Sabor
+                    </h3>
+                    <span>
+                        Na Divino Sabor, transformamos sonhos em bolos deliciosos, feitos com amor e
+                        ingredientes
+                        frescos de alta qualidade.
+                    </span>
 
-                    Feitos com amor: Cada bolo é feito à mão com carinho e dedicação, utilizando técnicas
-                    tradicionais e
-                    receitas passadas de geração em geração.
-                    Ingredientes frescos: Priorizamos ingredientes frescos e de alta qualidade, provenientes de
-                    fornecedores locais sempre que possível.
-                    Sabores irresistíveis: Oferecemos uma variedade de sabores clássicos e inovadores para agradar
-                    todos
-                    os paladares.
-                    Personalização completa: Criamos bolos sob medida para atender às suas necessidades e desejos,
-                    desde
-                    o design até o sabor.
-                    Decorações encantadoras: Decoramos seus bolos com detalhes criativos e personalizados,
-                    utilizando
-                    técnicas como glacê real, flores comestíveis e muito mais.
-                    Mais do que bolos:
-
-                    Atendimento impecável: Nossa equipe dedicada está sempre pronta para atender às suas
-                    necessidades
-                    com atenção e profissionalismo.
-                    Prazo de entrega garantido: Entregamos seus bolos no prazo combinado, para que você possa
-                    aproveitar
-                    cada momento especial sem preocupações.
-                    Preço justo: Oferecemos preços competitivos que refletem a qualidade dos nossos produtos e
-                    serviços.
-                    Pagamento facilitado: Aceitamos diversas formas de pagamento para sua comodidade.
-                    Compartilhe a doçura:
-
-                    Faça seu pedido: Entre em contato conosco para fazer seu pedido e conversar sobre suas ideias
-                    para o
-                    bolo perfeito.
-                    Siga-nos nas redes sociais: Acompanhe nossas novidades, promoções e dicas de confeitaria em
-                    nossas
-                    redes sociais.
-                    Compartilhe sua experiência: Conte para seus amigos e familiares sobre a Divino e ajude-nos a
-                    espalhar a doçura por aí!
-                    Na Divino Sabor, acreditamos que a vida é feita para ser celebrada com bolos deliciosos e
-                    momentos
-                    felizes. Venha fazer parte da nossa história e transformar seus sonhos em realidade!</span>
+                </div>
+                <div class="div-img-sobre">
+                    <img class="img-fluid img-thumbnail" src="./img/Sobre.png" alt="Imagem Sobre">
+                </div>
             </article>
+
+            <!-- Collapse -->
+            <div class="accordion" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                                aria-expanded="true" aria-controls="collapseOne">
+                                <!-- Title -->
+                                <div style="margin-top: 2rem !important;">
+                                    <section class="sect-tag-card-title">
+                                        <span id="icon_menus" class="material-symbols-outlined hov-cursor-point">
+                                            photo_prints
+                                        </span>
+                                        <h1>Descrição</h1><span id="arrow_drop_down"
+                                            class="material-symbols-outlined hov-cursor-point">
+                                            arrow_drop_down</span>
+                                    </section>
+                                </div>
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                        data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="div-desciption-gallery">
+                                <section>
+                                    <h6>
+                                        <span>
+                                            Somos apaixonados por criar bolos sob encomenda para celebrar os momentos
+                                            mais
+                                            especiais da vida, desde aniversários e casamentos até eventos corporativos
+                                            e confraternizações.
+                                        </span>
+                                         <h4 style="margin-top: 2rem;">
+                                            título aqui
+                                        </h4>
+                                        <span>
+                                            Trajetória, formações, rotinas, vida pessoal e profissional, família e redes sociais.
+                                        </span>
+                                        <p style="font-size: 0.8em; color: red; margin-top: 1rem;"> * Não trabalhamos com pasta americana.</p>
+                                    </h6>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <article>
                 <h3>Entre em contato ou nos acompanhe nas redes sociais:</h3>
                 <div>
@@ -183,7 +201,7 @@
                     <p>NUMERO WHATSAPP AQUI</p>
                 </div>
                 <div>
-                    <img src="./img/instagram-icon.png" alt="instagram_icon">
+                    <!-- <img src="./img/instagram-icon.png" alt="instagram_icon"> -->
                     <p>INSTAGRAM AQUI</p>
                 </div>
             </article>
