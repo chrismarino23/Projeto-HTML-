@@ -916,7 +916,7 @@ nav ul li:hover ul.submenu {
   & p {
     font-family: var(--font_padrão);
     font-size: 1em;
-    padding: 2px;
+    padding: 2px 5px;
     margin: 2rem auto 0;
     background-color: var(--brown);
     color: white;
@@ -1246,7 +1246,7 @@ nav ul li:hover ul.submenu {
   border: solid 1px rgb(206, 203, 203);
   padding: 10px;
   border-radius: 15px;
-  margin: 2rem auto;
+  margin: 2rem;
   & h3 {
     font-family: var(--font_title);
   }
