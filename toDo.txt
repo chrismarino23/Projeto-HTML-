@@ -1,39 +1,24 @@
 TO DO 
 
 AJUSTES PARA DISPOSITIVOS MAIORES
--  Finalizar tela de Produtos e Contato.
+-  Finalizar tela de Produtos e Sobre.
+                                -Sobre (Done)
 
-AJUSTES PARA DISPOSITIVOS MENORES
-- Imagens do Banner
-- bolinhas indicador
-- Título de Bem vindo
-- Alert 
 
 AMBOS DISPOSITIVOS 
-- Replicar JS de alerta nas demais telas além da Home
-- Página de Galeria
+
 - Direcionamento do ul li a > produtos
-- Página Onde nos Encontrar
 - Analisar possibilidade de deixar cada style.css e script.js dentro de sua respectiva página de aplicação
 
 DONE 
-Alterar cor dos cards e title section main. 
-Adicionado Modal para alerta inciial da página.
+- Página Onde nos Encontrar
+- Página de Galeria
+- Alterar cor dos cards e title section main. 
+- Adicionado Modal para alerta inciial da página.
+- Replicar JS de alerta nas demais telas além da Home
 
-
-REMOVIDOS: 
-
-
-        <!-- <div id="meuAlerta" class="alerta">
-            <div>
-                <h1>Sejam bem-vindos!</h1>
-                <p>No momento só estamos aceitando pedidos via WhatsApp</p>
-                <button onclick="fecharAlerta()">Ok</button>
-            </div>
-        </div> -->
-
-        <!-- <div class="banner-saito" id="id-direct-banner">
-        <img src="./img/Donuts.png" alt="banner-saito">
-     </div> -->
-
-     
+    AJUSTES PARA DISPOSITIVOS MENORES
+        - Imagens do Banner
+        - bolinhas indicador
+        - Título de Bem vindo
+        - Alert 
