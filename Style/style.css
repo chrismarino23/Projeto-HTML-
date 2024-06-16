@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
 
 :root {
   --font_padrão: "Questrial", sans-serif;
   --brown: rgba(65, 39, 31, 1);
   --smooth_pink: rgb(255, 225, 248);
   --font_title: "Berkshire Swash", serif;
-  --box_shadow: 0 5px 45px 10px rgba(0, 0, 0, .15);
+  --box_shadow: 0 5px 45px 10px rgba(0, 0, 0, 0.15);
 }
 
 * {
@@ -16,7 +16,7 @@
 }
 
 body {
-  background-color: #FFF;
+  background-color: #fff;
   width: 100%;
   height: auto;
   min-width: fit-content;
@@ -29,7 +29,6 @@ body {
 
 /* Smaller Smarphones */
 @media only screen and (max-width: 480px) {
-
   .artc-sobre-titulo {
     display: block !important;
   }
@@ -74,24 +73,29 @@ body {
     }
   }
 
+  #card_torta04 {
+    margin-bottom: 3rem;
+  }
+
+  .p_card_products_doces p {
+    translate: 0 -0.2rem !important;
+  }
+
   .card-products-gallery {
     max-width: 185px !important;
 
     & p {
       padding: 4px !important;
     }
-
   }
 
   .map-loja a {
     width: 95% !important;
   }
-
 }
 
 /* Tablets & Larger Smartphones */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-
   .artc-sobre-titulo {
     display: block !important;
   }
@@ -135,6 +139,14 @@ body {
       }
     }
 
+    #card_torta04 {
+      margin-bottom: 3rem;
+    }
+
+    .p_card_products_doces p {
+      translate: 0 -0.2rem !important;
+    }
+
     #redirect_arrow {
       margin-left: -35px;
     }
@@ -147,7 +159,6 @@ body {
   .map-loja a {
     width: 95%;
   }
-
 }
 
 @media only screen and (max-width: 833px) {
@@ -165,6 +176,14 @@ body {
     }
   }
 
+  #card_torta04 {
+    margin-bottom: 2.2rem !important;
+  }
+
+  .p_card_products_doces p {
+    translate: 0 -0.2rem !important;
+  }
+
   .map-loja img {
     width: 95%;
   }
@@ -172,7 +191,6 @@ body {
 
 /* Laptops, Larger Tablets in Landscape and small desktops */
 @media only screen and (min-width: 769px) and (max-width: 999.99px) {
-
   .sect-tag-card-title {
     margin: 0 auto;
 
@@ -183,18 +201,16 @@ body {
   }
 
   .div-img-sobre img {
-      max-width: 90%;
-    }
-
-    #redirect_arrow {
-    margin-left: -35px;
+    max-width: 90%;
   }
 
+  #redirect_arrow {
+    margin-left: -35px;
+  }
 }
 
 /* Larger desktops and monitors */
 @media only screen and (min-width: 769px) and (max-width: 1279px) {
-
   .sect-tag-card-title {
     margin: 0 auto;
 
@@ -208,12 +224,18 @@ body {
     max-width: 80%;
   }
 
+  #card_torta04 {
+    margin-bottom: 3.3rem !important;
+  }
 }
 
 @media only screen and (min-width: 1280px) {
-
   .div-img-sobre img {
     max-width: 60% !important;
+  }
+
+  #card_torta04 {
+    margin-bottom: 4.3rem !important;
   }
 }
 
@@ -221,7 +243,7 @@ body {
 ::-webkit-scrollbar {
   width: 12px;
   height: auto;
-  background: var(--SBG-SBG, #FFC1AB);
+  background: var(--SBG-SBG, #ffc1ab);
   border-radius: 10px;
   margin-right: 5px;
 }
@@ -236,7 +258,7 @@ body {
 
 /* Trilho de baixo da barra */
 ::-webkit-scrollbar-track {
-  background: var(--BG-BG, #FFE1F8);
+  background: var(--BG-BG, #ffe1f8);
   border-radius: 30px;
   height: auto;
 }
@@ -293,7 +315,6 @@ body {
   height: 5rem;
   border-radius: 90%;
   opacity: 50%;
-
 
   &:hover {
     opacity: 100%;
@@ -445,7 +466,7 @@ body {
 #menu-disp-menores {
   display: none;
   justify-content: center;
-  background: var(--BG-BG, #FFE1F8);
+  background: var(--BG-BG, #ffe1f8);
   box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px;
   border-radius: 0.5% 0.5% 6% 6%;
 }
@@ -456,7 +477,7 @@ body {
   display: flex;
   justify-content: space-evenly;
   padding: 10px;
-  background: var(--BG-BG, #FFE1F8);
+  background: var(--BG-BG, #ffe1f8);
   box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px;
 
   & a img {
@@ -491,7 +512,7 @@ nav {
     padding: 10px;
     text-decoration: none;
     text-align: center;
-    background-color: rgb(#FFC1AB);
+    background-color: rgb(#ffc1ab);
     color: rgba(65, 39, 31, 1) !important;
     border-top: 2px solid white;
 
@@ -533,7 +554,6 @@ nav ul li:hover ul.submenu {
 #navHamb {
   display: none;
 
-
   & ul {
     list-style-type: none;
     position: relative;
@@ -553,7 +573,7 @@ nav ul li:hover ul.submenu {
     text-align: center;
 
     &:hover {
-      color: #FFF;
+      color: #fff;
     }
   }
 }
@@ -622,7 +642,7 @@ nav ul li:hover ul.submenu {
   display: flex;
   justify-content: center;
   padding: 5px;
-  color: #FFF;
+  color: #fff;
   border-radius: 50px;
 
   &:hover {
@@ -641,7 +661,7 @@ nav ul li:hover ul.submenu {
   width: 100%;
   box-sizing: border-box;
   height: 1rem;
-  background: var(--BG-BG, #FFE1F8);
+  background: var(--BG-BG, #ffe1f8);
 }
 
 .tarja-bottom-banner {
@@ -707,7 +727,7 @@ nav ul li:hover ul.submenu {
   padding: 2rem 0rem 4rem;
   display: flex;
   width: 100%;
-  background-color: #FFF;
+  background-color: #fff;
   /* height: 30vh; */
   justify-content: center;
   align-items: center;
@@ -756,7 +776,7 @@ nav ul li:hover ul.submenu {
 .div_section_produtos {
   box-sizing: border-box;
   width: 100%;
-  background-color: #FFF;
+  background-color: #fff;
   padding: 2%;
 
   & p {
@@ -837,9 +857,11 @@ nav ul li:hover ul.submenu {
   }
 
   & a {
+    text-decoration: none !important;
     & img {
       width: 100%;
-      transform: scale(0.8);
+      transform: scale(1);
+      filter: drop-shadow(-1px 4px 4px black);
       object-fit: cover;
       /* Mantém a proporção da imagem e preenche o espaço disponível */
       box-shadow: none;
@@ -852,6 +874,8 @@ nav ul li:hover ul.submenu {
   }
 
   & p {
+    border: solid 1px var(--brown);
+    width: 100%;
     font-family: var(--font_padrão);
     font-size: 1em;
     padding: 5px;
@@ -863,13 +887,19 @@ nav ul li:hover ul.submenu {
     box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px;
 
     &:hover {
-      cursor: default;
+      cursor: pointer;
       box-shadow: none;
       background-color: transparent;
       color: var(--brown);
-      border: solid 2px var(--brown);
+      border: solid 1px var(--brown);
     }
   }
+}
+
+.p_card_products_doces p {
+  transition: translate 0.5s;
+  translate: 0 0.1rem;
+  margin-top: 3.3rem;
 }
 
 .card-products-gallery {
@@ -918,6 +948,7 @@ nav ul li:hover ul.submenu {
   }
 
   & p {
+    width: 100%;
     font-family: var(--font_padrão);
     font-size: 1em;
     padding: 2px 5px;
@@ -936,6 +967,10 @@ nav ul li:hover ul.submenu {
   }
 }
 
+#card_torta04 {
+  margin-bottom: 3rem;
+}
+
 /* Estilo do Footer */
 .style-footer {
   display: flex;
@@ -943,7 +978,13 @@ nav ul li:hover ul.submenu {
   position: relative;
   bottom: 0;
   margin: 10rem 0 0;
-  background: linear-gradient(180deg, rgba(65, 39, 31, 1) 56%, rgba(57, 35, 28, 1) 65%, rgba(40, 24, 19, 1) 86%, rgba(0, 0, 0, 1) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(65, 39, 31, 1) 56%,
+    rgba(57, 35, 28, 1) 65%,
+    rgba(40, 24, 19, 1) 86%,
+    rgba(0, 0, 0, 1) 100%
+  );
   height: auto;
   width: 100%;
   box-sizing: border-box;
@@ -961,7 +1002,7 @@ nav ul li:hover ul.submenu {
 .hr-vertical {
   height: 18vh;
   width: 0.1vw;
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
   margin: 1rem;
   border: 0;
 }
@@ -990,7 +1031,6 @@ nav ul li:hover ul.submenu {
 }
 
 .secao-2 {
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -999,7 +1039,7 @@ nav ul li:hover ul.submenu {
   height: auto;
 
   & h2 {
-    color: #FFF;
+    color: #fff;
     font-family: var(--font_padrão);
     font-size: 1em;
     font-style: normal;
@@ -1033,7 +1073,7 @@ nav ul li:hover ul.submenu {
 
   & h3 {
     margin-top: 0;
-    color: #FFF;
+    color: #fff;
     font-family: var(--font_padrão);
     font-size: 0.9em;
     /* font-style: normal; */
@@ -1050,7 +1090,6 @@ nav ul li:hover ul.submenu {
       width: 1px;
       height: 1px;
       opacity: 100%;
-
 
       &:hover {
         opacity: 70%;
@@ -1076,9 +1115,11 @@ nav ul li:hover ul.submenu {
   text-align: justify;
 
   & h1 {
-    color: #FFF;
+    color: #fff;
     font-weight: 100;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
     font-size: 0.7em;
     letter-spacing: 0.2em;
     text-align: center;
@@ -1097,19 +1138,20 @@ nav ul li:hover ul.submenu {
   opacity: 80%;
 }
 
-.btn-link.focus, .btn-link:focus {
+.btn-link.focus,
+.btn-link:focus {
   text-decoration: none !important;
 }
 
 .div-desciption-gallery {
-  display: block; 
-  text-align: justify; 
-  padding: 2rem; 
+  display: block;
+  text-align: justify;
+  padding: 2rem;
   section {
     font-family: var(--font_padrão);
     color: var(--brown) !important;
     margin: 0 auto;
-    
+
     ul {
       text-align: justify;
 
@@ -1148,7 +1190,8 @@ nav ul li:hover ul.submenu {
   text-decoration: none;
 }
 
-.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link:hover {
   border: solid 1px black !important;
 }
 
@@ -1187,7 +1230,6 @@ nav ul li:hover ul.submenu {
   justify-content: space-around;
 }
 
-
 .div-artic-sobre-titulo {
   display: flex;
   justify-content: center;
@@ -1207,7 +1249,6 @@ nav ul li:hover ul.submenu {
   span {
     text-align: center;
   }
-
 }
 
 .div-img-sobre {
@@ -1262,7 +1303,6 @@ nav ul li:hover ul.submenu {
   }
 }
 
-
 /* Tela Onde Encontrar */
 .sect-onde-encontrar {
   display: block;
@@ -1276,7 +1316,6 @@ nav ul li:hover ul.submenu {
     width: 100%;
     justify-items: center;
     display: flex;
-
   }
 }
 

@@ -6,7 +6,7 @@ AJUSTES PARA DISPOSITIVOS MAIORES
 
 
 AMBOS DISPOSITIVOS 
-
+- Direcionamento index
 - Direcionamento do ul li a > produtos
 - Analisar possibilidade de deixar cada style.css e script.js dentro de sua respectiva página de aplicação
 
