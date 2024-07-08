@@ -37,12 +37,12 @@ document.addEventListener("DOMContentLoaded", function () {
   btn_fechar_modal_cart_x.addEventListener("click", () => {
     $("#cartModal").modal("hide");
     document.getElementById("newPrice").style.display = "none";
-    document.getElementById("valuePrice").style.display = "block";
+    document.getElementById("valuePrice").style.display = "";
   });
   btn_fechar_modal_cart.addEventListener("click", () => {
     $("#cartModal").modal("hide");
     document.getElementById("newPrice").style.display = "none";
-    document.getElementById("valuePrice").style.display = "block";
+    document.getElementById("valuePrice").style.display = "";
   });
 });
 
@@ -55,9 +55,12 @@ function abrirModal(img, produto, price) {
   imagem.style.height = "200px";
   document.getElementById("produtoSelecionado").innerText = `${produto}`;
   document.getElementById("quantidade").value = 1;
-  pricePkg = parseFloat(
-    (document.getElementById("valuePrice").innerText = `${price}`)
-  );
+  document.getElementById("valuePrice").innerText = parseFloat(`${price}`)
+    .toFixed(2)
+    .toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    });
 
   $("#cartModal").modal("show");
 }
@@ -70,10 +73,10 @@ function alterarQuantidade(delta) {
   let price = document.getElementById("valuePrice").textContent;
   document.getElementById("valuePrice").style.display = "none";
 
-  let newPrice = parseFloat(price * quantidade);
+  let newPrice = parseFloat(price * quantidade).toFixed(2);
   console.log(newPrice);
-  document.getElementById("newPrice").innerText = `R$ ${newPrice}`;
-  document.getElementById("newPrice").style.display = "block";
+  document.getElementById("newPrice").innerText = `${newPrice}`;
+  document.getElementById("newPrice").style.display = "";
 }
 
 var carrinho = [];
