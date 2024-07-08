@@ -1496,3 +1496,55 @@ nav ul li:hover ul.submenu {
   width: 80%;
   background-color: white;
 }
+
+/* Produtos */
+.btn_add_remove_cart {
+  padding: 4px;
+  height: 2.4rem;
+  display: flex !important;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.div_bottom_kg {
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+}
+
+#div_modal_body_cart {
+  padding: 0;
+}
+
+#shopping_cart {
+  color: black;
+  margin: auto 2rem;
+  cursor: default;
+}
+
+#btn_abrir_modal_cart {
+  background-color: transparent;
+  color: white;
+  border: none;
+  &:focus {
+    box-shadow: none !important;
+  }
+}
+
+#produtoSelecionado {
+  margin: 1rem 0;
+  width: 100%;
+  background-color: var(--brown);
+  padding: 5px 0;
+  color: white;
+}
+
+#sect_ta_card_title_produts {
+  --bs-btn-color: none !important;
+  text-decoration: none !important;
+
+  span {
+    text-decoration: none;
+  }
+}

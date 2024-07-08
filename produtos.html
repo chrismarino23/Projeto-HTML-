@@ -23,6 +23,9 @@
     <!-- Link do bootstrapCDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
     <!-- Google Apis -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -125,8 +128,9 @@
             <div class="card">
                 <div class="card-header" id="headingOne">
                     <h5 class="mb-0">
-                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-                            aria-expanded="true" aria-controls="collapseOne">
+                        <button id="sect_ta_card_title_produts" class="btn btn-link" type="button"
+                            data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                            aria-controls="collapseOne">
                             <!-- Title -->
                             <div style="margin-top: 2rem !important;">
                                 <section class="sect-tag-card-title">
@@ -177,6 +181,117 @@
             </button>
         </div>
 
+
+        <!-- Modal adc ao carrinho -->
+
+        <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="cartModalLabel">Adicionar ao Carrinho</h5>
+                        <span id="shopping_cart" class="material-symbols-outlined">
+                            shopping_cart
+                        </span>
+                        <button id="btn_fechar_modal_cart_x" type="button" class="close" data-dismiss="modal"
+                            aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div id="div_modal_body_cart" class="modal-body">
+                        <img id="imgSelecionada" src="" alt="Imagem Selecionada">
+                        <p id="produtoSelecionado"></p>
+                        <div class="div_bottom_kg">
+                            <p>Quantidade em KG: </p>
+                            <div class="input-group" style="width: auto;">
+                                <div class="input-group-prepend">
+                                    <button class="btn btn-outline-secondary btn_add_remove_cart" type="button"
+                                        onclick="alterarQuantidade(-1)">-</button>
+                                </div>
+                                <input type="text" id="quantidade" class="form-control text-center" value="1" readonly
+                                    style="max-width: 3rem;">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary btn_add_remove_cart" type="button"
+                                        onclick="alterarQuantidade(1)">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btn_fechar_modal_cart" type="button" class="btn btn-outline-danger"
+                            data-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-primary" onclick="adicionarAoCarrinho()">Adicionar ao
+                            Carrinho</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-dialog modal-dialog-centered">
+                    ...
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="cartModalLabel">Adicionar ao Carrinho</h5>
+                            <span id="shopping_cart" class="material-symbols-outlined">
+                                shopping_cart
+                            </span>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div id="div_modal_body_cart" class="modal-body">
+                            <img id="imgSelecionada" src="" alt="Imagem Selecionada">
+                            <p id="produtoSelecionado"></p>
+                            <div class="div_bottom_kg">
+                                <p>Quantidade em KG: </p>
+                                <div class="input-group" style="width: auto;">
+                                    <div class="input-group-prepend">
+                                        <button class="btn btn-outline-secondary btn_add_remove_cart" type="button"
+                                            onclick="alterarQuantidade(-1)">-</button>
+                                    </div>
+                                    <input type="text" id="quantidade" class="form-control text-center" value="1"
+                                        readonly style="max-width: 3rem;">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary btn_add_remove_cart" type="button"
+                                            onclick="alterarQuantidade(1)">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Fechar</button>
+                            <button type="button" class="btn btn-primary" onclick="adicionarAoCarrinho()">Adicionar
+                                ao
+                                Carrinho</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- Modal Carrinho offCanvas -->
+        <div class="modal right fade" id="rightModal" tabindex="-1" aria-labelledby="rightModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="rightModalLabel">Modal no Canto Direito</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Conteúdo do modal vai aqui.</p>
+                        <!-- Adicione mais conteúdo conforme necessário -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Main Section -->
         <main>
             <!-- Bolos -->
@@ -187,6 +302,20 @@
                     </span>
                 </section>
 
+                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Toggle right offcanvas</button>
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                    aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        ...
+                    </div>
+                </div>
+
                 <section class="sect-flex-products ga-ma-pa">
                     <div class="card-products-gallery ga-ma-pa">
                         <div class="div-img-card-gallery">
@@ -194,7 +323,12 @@
                                 <img src="./img/Gallery_Pic/Bolos/Heineken_transpa.png">
                             </a>
                         </div>
-                        <p>Ninho c/ Morango</p>
+                        <p>
+                            <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
+                                onclick="abrirModal('./img/Gallery_Pic/Bolos/Heineken_transpa.png','Ninho c/ Morango')">
+                                Ninho c/ Morango
+                            </button>
+                        </p>
                     </div>
                     <div class="card-products-gallery ga-ma-pa">
                         <div class="div-img-card-gallery">
@@ -752,10 +886,8 @@
                 </section>
 
             </div>
+        </main>
     </div>
-
-
-    </main>
     </div>
 
     <footer class="style-footer">
@@ -813,6 +945,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
 </body>
 
 </html>
