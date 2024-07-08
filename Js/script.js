@@ -36,21 +36,29 @@ document.addEventListener("DOMContentLoaded", function () {
   //close cart's modal at products screen.
   btn_fechar_modal_cart_x.addEventListener("click", () => {
     $("#cartModal").modal("hide");
+    document.getElementById("newPrice").style.display = "none";
+    document.getElementById("valuePrice").style.display = "block";
   });
   btn_fechar_modal_cart.addEventListener("click", () => {
     $("#cartModal").modal("hide");
+    document.getElementById("newPrice").style.display = "none";
+    document.getElementById("valuePrice").style.display = "block";
   });
 });
 
 //Modal add to cart
 
-function abrirModal(img, produto) {
+function abrirModal(img, produto, price) {
   let imagem = document.getElementById("imgSelecionada");
   imagem.src = img;
   imagem.style.width = "200px";
   imagem.style.height = "200px";
   document.getElementById("produtoSelecionado").innerText = `${produto}`;
   document.getElementById("quantidade").value = 1;
+  pricePkg = parseFloat(
+    (document.getElementById("valuePrice").innerText = `${price}`)
+  );
+
   $("#cartModal").modal("show");
 }
 
@@ -59,4 +67,38 @@ function alterarQuantidade(delta) {
   let quantidade = parseInt(quantidadeInput.value);
   quantidade = Math.max(1, quantidade + delta); // Garante que a quantidade mínima é 1
   quantidadeInput.value = quantidade;
+  let price = document.getElementById("valuePrice").textContent;
+  document.getElementById("valuePrice").style.display = "none";
+
+  let newPrice = parseFloat(price * quantidade);
+  console.log(newPrice);
+  document.getElementById("newPrice").innerText = `R$ ${newPrice}`;
+  document.getElementById("newPrice").style.display = "block";
+}
+
+var carrinho = [];
+
+class ConstructCar {
+  constructor(nameProduct, qtdKG, pricepKG, finalPrice) {
+    this.nameProduct = nameProduct;
+    this.qtdKG = parseInt(qtdKG);
+    this.pricepKG = parseFloat(pricepKG);
+    this.finalPrice = parseFloat(finalPrice);
+  }
+}
+
+function adicionarAoCarrinho(nameProduct, qtdKG, pricepKG) {
+  let nameFront = document.getElementById("ninhoCMorango").textContent;
+  // let priceFront = document.getElementById("ninhoCMorango").textContent;
+  // let nameFront = document.getElementById("ninhoCMorango").textContent;
+  console.log(nameFront);
+  let finalPrice = qtdKG * pricepKG;
+  const newcart = new ConstructCar(nameProduct, qtdKG, pricepKG, finalPrice);
+
+  carrinho.push[newcart];
+
+  // console.log(carrinho);
+  for (const desc in newcart) {
+    console.log(`${desc} = ${newcart[desc]}`);
+  }
 }

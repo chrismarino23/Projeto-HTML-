@@ -200,18 +200,26 @@
                     <div id="div_modal_body_cart" class="modal-body">
                         <img id="imgSelecionada" src="" alt="Imagem Selecionada">
                         <p id="produtoSelecionado"></p>
-                        <div class="div_bottom_kg">
-                            <p>Quantidade em KG: </p>
-                            <div class="input-group" style="width: auto;">
-                                <div class="input-group-prepend">
-                                    <button class="btn btn-outline-secondary btn_add_remove_cart" type="button"
-                                        onclick="alterarQuantidade(-1)">-</button>
+                        <div style="display: block;">
+                            <div class="div_bottom_kg">
+                                <p>Quantidade em KG: </p>
+                                <div class="input-group" style="width: auto;">
+                                    <div class="input-group-prepend">
+                                        <button class="btn btn-outline-secondary btn_add_remove_cart" type="button"
+                                            onclick="alterarQuantidade(-1)">-</button>
+                                    </div>
+                                    <input type="text" id="quantidade" class="form-control text-center" value="1"
+                                        readonly style="max-width: 3rem;">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary btn_add_remove_cart" type="button"
+                                            onclick="alterarQuantidade(1)">+</button>
+                                    </div>
                                 </div>
-                                <input type="text" id="quantidade" class="form-control text-center" value="1" readonly
-                                    style="max-width: 3rem;">
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary btn_add_remove_cart" type="button"
-                                        onclick="alterarQuantidade(1)">+</button>
+                                <div>
+                                    <p><span>Preço por KG: </span>
+                                        <span id="valuePrice"></span>
+                                        <span id="newPrice"></span>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -323,9 +331,9 @@
                                 <img src="./img/Gallery_Pic/Bolos/Heineken_transpa.png">
                             </a>
                         </div>
-                        <p>
+                        <p id="ninhoCMorango">
                             <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
-                                onclick="abrirModal('./img/Gallery_Pic/Bolos/Heineken_transpa.png','Ninho c/ Morango')">
+                                onclick="abrirModal('./img/Gallery_Pic/Bolos/Heineken_transpa.png','Ninho c/ Morango', '50')">
                                 Ninho c/ Morango
                             </button>
                         </p>
