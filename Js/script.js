@@ -4,7 +4,7 @@ const navHamburguer = document.getElementById("navHamburguer");
 //Modal
 setTimeout(function () {
   $("#meuModal").modal("show");
-}, 2000); // Tempo em milissegundos (2 segundos neste caso)
+}, 2000);
 
 let textoAtual = "Menu";
 btnHamb.addEventListener("click", () => {
@@ -74,7 +74,6 @@ function alterarQuantidade(delta) {
   document.getElementById("valuePrice").style.display = "none";
 
   let newPrice = parseFloat(price * quantidade).toFixed(2);
-  // console.log(newPrice);
   let newPriceFront = document.getElementById("newPrice");
   newPriceFront.innerText = `${newPrice}`;
   newPriceFront.style.display = "";
@@ -99,11 +98,9 @@ class ConstructCar {
 
 document.getElementById("addToCart").addEventListener("click", () => {
   let quantidadeInput = document.getElementById("quantidade").value;
-  // console.log(quantidadeInput);
 
   let produtoSelecionado =
     document.getElementById("produtoSelecionado").textContent;
-  // console.log(`produtoSelecionado = ` + produtoSelecionado);
 
   let finalPrice = parseFloat(document.getElementById("newPrice").textContent);
 
@@ -113,7 +110,6 @@ document.getElementById("addToCart").addEventListener("click", () => {
     );
     finalPrice = oldPrice;
   }
-  // console.log(produtoSelecionado + finalPrice);
 
   const cartItem = document.createElement("span");
   cartItem.className = "list-group-item";
@@ -121,16 +117,15 @@ document.getElementById("addToCart").addEventListener("click", () => {
   cartItem.style.color = "saddlebrown";
   cartItem.style.fontWeight = "bold";
   cartItem.style.borderTop = "1px solid brown";
-  // cartItem.textContent = `${produtoSelecionado} - R$: ${finalPrice}`;
 
   let pricepKG = finalPrice / quantidadeInput;
-  // console.log(pricepKG);
+
   document.getElementById("cart").appendChild(cartItem);
 
-  const paragrafo = document.createElement("p"); // Cria um novo elemento <p>
-  const paragrafo2 = document.createElement("p"); // Cria um novo elemento <p>
-  const paragrafo3 = document.createElement("p"); // Cria um novo elemento <p>
-  const paragrafo4 = document.createElement("p"); // Cria um novo elemento <p>
+  const paragrafo = document.createElement("p");
+  const paragrafo2 = document.createElement("p");
+  const paragrafo3 = document.createElement("p");
+  const paragrafo4 = document.createElement("p");
   const finalTotalPrice = document.createElement("p");
 
   paragrafo.className = "list-group-item";
@@ -160,17 +155,17 @@ document.getElementById("addToCart").addEventListener("click", () => {
     carrinho.forEach((elemento, index) => {
       cartItem.textContent = `Item ${index + 1}: `;
 
-      paragrafo.textContent = elemento.nameProduct; // Define o texto do parágrafo
-      document.getElementById("cart").appendChild(paragrafo); // Adiciona o parágrafo ao container
+      paragrafo.textContent = elemento.nameProduct;
+      document.getElementById("cart").appendChild(paragrafo);
 
-      paragrafo2.textContent = `Quantidade: ${elemento.qtdKG}`; // Define o texto do parágrafo
-      document.getElementById("cart").appendChild(paragrafo2); // Adiciona o parágrafo ao container
+      paragrafo2.textContent = `Quantidade: ${elemento.qtdKG}`;
+      document.getElementById("cart").appendChild(paragrafo2);
 
-      paragrafo3.textContent = `Preço por KG: R$ ${elemento.pricepKG}`; // Define o texto do parágrafo
-      document.getElementById("cart").appendChild(paragrafo3); // Adiciona o parágrafo ao container
+      paragrafo3.textContent = `Preço por KG: R$ ${elemento.pricepKG}`;
+      document.getElementById("cart").appendChild(paragrafo3);
 
-      paragrafo4.textContent = `Preço Total do Item: R$ ${elemento.finalPrice}`; // Define o texto do parágrafo
-      document.getElementById("cart").appendChild(paragrafo4); // Adiciona o parágrafo ao container
+      paragrafo4.textContent = `Preço Total do Item: R$ ${elemento.finalPrice}`;
+      document.getElementById("cart").appendChild(paragrafo4);
 
       precoFinalAtual += parseFloat(elemento.finalPrice);
       let remover = document.getElementById("idFinalTotalPrice");
@@ -178,34 +173,39 @@ document.getElementById("addToCart").addEventListener("click", () => {
         remover.remove();
       }
     });
-    console.log(`precoFinalAtual = ${precoFinalAtual}`);
 
     if (finalTotalPrice !== 0) {
       finalTotalPrice.textContent = `Valor total do Pedido: R$ ${precoFinalAtual}`;
       finalTotalPrice.id = "idFinalTotalPrice";
-      document.getElementById("cart").appendChild(finalTotalPrice); // Adiciona o parágrafo ao container
+      document.getElementById("cart").appendChild(finalTotalPrice);
     }
 
-    // for (let i = 0; i < carrinho.length; i++) {
-    //   console.log(JSON.stringify(carrinho, null, 2));
-    // cartItem.textContent = JSON.stringify(carrinho[i], null, 2);
-    // cartItem.textContent = carrinho[i];
-
-    // cartItem.textContent = `${carrinho[i].nameProduct}\n
-    // Quantidade: ${carrinho[i].qtdKG}\n
-    // Preço por KG: R$ ${carrinho[i].pricepKG}\n
-    // Valor total: R$ ${carrinho[i].finalPrice}`;
-    // }
-    carrinho.forEach((produto, index) => {
-      console.log(`Item: ${index + 1}`);
-      console.log(`Produto: ${produto.nameProduct}`);
-      console.log(`Quantidade: ${produto.qtdKG}KG`);
-      console.log(`Preço por KG: R$ ${produto.pricepKG}`);
-      console.log(`Preço Final: R$ ${produto.finalPrice}`);
-    });
+    // carrinho.forEach((produto, index) => {
+    //   console.log(`Item: ${index + 1}`);
+    //   console.log(`Produto: ${produto.nameProduct}`);
+    //   console.log(`Quantidade: ${produto.qtdKG}KG`);
+    //   console.log(`Preço por KG: R$ ${produto.pricepKG}`);
+    //   console.log(`Preço Final: R$ ${produto.finalPrice}`);
+    // });
   } else {
     console.log("não leu o array de obj");
   }
 
   $("#cartModal").modal("hide");
+
+  let delay = 1500;
+
+  let show_alert_success = document.getElementById("show_alert_success");
+  show_alert_success.style.display =
+    show_alert_success.style.display === "block" ? "none" : "block";
+
+  setTimeout(() => {
+    document.getElementById("show_alert_success").style.display = "none";
+  }, delay);
+
+  show_alert_success.onclick = () => {
+    show_alert_success.style.display =
+      show_alert_success.style.display === "block" ? "none" : "block";
+  };
+  localStorage.setItem("carrinho", JSON.stringify(carrinho));
 });
