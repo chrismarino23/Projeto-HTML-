@@ -19,6 +19,9 @@
     <!-- Links de estilização -->
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
 
+    <!-- ToastFy effects  -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
     <link rel="stylesheet" href="./Style/style.css">
     <!-- Link do bootstrapCDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -148,6 +151,46 @@
                 </div>
             </div>
         </div>
+        <!-- Botão carrinho -->
+
+        <button id="mostraCarrinho" class="btn btn-outline-success" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+            <span id="cartIcon" class="material-symbols-outlined">
+                shopping_cart
+            </span>
+            <span id="warning_cart" class="material-symbols-outlined">
+                priority_high
+            </span>
+        </button>
+
+        <!-- MODAL CARRINHO -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasRightLabel"> <span id="shopcart_icon"
+                        class="material-symbols-outlined">
+                        shopping_cart
+                    </span> Carrinho </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body removePadding">
+                <div class="container mt-3 removePadding">
+                    <ul class="list-group" id="cart">
+                        <div id="div_carrinho">
+                            <ol class="cart_list">
+                            </ol>
+                        </div>
+                    </ul>
+                </div>
+                <div id="offcanvas_footer" class="offcanvas_footer">
+                    <div class="btn_footer_offcanvas">
+                        <button id="clean_cart" type="button" class="btn btn-outline-danger">Limpar Carrinho</button>
+                        <button id="btn_finaliza_compra" class="btn btn-success" type="button">Finalizar Compra</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
         <!-- Desciption -->
         <div class="accordion" id="accordionExample">
             <div class="card">
@@ -223,6 +266,7 @@
                         </button>
                     </div>
                     <div id="div_modal_body_cart" class="modal-body">
+                        <span id="idModalProduct" style="display: block;"></span>
                         <img id="imgSelecionada" src="" alt="Imagem Selecionada">
                         <p id="produtoSelecionado"></p>
                         <div style="display: block;">
@@ -253,7 +297,7 @@
                     <div class="modal-footer">
                         <button id="btn_fechar_modal_cart" type="button" class="btn btn-outline-danger"
                             data-dismiss="modal">Fechar</button>
-                        <button id="addToCart" type="button" class="btn btn-primary">Adicionar ao
+                        <button id="addToCart" type="button" class="btn btn-primary btn_Produto">Adicionar ao
                             Carrinho</button>
                     </div>
                 </div>
@@ -270,595 +314,519 @@
                     </span>
                 </section>
 
-                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Toggle right offcanvas</button>
-
-                <!-- MODAL CARRINHO -->
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
-                    aria-labelledby="offcanvasRightLabel">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasRightLabel">Carrinho</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <div class="container mt-3">
-                            <ul class="list-group" id="cart">
-                                <!-- Itens do carrinho serão adicionados aqui -->
-                            </ul>
-                        </div>
-                    </div>
-                </div>
 
                 <section class="sect-flex-products ga-ma-pa">
                     <div class="card-products-gallery ga-ma-pa">
                         <div class="div-img-card-gallery">
+                            <span id="spanID">#B-001</span>
                             <a href="./img/Gallery_Pic/Bolos/Heineken.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Bolos/Heineken_transpa.png">
+                                <img id="urlImgProduct" src="./img/Gallery_Pic/Bolos/Heineken_transpa.png">
                             </a>
                         </div>
                         <p id="ninhoCMorango">
                             <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
-                                onclick="abrirModal('./img/Gallery_Pic/Bolos/Heineken_transpa.png','Ninho c/ Morango', '50,00')">
+                                onclick="abrirModal('B-001','./img/Gallery_Pic/Bolos/Heineken_transpa.png','Ninho c/ Morango', '50,00')">
                                 Ninho c/ Morango
                             </button>
                         </p>
                     </div>
                     <div class="card-products-gallery ga-ma-pa">
+                        <span id="spanID">#B-002</span>
                         <div class="div-img-card-gallery">
                             <a href="./img/Gallery_Pic/Bolos/cocolate_c_morango_full.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Bolos/Chocolate_c_morango.png">
+                                <img id="urlImgProduct" src="./img/Gallery_Pic/Bolos/Chocolate_c_morango.png">
                             </a>
                         </div>
-                        <p>Chocolate com Morango</p>
+                        <p>
+                            <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
+                                onclick="abrirModal('B-002','./img/Gallery_Pic/Bolos/Chocolate_c_morango.png','Chocolate com Morango', '60,00')">
+                                Chocolate com Morango
+                            </button>
+                        </p>
                     </div>
                     <div class="card-products-gallery ga-ma-pa">
+                        <span id="spanID">#B-003</span>
                         <div class="div-img-card-gallery">
                             <a href="./img/Gallery_Pic/Bolos/choc_escorrido_c_morango.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Bolos/choc_escorrido_c_morango_transpa.png">
+                                <img id="urlImgProduct"
+                                    src="./img/Gallery_Pic/Bolos/choc_escorrido_c_morango_transpa.png">
                             </a>
                         </div>
-                        <p>Chocolate Branco c/ Morango</p>
+                        <p>
+                            <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
+                                style="font-size: x-small;"
+                                onclick="abrirModal('B-003','./img/Gallery_Pic/Bolos/choc_escorrido_c_morango_transpa.png','Chocolate Branco c/ Morango', '60,00')">
+                                Chocolate Branco c/ Morango
+                            </button>
+                        </p>
                     </div>
                     <div class="card-products-gallery ga-ma-pa">
+                        <span id="spanID">#B-004</span>
                         <div class="div-img-card-gallery">
                             <a href="./img/Gallery_Pic/Bolos/kit-kat_full.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Bolos/kit-kat.png">
+                                <img id="urlImgProduct" src="./img/Gallery_Pic/Bolos/kit-kat.png">
                             </a>
                         </div>
-                        <p>Kit-Kat</p>
+                        <p>
+                            <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
+                                style="font-size: x-small;"
+                                onclick="abrirModal('B-004','./img/Gallery_Pic/Bolos/kit-kat.png',' Kit-Kat', '90,00')">
+                                Kit-Kat
+                            </button>
+                        </p>
                     </div>
                     <div class="card-products-gallery ga-ma-pa">
+                        <span id="spanID">#B-005</span>
                         <div class="div-img-card-gallery">
                             <a href="./img/Gallery_Pic/Bolos/ninho-c-mor-choc-bran-full.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Bolos/ninho-c-mor-choc-bran-transp.png">
+                                <img id="urlImgProduct" src="./img/Gallery_Pic/Bolos/ninho-c-mor-choc-bran-transp.png">
                             </a>
                         </div>
-                        <p>Ninho c/ Morango - Cobert. Choc Branco</p>
+                        <p>
+                            <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
+                                style="font-size: x-small;"
+                                onclick="abrirModal('B-005','./img/Gallery_Pic/Bolos/ninho-c-mor-choc-bran-transp.png',' Ninho c/ Choc Branco', '80,00')">
+                                Ninho c/ Choc Branco
+                            </button>
+                        </p>
                     </div>
                     <div class="card-products-gallery ga-ma-pa">
                         <div class="div-img-card-gallery">
+                            <span id="spanID">#B-001</span>
                             <a href="./img/Gallery_Pic/Bolos/Heineken.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Bolos/Heineken_transpa.png">
+                                <img id="urlImgProduct" src="./img/Gallery_Pic/Bolos/Heineken_transpa.png">
                             </a>
                         </div>
-                        <p>Ninho c/ Morango</p>
+                        <p id="ninhoCMorango">
+                            <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
+                                onclick="abrirModal('B-001','./img/Gallery_Pic/Bolos/Heineken_transpa.png','Ninho c/ Morango', '50,00')">
+                                Ninho c/ Morango
+                            </button>
+                        </p>
                     </div>
                     <div class="card-products-gallery ga-ma-pa">
+                        <span id="spanID">#B-002</span>
                         <div class="div-img-card-gallery">
                             <a href="./img/Gallery_Pic/Bolos/cocolate_c_morango_full.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Bolos/Chocolate_c_morango.png">
+                                <img id="urlImgProduct" src="./img/Gallery_Pic/Bolos/Chocolate_c_morango.png">
                             </a>
                         </div>
-                        <p>Chocolate com Morango</p>
+                        <p>
+                            <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
+                                onclick="abrirModal('B-002','./img/Gallery_Pic/Bolos/Chocolate_c_morango.png','Chocolate com Morango', '60,00')">
+                                Chocolate com Morango
+                            </button>
+                        </p>
                     </div>
                     <div class="card-products-gallery ga-ma-pa">
+                        <span id="spanID">#B-003</span>
                         <div class="div-img-card-gallery">
                             <a href="./img/Gallery_Pic/Bolos/choc_escorrido_c_morango.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Bolos/choc_escorrido_c_morango_transpa.png">
+                                <img id="urlImgProduct"
+                                    src="./img/Gallery_Pic/Bolos/choc_escorrido_c_morango_transpa.png">
                             </a>
                         </div>
-                        <p>Chocolate Branco c/ Morango</p>
+                        <p>
+                            <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
+                                style="font-size: x-small;"
+                                onclick="abrirModal('B-003','./img/Gallery_Pic/Bolos/choc_escorrido_c_morango_transpa.png','Chocolate Branco c/ Morango', '60,00')">
+                                Chocolate Branco c/ Morango
+                            </button>
+                        </p>
                     </div>
                     <div class="card-products-gallery ga-ma-pa">
+                        <span id="spanID">#B-004</span>
                         <div class="div-img-card-gallery">
                             <a href="./img/Gallery_Pic/Bolos/kit-kat_full.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Bolos/kit-kat.png">
+                                <img id="urlImgProduct" src="./img/Gallery_Pic/Bolos/kit-kat.png">
                             </a>
                         </div>
-                        <p>Kit-Kat</p>
+                        <p>
+                            <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
+                                style="font-size: x-small;"
+                                onclick="abrirModal('B-004','./img/Gallery_Pic/Bolos/kit-kat.png',' Kit-Kat', '90,00')">
+                                Kit-Kat
+                            </button>
+                        </p>
                     </div>
                     <div class="card-products-gallery ga-ma-pa">
+                        <span id="spanID">#B-005</span>
                         <div class="div-img-card-gallery">
                             <a href="./img/Gallery_Pic/Bolos/ninho-c-mor-choc-bran-full.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Bolos/ninho-c-mor-choc-bran-transp.png">
+                                <img id="urlImgProduct" src="./img/Gallery_Pic/Bolos/ninho-c-mor-choc-bran-transp.png">
                             </a>
                         </div>
-                        <p>Ninho c/ Morango - Cobert. Choc Branco</p>
+                        <p>
+                            <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
+                                style="font-size: x-small;"
+                                onclick="abrirModal('B-005','./img/Gallery_Pic/Bolos/ninho-c-mor-choc-bran-transp.png',' Ninho c/ Choc Branco', '80,00')">
+                                Ninho c/ Choc Branco
+                            </button>
+                        </p>
                     </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Bolos/Heineken.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Bolos/Heineken_transpa.png">
-                            </a>
-                        </div>
-                        <p>Ninho c/ Morango</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Bolos/cocolate_c_morango_full.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Bolos/Chocolate_c_morango.png">
-                            </a>
-                        </div>
-                        <p>Chocolate com Morango</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Bolos/choc_escorrido_c_morango.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Bolos/choc_escorrido_c_morango_transpa.png">
-                            </a>
-                        </div>
-                        <p>Chocolate Branco c/ Morango</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Bolos/kit-kat_full.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Bolos/kit-kat.png">
-                            </a>
-                        </div>
-                        <p>Kit-Kat</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Bolos/ninho-c-mor-choc-bran-full.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Bolos/ninho-c-mor-choc-bran-transp.png">
-                            </a>
-                        </div>
-                        <p>Ninho c/ Morango - Cobert. Choc Branco</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Bolos/Heineken.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Bolos/Heineken_transpa.png">
-                            </a>
-                        </div>
-                        <p>Ninho c/ Morango</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Bolos/cocolate_c_morango_full.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Bolos/Chocolate_c_morango.png">
-                            </a>
-                        </div>
-                        <p>Chocolate com Morango</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Bolos/choc_escorrido_c_morango.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Bolos/choc_escorrido_c_morango_transpa.png">
-                            </a>
-                        </div>
-                        <p>Chocolate Branco c/ Morango</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Bolos/kit-kat_full.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Bolos/kit-kat.png">
-                            </a>
-                        </div>
-                        <p>Kit-Kat</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Bolos/ninho-c-mor-choc-bran-full.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Bolos/ninho-c-mor-choc-bran-transp.png">
-                            </a>
-                        </div>
-                        <p>Ninho c/ Morango - Cobert. Choc Branco</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Bolos/Heineken.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Bolos/Heineken_transpa.png">
-                            </a>
-                        </div>
-                        <p>Ninho c/ Morango</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Bolos/cocolate_c_morango_full.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Bolos/Chocolate_c_morango.png">
-                            </a>
-                        </div>
-                        <p>Chocolate com Morango</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Bolos/choc_escorrido_c_morango.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Bolos/choc_escorrido_c_morango_transpa.png">
-                            </a>
-                        </div>
-                        <p>Chocolate Branco c/ Morango</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Bolos/kit-kat_full.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Bolos/kit-kat.png">
-                            </a>
-                        </div>
-                        <p>Kit-Kat</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Bolos/Heineken.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Bolos/Heineken_transpa.png">
-                            </a>
-                        </div>
-                        <p>Ninho c/ Morango</p>
-                    </div>
-                </section>
-            </div>
-            <!-- Doces -->
-            <div id="doces-prod">
-                <section id="sect-title-cardapio" class="sect-tag-card-title aba-subtitle">
-                    <span class="material-symbols-outlined aba-subtitle">
-                        cookie
-                    </span>
-                </section>
 
-                <section class="sect-flex-products ga-ma-pa">
-                    <div class="card-products-gallery ga-ma-pa">
-                        <a href="./img/card/Doces/teste-sobre.png" target="_blank">
-                            <img src="./img/card/Doces/teste-sobre.png">
-                        </a>
-                        <p>Travessa de Morango</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <a href="./img/Gallery_Pic/Doces/doce_de_leite_full.png" target="_blank">
-                            <img src="./img/Gallery_Pic/Doces/doce_de_leite_transp.png">
-                        </a>
-                        <p>Banana c/ Canela</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <a href="./img/Gallery_Pic/Doces/bem_casado.png" target="_blank">
-                            <img src="./img/Gallery_Pic/Doces/bem_casado.png">
-                        </a>
-                        <p>Chocolate c/ Cereja (Casamento)</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <a href="./img/Gallery_Pic/Doces/2cx_bejinho_brigadeiro.png" target="_blank">
-                            <img src="./img/Gallery_Pic/Doces/2cx_bejinho_brigadeiro.png">
-                        </a>
-                        <p>Cx c/ Beijinho + Brigadeiro</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <a href="./img/Gallery_Pic/Doces/bem_casado_embrulhado.png" target="_blank">
-                            <img src="./img/Gallery_Pic/Doces/bem_casado_embrulhado.png">
-                        </a>
-                        <p>Bem Casado (Casamento)</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <a href="./img/Gallery_Pic/Doces/bolinhos_formato_pizza.png" target="_blank">
-                            <img src="./img/Gallery_Pic/Doces/bolinhos_formato_pizza.png">
-                        </a>
-                        <p>Fatia Trufada - Sabores</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <a href="./img/Gallery_Pic/Doces/bolo_de_limão.png" target="_blank">
-                            <img src="./img/Gallery_Pic/Doces/bolo_de_limão.png">
-                        </a>
-                        <p>Bolo de Limão</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <a href="./img/Gallery_Pic/Doces/brig_de_morango.png" target="_blank">
-                            <img src="./img/Gallery_Pic/Doces/brig_de_morango.png">
-                        </a>
-                        <p>Docinho de Morango</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <a href="./img/Gallery_Pic/Doces//donuts.png" target="_blank">
-                            <img src="./img/Gallery_Pic/Doces/donuts.png">
-                        </a>
-                        <p>Donuts</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <a href="./img/Gallery_Pic/Doces/brigadeiros.png" target="_blank">
-                            <img src="./img/Gallery_Pic/Doces/brigadeiros.png">
-                        </a>
-                        <p>Brigadeiros</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <a href="./img/Gallery_Pic/Doces/combo_cafe.png" target="_blank">
-                            <img src="./img/Gallery_Pic/Doces/combo_cafe.png">
-                        </a>
-                        <p>Café da tarde em família</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <a href="./img/Gallery_Pic/Doces/docinhos.png" target="_blank">
-                            <img src="./img/Gallery_Pic/Doces/docinhos.png">
-                        </a>
-                        <p>Docinhos</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <a href="./img/Gallery_Pic/Doces/doce_no_pote.png" target="_blank">
-                            <img src="./img/Gallery_Pic/Doces/doce_no_pote.png">
-                        </a>
-                        <p>Bolinho da felicidade</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <a href="./img/Gallery_Pic/Doces/doce_no_pote_02.png" target="_blank">
-                            <img src="./img/Gallery_Pic/Doces/doce_no_pote_02.png">
-                        </a>
-                        <p>Bolinho da felicidade 2</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <a href="./img/Gallery_Pic/Doces//meio_a_meio_beijnhoebrig.png" target="_blank">
-                            <img src="./img/Gallery_Pic/Doces/meio_a_meio_beijnhoebrig.png">
-                        </a>
-                        <p>Meio a Meio - Beij + Brig</p>
-                    </div>
-                </section>
-            </div>
-            <!-- Paes -->
-            <div id="paes-prod">
-                <section id="sect-title-cardapio" class="sect-tag-card-title aba-subtitle">
-                    <span class="material-symbols-outlined aba-subtitle">
-                        bakery_dining
-                    </span>
-                </section>
-                <section class="sect-flex-products ga-ma-pa">
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Paes/pao1.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Paes/pao1.png">
-                            </a>
-                        </div>
-                        <p>Pão 1</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Paes/pao2.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Paes/pao2.png">
-                            </a>
-                        </div>
-                        <p>Pão 2</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Paes/pao3.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Paes/pao3.png">
-                            </a>
-                        </div>
-                        <p>Pão 3</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Paes/pao_doce_full.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Paes/pao_doce.png">
-                            </a>
-                        </div>
-                        <p>Pão Doce</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Paes/pao1.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Paes/pao1.png">
-                            </a>
-                        </div>
-                        <p>Pão 1</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Paes/pao2.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Paes/pao2.png">
-                            </a>
-                        </div>
-                        <p>Pão 2</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Paes/pao3.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Paes/pao3.png">
-                            </a>
-                        </div>
-                        <p>Pão 3</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Paes/pao_doce_full.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Paes/pao_doce.png">
-                            </a>
-                        </div>
-                        <p>Pão Doce</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Paes/pao1.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Paes/pao1.png">
-                            </a>
-                        </div>
-                        <p>Pão 1</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Paes/pao2.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Paes/pao2.png">
-                            </a>
-                        </div>
-                        <p>Pão 2</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Paes/pao3.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Paes/pao3.png">
-                            </a>
-                        </div>
-                        <p>Pão 3</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Paes/pao_doce_full.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Paes/pao_doce.png">
-                            </a>
-                        </div>
-                        <p>Pão Doce</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Paes/pao2.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Paes/pao2.png">
-                            </a>
-                        </div>
-                        <p>Pão 2</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Paes/pao3.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Paes/pao3.png">
-                            </a>
-                        </div>
-                        <p>Pão 3</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Paes/pao_doce_full.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Paes/pao_doce.png">
-                            </a>
-                        </div>
-                        <p>Pão Doce</p>
-                    </div>
-                </section>
-            </div>
-            <!-- Tortas -->
-            <div id="tortas-prod">
-                <section id="sect-title-cardapio" class="sect-tag-card-title aba-subtitle">
-                    <span class="material-symbols-outlined aba-subtitle">
-                        breakfast_dining
-                    </span>
-                </section>
-                <section class="sect-flex-products ga-ma-pa">
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Tortas/Photoroom_20240519_201540.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Tortas/Photoroom_20240519_201540.png">
-                            </a>
-                        </div>
-                        <p>Torta 1</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Tortas/Photoroom_20240526_184845.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Tortas/Photoroom_20240526_184845.png">
-                            </a>
-                        </div>
-                        <p>Torta 2</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Tortas/Photoroom_20240526_185040.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Tortas/Photoroom_20240526_185040.png">
-                            </a>
-                        </div>
-                        <p>Torta 3</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Tortas/torta_de_morango.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Tortas/torta_de_morango.png">
-                            </a>
-                        </div>
-                        <p>Torta de Morango</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Tortas/Photoroom_20240519_201540.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Tortas/Photoroom_20240519_201540.png">
-                            </a>
-                        </div>
-                        <p>Torta 1</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Tortas/Photoroom_20240526_184845.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Tortas/Photoroom_20240526_184845.png">
-                            </a>
-                        </div>
-                        <p>Torta 2</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Tortas/Photoroom_20240526_185040.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Tortas/Photoroom_20240526_185040.png">
-                            </a>
-                        </div>
-                        <p>Torta 3</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Tortas/torta_de_morango.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Tortas/torta_de_morango.png">
-                            </a>
-                        </div>
-                        <p>Torta de Morango</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Tortas/Photoroom_20240519_201540.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Tortas/Photoroom_20240519_201540.png">
-                            </a>
-                        </div>
-                        <p>Torta 1</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Tortas/Photoroom_20240526_184845.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Tortas/Photoroom_20240526_184845.png">
-                            </a>
-                        </div>
-                        <p>Torta 2</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Tortas/Photoroom_20240526_185040.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Tortas/Photoroom_20240526_185040.png">
-                            </a>
-                        </div>
-                        <p>Torta 3</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Tortas/torta_de_morango.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Tortas/torta_de_morango.png">
-                            </a>
-                        </div>
-                        <p>Torta de Morango</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Tortas/Photoroom_20240519_201540.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Tortas/Photoroom_20240519_201540.png">
-                            </a>
-                        </div>
-                        <p>Torta 1</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Tortas/Photoroom_20240526_184845.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Tortas/Photoroom_20240526_184845.png">
-                            </a>
-                        </div>
-                        <p>Torta 2</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <div class="div-img-card-gallery">
-                            <a href="./img/Gallery_Pic/Tortas/Photoroom_20240526_185040.png" target="_blank">
-                                <img src="./img/Gallery_Pic/Tortas/Photoroom_20240526_185040.png">
-                            </a>
-                        </div>
-                        <p>Torta 3</p>
-                    </div>
-                </section>
+                    <!-- Doces -->
+                    <div id="doces-prod">
+                        <section id="sect-title-cardapio" class="sect-tag-card-title aba-subtitle">
+                            <span class="material-symbols-outlined aba-subtitle">
+                                cookie
+                            </span>
+                        </section>
 
-            </div>
+                        <section class="sect-flex-products ga-ma-pa">
+                            <div class="card-products-gallery ga-ma-pa">
+                                <a href="./img/card/Doces/teste-sobre.png" target="_blank">
+                                    <img src="./img/card/Doces/teste-sobre.png">
+                                </a>
+                                <p>Travessa de Morango</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <a href="./img/Gallery_Pic/Doces/doce_de_leite_full.png" target="_blank">
+                                    <img src="./img/Gallery_Pic/Doces/doce_de_leite_transp.png">
+                                </a>
+                                <p>Banana c/ Canela</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <a href="./img/Gallery_Pic/Doces/bem_casado.png" target="_blank">
+                                    <img src="./img/Gallery_Pic/Doces/bem_casado.png">
+                                </a>
+                                <p>Chocolate c/ Cereja (Casamento)</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <a href="./img/Gallery_Pic/Doces/Brigadeiro.JPG" target="_blank">
+                                    <img src="./img/Gallery_Pic/Doces/Brigadeiro.PNG">
+                                </a>
+                                <p>Cx c/ Beijinho + Brigadeiro</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <a href="./img/Gallery_Pic/Doces/bem_casado_embrulhado.png" target="_blank">
+                                    <img src="./img/Gallery_Pic/Doces/bem_casado_embrulhado.png">
+                                </a>
+                                <p>Bem Casado (Casamento)</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <a href="./img/Gallery_Pic/Doces/Outros/bolinhos_formato_pizza.png" target="_blank">
+                                    <img src="./img/Gallery_Pic/Doces/Outros/bolinhos_formato_pizza.png">
+                                </a>
+                                <p>Fatia Trufada - Sabores</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <a href="./img/Gallery_Pic/Doces/Bicho de pé.JPG" target="_blank">
+                                    <img src="./img/Gallery_Pic/Doces/Bicho de pé.JPG">
+                                </a>
+                                <p>Bicho de Pé</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <a href="./img/Gallery_Pic/Doces//meio_a_meio_beijnhoebrig.png" target="_blank">
+                                    <img src="./img/Gallery_Pic/Doces/meio_a_meio_beijnhoebrig.png">
+                                </a>
+                                <p>Docinho de Morango</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <a href="./img/Gallery_Pic/Doces/donuts.png" target="_blank">
+                                    <img src="./img/Gallery_Pic/Doces/donuts.png">
+                                </a>
+                                <p>Donuts</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <a href="./img/Gallery_Pic/Doces/brigadeiros.png" target="_blank">
+                                    <img src="./img/Gallery_Pic/Doces/brigadeiros.png">
+                                </a>
+                                <p>Brigadeiros</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <a href="./img/Gallery_Pic/Doces/combo_cafe.png" target="_blank">
+                                    <img src="./img/Gallery_Pic/Doces/combo_cafe.png">
+                                </a>
+                                <p>Café da tarde em família</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <a href="./img/Gallery_Pic/Doces/docinhos.png" target="_blank">
+                                    <img src="./img/Gallery_Pic/Doces/docinhos.png">
+                                </a>
+                                <p>Docinhos</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <a href="./img/Gallery_Pic/Doces/doce_no_pote.png" target="_blank">
+                                    <img src="./img/Gallery_Pic/Doces/doce_no_pote.png">
+                                </a>
+                                <p>Bolinho da felicidade</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <a href="./img/Gallery_Pic/Doces/doce_no_pote_02.png" target="_blank">
+                                    <img src="./img/Gallery_Pic/Doces/doce_no_pote_02.png">
+                                </a>
+                                <p>Bolinho da felicidade 2</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <a href="./img/Gallery_Pic/Doces//meio_a_meio_beijnhoebrig.png" target="_blank">
+                                    <img src="./img/Gallery_Pic/Doces/meio_a_meio_beijnhoebrig.png">
+                                </a>
+                                <p>Meio a Meio - Beij + Brig</p>
+                            </div>
+                        </section>
+                    </div>
+                    <!-- Paes -->
+                    <div id="paes-prod">
+                        <section id="sect-title-cardapio" class="sect-tag-card-title aba-subtitle">
+                            <span class="material-symbols-outlined aba-subtitle">
+                                bakery_dining
+                            </span>
+                        </section>
+                        <section class="sect-flex-products ga-ma-pa">
+                            <div class="card-products-gallery ga-ma-pa">
+                                <div class="div-img-card-gallery">
+                                    <a href="./img/Gallery_Pic/Paes/pao1.png" target="_blank">
+                                        <img src="./img/Gallery_Pic/Paes/pao1.png">
+                                    </a>
+                                </div>
+                                <p>Pão 1</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <div class="div-img-card-gallery">
+                                    <a href="./img/Gallery_Pic/Paes/pao2.png" target="_blank">
+                                        <img src="./img/Gallery_Pic/Paes/pao2.png">
+                                    </a>
+                                </div>
+                                <p>Pão 2</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <div class="div-img-card-gallery">
+                                    <a href="./img/Gallery_Pic/Paes/pao3.png" target="_blank">
+                                        <img src="./img/Gallery_Pic/Paes/pao3.png">
+                                    </a>
+                                </div>
+                                <p>Pão 3</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <div class="div-img-card-gallery">
+                                    <a href="./img/Gallery_Pic/Paes/pao_doce_full.png" target="_blank">
+                                        <img src="./img/Gallery_Pic/Paes/pao_doce.png">
+                                    </a>
+                                </div>
+                                <p>Pão Doce</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <div class="div-img-card-gallery">
+                                    <a href="./img/Gallery_Pic/Paes/pao1.png" target="_blank">
+                                        <img src="./img/Gallery_Pic/Paes/pao1.png">
+                                    </a>
+                                </div>
+                                <p>Pão 1</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <div class="div-img-card-gallery">
+                                    <a href="./img/Gallery_Pic/Paes/pao2.png" target="_blank">
+                                        <img src="./img/Gallery_Pic/Paes/pao2.png">
+                                    </a>
+                                </div>
+                                <p>Pão 2</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <div class="div-img-card-gallery">
+                                    <a href="./img/Gallery_Pic/Paes/pao3.png" target="_blank">
+                                        <img src="./img/Gallery_Pic/Paes/pao3.png">
+                                    </a>
+                                </div>
+                                <p>Pão 3</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <div class="div-img-card-gallery">
+                                    <a href="./img/Gallery_Pic/Paes/pao_doce_full.png" target="_blank">
+                                        <img src="./img/Gallery_Pic/Paes/pao_doce.png">
+                                    </a>
+                                </div>
+                                <p>Pão Doce</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <div class="div-img-card-gallery">
+                                    <a href="./img/Gallery_Pic/Paes/pao1.png" target="_blank">
+                                        <img src="./img/Gallery_Pic/Paes/pao1.png">
+                                    </a>
+                                </div>
+                                <p>Pão 1</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <div class="div-img-card-gallery">
+                                    <a href="./img/Gallery_Pic/Paes/pao2.png" target="_blank">
+                                        <img src="./img/Gallery_Pic/Paes/pao2.png">
+                                    </a>
+                                </div>
+                                <p>Pão 2</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <div class="div-img-card-gallery">
+                                    <a href="./img/Gallery_Pic/Paes/pao3.png" target="_blank">
+                                        <img src="./img/Gallery_Pic/Paes/pao3.png">
+                                    </a>
+                                </div>
+                                <p>Pão 3</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <div class="div-img-card-gallery">
+                                    <a href="./img/Gallery_Pic/Paes/pao_doce_full.png" target="_blank">
+                                        <img src="./img/Gallery_Pic/Paes/pao_doce.png">
+                                    </a>
+                                </div>
+                                <p>Pão Doce</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <div class="div-img-card-gallery">
+                                    <a href="./img/Gallery_Pic/Paes/pao2.png" target="_blank">
+                                        <img src="./img/Gallery_Pic/Paes/pao2.png">
+                                    </a>
+                                </div>
+                                <p>Pão 2</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <div class="div-img-card-gallery">
+                                    <a href="./img/Gallery_Pic/Paes/pao3.png" target="_blank">
+                                        <img src="./img/Gallery_Pic/Paes/pao3.png">
+                                    </a>
+                                </div>
+                                <p>Pão 3</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <div class="div-img-card-gallery">
+                                    <a href="./img/Gallery_Pic/Paes/pao_doce_full.png" target="_blank">
+                                        <img src="./img/Gallery_Pic/Paes/pao_doce.png">
+                                    </a>
+                                </div>
+                                <p>Pão Doce</p>
+                            </div>
+                        </section>
+                    </div>
+                    <!-- Tortas -->
+                    <div id="tortas-prod">
+                        <section id="sect-title-cardapio" class="sect-tag-card-title aba-subtitle">
+                            <span class="material-symbols-outlined aba-subtitle">
+                                breakfast_dining
+                            </span>
+                        </section>
+                        <section class="sect-flex-products ga-ma-pa">
+                            <div class="card-products-gallery ga-ma-pa">
+                                <div class="div-img-card-gallery">
+                                    <a href="./img/Gallery_Pic/Tortas/Photoroom_20240519_201540.png" target="_blank">
+                                        <img src="./img/Gallery_Pic/Tortas/Photoroom_20240519_201540.png">
+                                    </a>
+                                </div>
+                                <p>Torta 1</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <div class="div-img-card-gallery">
+                                    <a href="./img/Gallery_Pic/Tortas/Photoroom_20240526_184845.png" target="_blank">
+                                        <img src="./img/Gallery_Pic/Tortas/Photoroom_20240526_184845.png">
+                                    </a>
+                                </div>
+                                <p>Torta 2</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <div class="div-img-card-gallery">
+                                    <a href="./img/Gallery_Pic/Tortas/Photoroom_20240526_185040.png" target="_blank">
+                                        <img src="./img/Gallery_Pic/Tortas/Photoroom_20240526_185040.png">
+                                    </a>
+                                </div>
+                                <p>Torta 3</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <div class="div-img-card-gallery">
+                                    <a href="./img/Gallery_Pic/Tortas/torta_de_morango.png" target="_blank">
+                                        <img src="./img/Gallery_Pic/Tortas/torta_de_morango.png">
+                                    </a>
+                                </div>
+                                <p>Torta de Morango</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <div class="div-img-card-gallery">
+                                    <a href="./img/Gallery_Pic/Tortas/Photoroom_20240519_201540.png" target="_blank">
+                                        <img src="./img/Gallery_Pic/Tortas/Photoroom_20240519_201540.png">
+                                    </a>
+                                </div>
+                                <p>Torta 1</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <div class="div-img-card-gallery">
+                                    <a href="./img/Gallery_Pic/Tortas/Photoroom_20240526_184845.png" target="_blank">
+                                        <img src="./img/Gallery_Pic/Tortas/Photoroom_20240526_184845.png">
+                                    </a>
+                                </div>
+                                <p>Torta 2</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <div class="div-img-card-gallery">
+                                    <a href="./img/Gallery_Pic/Tortas/Photoroom_20240526_185040.png" target="_blank">
+                                        <img src="./img/Gallery_Pic/Tortas/Photoroom_20240526_185040.png">
+                                    </a>
+                                </div>
+                                <p>Torta 3</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <div class="div-img-card-gallery">
+                                    <a href="./img/Gallery_Pic/Tortas/torta_de_morango.png" target="_blank">
+                                        <img src="./img/Gallery_Pic/Tortas/torta_de_morango.png">
+                                    </a>
+                                </div>
+                                <p>Torta de Morango</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <div class="div-img-card-gallery">
+                                    <a href="./img/Gallery_Pic/Tortas/Photoroom_20240519_201540.png" target="_blank">
+                                        <img src="./img/Gallery_Pic/Tortas/Photoroom_20240519_201540.png">
+                                    </a>
+                                </div>
+                                <p>Torta 1</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <div class="div-img-card-gallery">
+                                    <a href="./img/Gallery_Pic/Tortas/Photoroom_20240526_184845.png" target="_blank">
+                                        <img src="./img/Gallery_Pic/Tortas/Photoroom_20240526_184845.png">
+                                    </a>
+                                </div>
+                                <p>Torta 2</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <div class="div-img-card-gallery">
+                                    <a href="./img/Gallery_Pic/Tortas/Photoroom_20240526_185040.png" target="_blank">
+                                        <img src="./img/Gallery_Pic/Tortas/Photoroom_20240526_185040.png">
+                                    </a>
+                                </div>
+                                <p>Torta 3</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <div class="div-img-card-gallery">
+                                    <a href="./img/Gallery_Pic/Tortas/torta_de_morango.png" target="_blank">
+                                        <img src="./img/Gallery_Pic/Tortas/torta_de_morango.png">
+                                    </a>
+                                </div>
+                                <p>Torta de Morango</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <div class="div-img-card-gallery">
+                                    <a href="./img/Gallery_Pic/Tortas/Photoroom_20240519_201540.png" target="_blank">
+                                        <img src="./img/Gallery_Pic/Tortas/Photoroom_20240519_201540.png">
+                                    </a>
+                                </div>
+                                <p>Torta 1</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <div class="div-img-card-gallery">
+                                    <a href="./img/Gallery_Pic/Tortas/Photoroom_20240526_184845.png" target="_blank">
+                                        <img src="./img/Gallery_Pic/Tortas/Photoroom_20240526_184845.png">
+                                    </a>
+                                </div>
+                                <p>Torta 2</p>
+                            </div>
+                            <div class="card-products-gallery ga-ma-pa">
+                                <div class="div-img-card-gallery">
+                                    <a href="./img/Gallery_Pic/Tortas/Photoroom_20240526_185040.png" target="_blank">
+                                        <img src="./img/Gallery_Pic/Tortas/Photoroom_20240526_185040.png">
+                                    </a>
+                                </div>
+                                <p>Torta 3</p>
+                            </div>
+                        </section>
+
+                    </div>
         </main>
     </div>
     </div>
@@ -909,6 +877,7 @@
     </footer>
     </div>
     <script src="./Js/script.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
