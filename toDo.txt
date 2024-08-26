@@ -1,16 +1,18 @@
 TO DO 
 
 AJUSTES PARA DISPOSITIVOS MAIORES
--  Finalizar tela de Produtos e Sobre.
-                                -Sobre (Done)
+-  Finalizar tela de Produtos
+                                
 
 
 AMBOS DISPOSITIVOS 
-- Direcionamento index
-- Direcionamento do ul li a > produtos
+
 - Analisar possibilidade de deixar cada style.css e script.js dentro de sua respectiva página de aplicação
 
 DONE 
+-Sobre (Done)
+- Direcionamento index
+- Direcionamento do ul li a > produtos
 - Página Onde nos Encontrar
 - Página de Galeria
 - Alterar cor dos cards e title section main. 

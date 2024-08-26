@@ -39,14 +39,10 @@ document.addEventListener("DOMContentLoaded", function () {
   };
   //close cart's modal at products screen.
   btn_fechar_modal_cart_x.addEventListener("click", () => {
-    $("#cartModal").modal("hide");
-    document.getElementById("newPrice").style.display = "none";
-    document.getElementById("valuePrice").style.display = "";
+    resetNewPrice();
   });
   btn_fechar_modal_cart.addEventListener("click", () => {
-    $("#cartModal").modal("hide");
-    document.getElementById("newPrice").style.display = "none";
-    document.getElementById("valuePrice").style.display = "";
+    resetNewPrice();
   });
 
   verifyCartWarn();
@@ -55,26 +51,42 @@ document.addEventListener("DOMContentLoaded", function () {
 //Modal add to cart
 
 function abrirModal(idRecebido, img, produto, price) {
-  let idModalProduct = document.getElementById("idModalProduct");
-  idModalProduct.innerText = idRecebido;
-  let imagem = document.getElementById("imgSelecionada");
-  imagem.src = img;
-  imagem.style.width = "200px";
-  imagem.style.height = "200px";
-  document.getElementById("produtoSelecionado").innerText = `${produto}`;
-  document.getElementById("quantidade").value = 1;
-  const precoToNumber = parseFloat(price);
-  const precoFormatado = precoToNumber.toLocaleString("pt-BR", {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  });
+  let searchProduct = carrinho.find((produto) => produto.id === idRecebido);
 
-  document.getElementById("valuePrice").innerText = `${precoFormatado}`;
+  if (searchProduct) {
+    ToastWarning("Este produto já está no carrinho!", 1000);
+  } else {
+    let idModalProduct = document.getElementById("idModalProduct");
+    idModalProduct.innerText = idRecebido;
+    let imagem = document.getElementById("imgSelecionada");
+    imagem.src = img;
+    imagem.style.width = "200px";
+    imagem.style.height = "200px";
+    document.getElementById("produtoSelecionado").innerText = `${produto}`;
+    document.getElementById("quantidade").value = 1;
+    const precoToNumber = parseFloat(price);
+    const precoFormatado = precoToNumber.toLocaleString("pt-BR", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
 
-  $("#cartModal").modal("show");
-  document.getElementById("newPrice").style.display = "none";
-  document.getElementById("valuePrice").style.display = "";
+    document.getElementById("valuePrice").innerText = `${precoFormatado}`;
+
+    $("#cartModal").modal("show");
+    document.getElementById("newPrice").style.display = "none";
+    document.getElementById("valuePrice").style.display = "";
+  }
 }
+
+const resetNewPrice = () => {
+  $("#cartModal").modal("hide");
+
+  let newPrice = document.getElementById("newPrice");
+  newPrice.innerText = "";
+  newPrice.style.display = "none";
+
+  document.getElementById("valuePrice").style.display = "";
+};
 
 function alterarQuantidade(delta) {
   let quantidadeInput = document.getElementById("quantidade");
@@ -193,6 +205,7 @@ btnAddtoCart.forEach((btnClicked) => {
         delete_forever
         </span></button>
         </div>`;
+
       document.querySelector(".cart_list").appendChild(licart);
 
       verifyCartWarn();
@@ -250,9 +263,9 @@ btnAddtoCart.forEach((btnClicked) => {
 
     $("#cartModal").modal("hide");
 
-    // localStorage.setItem("carrinho", JSON.stringify(carrinho));
-
     verifyCartWarn();
+
+    document.getElementById("newPrice").innerText = "";
   };
 });
 
