@@ -45,7 +45,7 @@
                         Divino Sabor
                     </h1>
                 </div>
-                <button id="btnHamb" class="material-symbols-outlined" onclick="clickMenu()"> Menu
+                <button id="btnHamb" class="material-symbols-outlined"> Menu
                 </button>
             </section>
             <nav id="navHamb" class="menuNav">
@@ -124,7 +124,7 @@
     <!-- Main Section -->
     <main>
         <section id="id-sect-place" class="sect-onde-encontrar">
-            <!-- Collapse -->
+            <!-- Collapse Título -->
             <div class="accordion" id="accordionExample">
                 <div class="card">
                     <!-- Header -->
@@ -200,7 +200,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Map -->
+            <!-- Map Title-->
             <div class="title-map">
                 <h5>Clique para ser redirecionado ao Google Maps
                     <span class="material-symbols-outlined">
@@ -208,12 +208,19 @@
                     </span>
                 </h5>
             </div>
+            <!-- Map Section -->
             <article class="map-loja">
-                <a href="https://www.google.com/maps/place/R.+Dr.+Amadeu+Sachi,+555+-+Vila+Formosa,+Jundia%C3%AD+-+SP,+13214-280/data=!4m2!3m1!1s0x94cf25deeb421b4b:0xfe63c24374efab53?sa=X&ved=1t:242&ictx=111"
+                <div id="map"></div>
+                <!-- <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3668.0786860358144!2d-46.90899382468185!3d-23.16732807907252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf25deeb421b4b%3A0xfe63c24374efab53!2sR.%20Dr.%20Amadeu%20Sachi%2C%20555%20-%20Vila%20Formosa%2C%20Jundia%C3%AD%20-%20SP%2C%2013214-280!5e0!3m2!1spt-BR!2sbr!4v1725728959707!5m2!1spt-BR!2sbr"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+                <!-- <a href="https://www.google.com/maps/place/R.+Dr.+Amadeu+Sachi,+555+-+Vila+Formosa,+Jundia%C3%AD+-+SP,+13214-280/data=!4m2!3m1!1s0x94cf25deeb421b4b:0xfe63c24374efab53?sa=X&ved=1t:242&ictx=111"
                     target="_blank">
                     <img src="./img/mapa-loja.png" alt="">
-                </a>
+                </a> -->
             </article>
+            <!-- Footer -->
             <span class="map-loja-span">
                 <a class="map-loja-span-a"
                     href="https://www.google.com/maps/place/R.+Dr.+Amadeu+Sachi,+555+-+Vila+Formosa,+Jundia%C3%AD+-+SP,+13214-280/data=!4m2!3m1!1s0x94cf25deeb421b4b:0xfe63c24374efab53?sa=X&ved=1t:242&ictx=111"
@@ -270,7 +277,6 @@
             </div>
         </section>
     </footer>
-
     <!-- Link JavaScript -->
     <script src="./Js/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

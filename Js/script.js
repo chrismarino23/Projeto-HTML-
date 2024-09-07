@@ -1,6 +1,48 @@
 const btnHamb = document.getElementById("btnHamb");
 const navHamburguer = document.getElementById("navHamburguer");
 
+// API G-Maps autentication
+((g) => {
+  var h,
+    a,
+    k,
+    p = "The Google Maps JavaScript API",
+    c = "google",
+    l = "importLibrary",
+    q = "__ib__",
+    m = document,
+    b = window;
+  b = b[c] || (b[c] = {});
+  var d = b.maps || (b.maps = {}),
+    r = new Set(),
+    e = new URLSearchParams(),
+    u = () =>
+      h ||
+      (h = new Promise(async (f, n) => {
+        await (a = m.createElement("script"));
+        e.set("libraries", [...r] + "");
+        for (k in g)
+          e.set(
+            k.replace(/[A-Z]/g, (t) => "_" + t[0].toLowerCase()),
+            g[k]
+          );
+        e.set("callback", c + ".maps." + q);
+        a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+        d[q] = f;
+        a.onerror = () => (h = n(Error(p + " could not load.")));
+        a.nonce = m.querySelector("script[nonce]")?.nonce || "";
+        m.head.append(a);
+      }));
+  d[l]
+    ? console.warn(p + " only loads once. Ignoring:", g)
+    : (d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)));
+})({
+  key: "AIzaSyCxJwcxayw_XgaRL3sY6gv-r7Eucs7bA8o",
+  v: "weekly",
+  // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
+  // Add other bootstrap parameters as needed, using camel case.
+});
+
 //Modal
 setTimeout(function () {
   $("#meuModal").modal("show");
@@ -19,7 +61,36 @@ btnHamb.addEventListener("click", () => {
   navHamb.style.display = navHamb.style.display === "block" ? "none" : "block";
 });
 
+let map;
+
+async function initMap() {
+  // The location of Uluru
+  const position = { lat: -23.16739, lng: -46.90649 };
+  // Request needed libraries.
+  //@ts-ignore
+  const { Map } = await google.maps.importLibrary("maps");
+  const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+
+  // The map, centered at Uluru
+  map = new Map(document.getElementById("map"), {
+    zoom: 18,
+    center: position,
+    mapId: "DEMO_MAP_ID",
+  });
+
+  // The marker, positioned at Uluru
+  const marker = new AdvancedMarkerElement({
+    map: map,
+    position: position,
+    title: "Divino Sabor da Alice",
+  });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
+  if (window.location.pathname === "/onde-encontrar.html") {
+    initMap();
+  }
+
   // Verifica se há um hash na URL
   if (window.location.hash) {
     // Remove o caractere `#` da âncora
@@ -32,20 +103,20 @@ document.addEventListener("DOMContentLoaded", function () {
       tabElement.click();
     }
   }
-
-  const mostraCarrinho = document.getElementById("mostraCarrinho");
-  mostraCarrinho.onclick = () => {
-    showFinishbtn();
-  };
-  //close cart's modal at products screen.
-  btn_fechar_modal_cart_x.addEventListener("click", () => {
-    resetNewPrice();
-  });
-  btn_fechar_modal_cart.addEventListener("click", () => {
-    resetNewPrice();
-  });
-
-  verifyCartWarn();
+  if (window.location.pathname === "/produtos.html") {
+    const mostraCarrinho = document.getElementById("mostraCarrinho");
+    mostraCarrinho.onclick = () => {
+      showFinishbtn();
+    };
+    //close cart's modal at products screen.
+    btn_fechar_modal_cart_x.addEventListener("click", () => {
+      resetNewPrice();
+    });
+    btn_fechar_modal_cart.addEventListener("click", () => {
+      resetNewPrice();
+    });
+    verifyCartWarn();
+  }
 });
 
 //Modal add to cart
@@ -54,7 +125,7 @@ function abrirModal(idRecebido, img, produto, price) {
   let searchProduct = carrinho.find((produto) => produto.id === idRecebido);
 
   if (searchProduct) {
-    ToastWarning("Este produto já está no carrinho!", 1000);
+    ToastWarning("Este produto já está no carrinho!", 2000);
   } else {
     let idModalProduct = document.getElementById("idModalProduct");
     idModalProduct.innerText = idRecebido;
@@ -134,7 +205,7 @@ btnAddtoCart.forEach((btnClicked) => {
     const produtoNoCarrinho = carrinho.find((item) => item.id === productId);
 
     if (produtoNoCarrinho) {
-      ToastWarning("Este produto já está no carrinho!", 1000);
+      ToastWarning("Este produto já está no carrinho!", 2000);
     } else {
       let urlFront = document.getElementById("imgSelecionada").src;
 
@@ -173,7 +244,7 @@ btnAddtoCart.forEach((btnClicked) => {
 
       carrinho.push(newcartItem);
 
-      ToastSuccess("O Produto foi adicionado ao carrinho!", 1000, "#2E8B57");
+      ToastSuccess("O Produto foi adicionado ao carrinho!", 2000, "#2E8B57");
       const licart = document.createElement("li");
       licart.classList.add("li_cart_list");
 
@@ -197,7 +268,7 @@ btnAddtoCart.forEach((btnClicked) => {
                   <input class="input_produto input_produto_cart" type="text" value="${newcartItem.qtdKG}" name="input_produto" disabled>
                   <button class="btn_Produto btn_Produto_add">+</button>
               </div>
-              <small class="message">Unidade(s)</small>
+              <small class="message">KG (s)</small>
           </div>
         </div>
         <div class="div_removeBtn">
@@ -269,11 +340,13 @@ btnAddtoCart.forEach((btnClicked) => {
   };
 });
 
-document.getElementById("btn_finaliza_compra").onclick = () => {
-  let json_carrinho = JSON.stringify(carrinho);
+if (window.location.pathname === "/produtos.html") {
+  document.getElementById("btn_finaliza_compra").onclick = () => {
+    let json_carrinho = JSON.stringify(carrinho);
 
-  localStorage.setItem("carrinho", json_carrinho);
-};
+    localStorage.setItem("carrinho", json_carrinho);
+  };
+}
 
 function atualizarPreco(produto, qtd, pCartPrice) {
   const trataPrice = produto.pricepKG;
@@ -293,20 +366,21 @@ function atualizarPreco(produto, qtd, pCartPrice) {
     console.log("produto não encontrado no carrinho!");
   }
 }
-
-function verifyCartWarn() {
-  carrinho.length >= 1
-    ? (warning_cart = document.getElementById("warning_cart").style.display =
-        "block")
-    : (warning_cart = document.getElementById("warning_cart").style.display =
-        "none");
+if (window.location.pathname === "/produtos.html") {
+  function verifyCartWarn() {
+    carrinho.length >= 1
+      ? (warning_cart = document.getElementById("warning_cart").style.display =
+          "")
+      : (warning_cart = document.getElementById("warning_cart").style.display =
+          "none");
+  }
 }
-
 function ToastSuccess(message, time, color) {
   Toastify({
     text: message,
     duration: time,
     close: true,
+    position: "left",
     gravity: "top", // `top` or `bottom`
     stopOnFocus: false, // Prevents dismissing of toast on hover
     style: {
@@ -321,6 +395,7 @@ function ToastWarning(message, time) {
   Toastify({
     text: message,
     duration: time,
+    position: "left",
     style: {
       borderRadius: "10px",
       background: "red",
@@ -345,7 +420,7 @@ const showFinishbtn = () => {
   const offCanvasFooter = document.getElementById("offcanvas_footer");
 
   if (carrinho == false) {
-    ToastWarning("O carrinho está vazio!", 1000);
+    ToastWarning("O carrinho está vazio!", 2000);
     $("#offcanvasRight").offcanvas("hide");
     offCanvasFooter.style.display = "none";
   } else {
@@ -355,16 +430,18 @@ const showFinishbtn = () => {
 
 const clean_cart = document.getElementById("clean_cart");
 
-clean_cart.onclick = () => {
-  carrinho = [];
-  newcartItem = [];
-  json_carrinho = JSON.stringify(carrinho);
-  localStorage.setItem("carrinho", json_carrinho);
+if (window.location.pathname === "/produtos.html") {
+  clean_cart.onclick = () => {
+    carrinho = [];
+    newcartItem = [];
+    json_carrinho = JSON.stringify(carrinho);
+    localStorage.setItem("carrinho", json_carrinho);
 
-  let divToRemove = document.querySelectorAll(".li_cart_list");
-  divToRemove.forEach((element) => {
-    element.remove();
-  });
-  showFinishbtn();
-  verifyCartWarn();
-};
+    let divToRemove = document.querySelectorAll(".li_cart_list");
+    divToRemove.forEach((element) => {
+      element.remove();
+    });
+    showFinishbtn();
+    verifyCartWarn();
+  };
+}
