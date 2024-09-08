@@ -108,8 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   if (
     window.location.pathname === "/produtos.html" ||
-    window.location.pathname ===
-      "https://chrismarino23.github.io/Projeto-HTML-/produtos.html"
+    window.location.pathname === "/Projeto-HTML-/produtos.html"
   ) {
     const mostraCarrinho = document.getElementById("mostraCarrinho");
     mostraCarrinho.onclick = () => {
@@ -349,8 +348,7 @@ btnAddtoCart.forEach((btnClicked) => {
 
 if (
   window.location.pathname === "/produtos.html" ||
-  window.location.pathname ===
-    "https://chrismarino23.github.io/Projeto-HTML-/produtos.html"
+  window.location.pathname === "/Projeto-HTML-/produtos.html"
 ) {
   document.getElementById("btn_finaliza_compra").onclick = () => {
     let json_carrinho = JSON.stringify(carrinho);
@@ -379,8 +377,7 @@ function atualizarPreco(produto, qtd, pCartPrice) {
 }
 if (
   window.location.pathname === "/produtos.html" ||
-  window.location.pathname ===
-    "https://chrismarino23.github.io/Projeto-HTML-/produtos.html"
+  window.location.pathname === "/Projeto-HTML-/produtos.html"
 ) {
   function verifyCartWarn() {
     carrinho.length >= 1
@@ -447,8 +444,7 @@ const clean_cart = document.getElementById("clean_cart");
 
 if (
   window.location.pathname === "/produtos.html" ||
-  window.location.pathname ===
-    "https://chrismarino23.github.io/Projeto-HTML-/produtos.html"
+  window.location.pathname === "/Projeto-HTML-/produtos.html"
 ) {
   clean_cart.onclick = () => {
     carrinho = [];
