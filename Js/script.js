@@ -87,7 +87,11 @@ async function initMap() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  if (window.location.pathname === "/onde-encontrar.html") {
+  if (
+    window.location.pathname === "/onde-encontrar.html" ||
+    window.location.pathname ===
+      "https://chrismarino23.github.io/Projeto-HTML-/onde-encontrar.html"
+  ) {
     initMap();
   }
 
@@ -103,7 +107,11 @@ document.addEventListener("DOMContentLoaded", function () {
       tabElement.click();
     }
   }
-  if (window.location.pathname === "/produtos.html") {
+  if (
+    window.location.pathname === "/produtos.html" ||
+    window.location.pathname ===
+      "https://chrismarino23.github.io/Projeto-HTML-/produtos.html"
+  ) {
     const mostraCarrinho = document.getElementById("mostraCarrinho");
     mostraCarrinho.onclick = () => {
       showFinishbtn();
@@ -340,7 +348,11 @@ btnAddtoCart.forEach((btnClicked) => {
   };
 });
 
-if (window.location.pathname === "/produtos.html") {
+if (
+  window.location.pathname === "/produtos.html" ||
+  window.location.pathname ===
+    "https://chrismarino23.github.io/Projeto-HTML-/produtos.html"
+) {
   document.getElementById("btn_finaliza_compra").onclick = () => {
     let json_carrinho = JSON.stringify(carrinho);
 
@@ -366,7 +378,11 @@ function atualizarPreco(produto, qtd, pCartPrice) {
     console.log("produto não encontrado no carrinho!");
   }
 }
-if (window.location.pathname === "/produtos.html") {
+if (
+  window.location.pathname === "/produtos.html" ||
+  window.location.pathname ===
+    "https://chrismarino23.github.io/Projeto-HTML-/produtos.html"
+) {
   function verifyCartWarn() {
     carrinho.length >= 1
       ? (warning_cart = document.getElementById("warning_cart").style.display =
@@ -430,7 +446,11 @@ const showFinishbtn = () => {
 
 const clean_cart = document.getElementById("clean_cart");
 
-if (window.location.pathname === "/produtos.html") {
+if (
+  window.location.pathname === "/produtos.html" ||
+  window.location.pathname ===
+    "https://chrismarino23.github.io/Projeto-HTML-/produtos.html"
+) {
   clean_cart.onclick = () => {
     carrinho = [];
     newcartItem = [];
