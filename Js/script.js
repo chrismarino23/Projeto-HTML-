@@ -89,8 +89,7 @@ async function initMap() {
 document.addEventListener("DOMContentLoaded", function () {
   if (
     window.location.pathname === "/onde-encontrar.html" ||
-    window.location.pathname ===
-      "https://chrismarino23.github.io/Projeto-HTML-/onde-encontrar.html"
+    window.location.pathname === "/Projeto-HTML-/onde-encontrar.html"
   ) {
     initMap();
   }
