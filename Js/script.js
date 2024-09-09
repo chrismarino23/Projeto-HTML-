@@ -441,7 +441,7 @@ if (
 
     const numeroTelefone = "5511961944937";
 
-    var urlWhatsApp = `https://api.whatsapp.com/send?1=pt_BR&phone=${numeroTelefone}&${mensagemCodificada}`;
+    var urlWhatsApp = `https://api.whatsapp.com/send?1=pt_BR&phone=${numeroTelefone}&text=${mensagemCodificada}`;
 
     window.open(urlWhatsApp, "_blank");
   };
