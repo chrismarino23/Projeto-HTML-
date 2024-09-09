@@ -395,6 +395,7 @@ if (
         // Cria um novo elemento <li>
         const li_check_order = document.createElement("li");
         li_check_order.classList.add("li_cart_list");
+        li_check_order.classList.add("width50prct");
         li_check_order.setAttribute("data-id", element.id); // Adiciona um atributo data-id para identificação
 
         // Define o conteúdo HTML do <li>
@@ -434,8 +435,9 @@ if (
       "Olá vim pelo site do Divino Sabor da Alice, e gostaria de fazer o pedido abaixo:\n";
 
     finalCart.forEach((produto) => {
-      mensagem += `${produto.nameProduct} - Quantidade: ${produto.qtdKG}KG\n
-      Link da imagem: ${produto.url}`;
+      mensagem += `\n${produto.nameProduct}\n
+      \n- Quantidade: ${produto.qtdKG}KG\n
+      \n- Link da imagem: ${produto.url}\n`;
     });
     const mensagemCodificada = encodeURIComponent(mensagem);
 
