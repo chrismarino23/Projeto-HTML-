@@ -49,7 +49,8 @@ setTimeout(function () {
 }, 2000);
 
 let textoAtual = "Menu";
-btnHamb.addEventListener("click", () => {
+
+const changeMenuBtn = () => {
   if (textoAtual === "Menu") {
     btnHamb.textContent = "close";
     textoAtual = "close";
@@ -59,6 +60,9 @@ btnHamb.addEventListener("click", () => {
   }
 
   navHamb.style.display = navHamb.style.display === "block" ? "none" : "block";
+};
+btnHamb.addEventListener("click", () => {
+  changeMenuBtn();
 });
 
 let map;
@@ -93,6 +97,8 @@ document.addEventListener("DOMContentLoaded", function () {
   ) {
     initMap();
   }
+  //verifica se ta vazio pra mostrar BG do carrinho
+  show_cart_BG();
 
   // Verifica se há um hash na URL
   if (window.location.hash) {
@@ -111,8 +117,17 @@ document.addEventListener("DOMContentLoaded", function () {
     window.location.pathname === "/Projeto-HTML-/produtos.html"
   ) {
     const mostraCarrinho = document.getElementById("mostraCarrinho");
+
     mostraCarrinho.onclick = () => {
-      showFinishbtn();
+      show_cart_BG();
+    };
+
+    const mostraCarrinho_disp_maiores = document.getElementById(
+      "mostraCarrinho_disp_maiores"
+    );
+
+    mostraCarrinho_disp_maiores.onclick = () => {
+      show_cart_BG();
     };
     //close cart's modal at products screen.
     btn_fechar_modal_cart_x.addEventListener("click", () => {
@@ -190,6 +205,7 @@ function alterarQuantidade(delta) {
 }
 
 var carrinho = [];
+var products_order = [];
 
 class ConstructCar {
   constructor(url, id, nameProduct, qtdKG, pricepKG) {
@@ -319,7 +335,7 @@ btnAddtoCart.forEach((btnClicked) => {
           localStorage.setItem("carrinho", JSON.stringify(carrinho));
         }
         verifyCartWarn();
-        showFinishbtn();
+        show_cart_BG();
       };
     }
 
@@ -354,8 +370,87 @@ if (
     let json_carrinho = JSON.stringify(carrinho);
 
     localStorage.setItem("carrinho", json_carrinho);
+
+    document.getElementById("catalog").style.display = "none";
+    document.getElementById("conferirPedido").style.display = "block";
+
+    $("#offcanvasRight").offcanvas("hide");
+    changeMenuBtn();
+
+    check_Cart = document.getElementById("check_Cart");
+
+    products_order = copiarEVerificar(carrinho, products_order);
+
+    console.log(products_order);
+
+    for (let i = 0; i < products_order.length; i++) {
+      const element = products_order[i];
+
+      // Verifica se o produto já está no DOM
+      const productInOrder = document.querySelector(
+        `#check_Cart li[data-id="${element.id}"]`
+      );
+
+      if (!productInOrder) {
+        // Cria um novo elemento <li>
+        const li_check_order = document.createElement("li");
+        li_check_order.classList.add("li_cart_list");
+        li_check_order.setAttribute("data-id", element.id); // Adiciona um atributo data-id para identificação
+
+        // Define o conteúdo HTML do <li>
+        li_check_order.innerHTML = `
+          <div class="div_img_cart">
+            <img class="img_product" src="${element.url}" alt="Produto ${element.id}">
+          </div>
+          <div class="div_body">
+            <h5 class="product_name">${element.nameProduct}</h5>
+            <p id="id_p_check_order">${element.id}</p>
+            <span class="span_product">
+              Preço:
+              <strong>
+                <p class="p_cart_price">R$ ${element.finalPrice}</p>
+              </strong>
+            </span>
+            <div class="div_cart_footer">
+              <div class="qtd_input">
+                <label class="lbl_input" for="input_produto">Quantidade</label>
+                <div class="div_footer_product">
+                  <input class="input_produto input_produto_cart" type="text" value="${element.qtdKG}" name="input_produto" disabled>
+                </div>
+                <small class="message">KG (s)</small>
+              </div>
+            </div>
+          </div>`;
+
+        // Adiciona o <li> ao elemento pai
+        check_Cart.appendChild(li_check_order);
+      }
+    }
+  };
+  document.getElementById("btn_sent_order").onclick = () => {
+    var finalCart = JSON.parse(localStorage.getItem("carrinho"));
+
+    let mensagem =
+      "Olá, vim pelo site do Divino Sabor da Alice, e gostaria de fazer o pedido abaixo:\n";
+
+    finalCart.forEach((produto) => {
+      mensagem += `${produto.nameProduct} - Quantidade: ${produto.qtdKG}KG\n
+      Link da imagem: ${produto.url}`;
+    });
+    const mensagemCodificada = encodeURIComponent(mensagem);
+
+    const numeroTelefone = "5511961944937";
+
+    var urlWhatsApp = `https://api.whatsapp.com/send?1=pt_BR&phone=${numeroTelefone}&${mensagemCodificada}`;
+
+    window.open(urlWhatsApp, "_blank");
   };
 }
+
+document.getElementById("btn_back_check_order").onclick = () => {
+  document.getElementById("catalog").style.display = "";
+  document.getElementById("conferirPedido").style.display = "none";
+};
 
 function atualizarPreco(produto, qtd, pCartPrice) {
   const trataPrice = produto.pricepKG;
@@ -428,15 +523,15 @@ function generateProductId() {
   return `${timestampPart}-${randomPart}`;
 }
 
-const showFinishbtn = () => {
+const show_cart_BG = () => {
   const offCanvasFooter = document.getElementById("offcanvas_footer");
 
-  if (carrinho == false) {
-    ToastWarning("O carrinho está vazio!", 2000);
-    $("#offcanvasRight").offcanvas("hide");
-    offCanvasFooter.style.display = "none";
-  } else {
+  if (carrinho != 0) {
+    document.getElementById("emptyCart").style.display = "none";
     offCanvasFooter.style.display = "block";
+  } else {
+    document.getElementById("emptyCart").style.display = "block";
+    offCanvasFooter.style.display = "none";
   }
 };
 
@@ -451,12 +546,28 @@ if (
     newcartItem = [];
     json_carrinho = JSON.stringify(carrinho);
     localStorage.setItem("carrinho", json_carrinho);
+    show_cart_BG();
 
     let divToRemove = document.querySelectorAll(".li_cart_list");
     divToRemove.forEach((element) => {
       element.remove();
     });
-    showFinishbtn();
+    // showFinishbtn();
     verifyCartWarn();
   };
+
+  function copiarEVerificar(carrinho, products_order) {
+    function idExiste(id) {
+      return products_order.some((produto) => produto.id === id);
+    }
+
+    // Adicionar produtos do carrinho ao products_order se o id não existir
+    carrinho.forEach((produto) => {
+      if (!idExiste(produto.id)) {
+        products_order.push(produto);
+      }
+    });
+
+    return products_order;
+  }
 }

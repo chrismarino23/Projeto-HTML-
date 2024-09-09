@@ -57,7 +57,7 @@
                 <nav id="navHamb" class="menuNav">
                     <ul>
                         <li>
-                            <a style="position: relative" id="mostraCarrinho" type="button" data-bs-toggle="offcanvas"
+                            <a id="mostraCarrinho" style="position: relative" type="button" data-bs-toggle="offcanvas"
                                 data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                                 <span id="icon_menus" class="material-symbols-outlined">
                                     shopping_cart
@@ -127,8 +127,9 @@
                             </ul>
                         </li>
                         <li style="list-style: none;">
-                            <button id="mostraCarrinho" class="btn" type="button" data-bs-toggle="offcanvas"
-                                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                            <button id="mostraCarrinho_disp_maiores" class="btn" type="button"
+                                data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                aria-controls="offcanvasRight">
                                 <span id="cartIcon" class="material-symbols-outlined">
                                     shopping_cart
                                 </span>
@@ -149,45 +150,9 @@
                 <button></button>
             </a>
         </div>
-        <!-- 
-        <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-            <symbol id="check-circle-fill" viewBox="0 0 16 16">
-                <path
-                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-            </symbol>
-            <symbol id="info-fill" viewBox="0 0 16 16">
-                <path
-                    d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
-            </symbol>
-            <symbol id="exclamation-triangle-fill" viewBox="0 0 16 16">
-                <path
-                    d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-            </symbol>
-        </svg> -->
 
-        <!-- <div id="show_alert_success">
-            <div class="alert alert-success d-flex align-items-center" role="alert">
-                <svg id="success_alert_icon" class="bi flex-shrink-0 me-2" role="img" aria-label="Success:">
-                    <use xlink:href="#check-circle-fill" />
-                </svg>
-                <div class="align_itens_center">
-                    Produto adicionado ao Carrinho!
-                </div>
-            </div>
-        </div> -->
-        <!-- Botão carrinho -->
 
-        <button id="mostraCarrinho" class="btn btn-outline-success" type="button" data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-            <span id="cartIcon" class="material-symbols-outlined">
-                shopping_cart
-            </span>
-            <span id="warning_cart" class="material-symbols-outlined">
-                priority_high
-            </span>
-        </button>
-
-        <!-- MODAL CARRINHO -->
+        <!-- Cart Modal -->
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
             <div class="offcanvas-header">
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -198,6 +163,15 @@
             </div>
             <div class="offcanvas-body removePadding">
                 <div class="container mt-3 removePadding">
+                    <div id="emptyCart">
+                        <div id="div_imgEmptyCart">
+                        </div>
+                        <div>
+
+                            <h5>Seu carrinho está vazio</h5>
+                            <p>Adicione itens</p>
+                        </div>
+                    </div>
                     <ul class="list-group" id="cart">
                         <div id="div_carrinho">
                             <ol class="cart_list">
@@ -215,459 +189,484 @@
 
         </div>
 
-        <!-- Desciption -->
-        <div class="accordion" id="accordionExample">
-            <div class="card">
-                <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                        <button id="sect_ta_card_title_produts" class="btn btn-link" type="button"
-                            data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                            aria-controls="collapseOne">
-                            <!-- Title -->
-                            <div style="margin-top: 2rem !important;">
-                                <section class="sect-tag-card-title">
-                                    <span id="icon_menus" class="material-symbols-outlined hov-cursor-point">
-                                        menu_book
-                                    </span>
-                                    <h1>Cardápio</h1><span id="arrow_drop_down"
-                                        class="material-symbols-outlined hov-cursor-point">
-                                        arrow_drop_down</span>
+        <div id="catalog">
+            <!-- Desciption -->
+            <div class="accordion" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button id="sect_ta_card_title_produts" class="btn btn-link" type="button"
+                                data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                                aria-controls="collapseOne">
+                                <!-- Title -->
+                                <div style="margin-top: 2rem !important;">
+                                    <section class="sect-tag-card-title">
+                                        <span id="icon_menus" class="material-symbols-outlined hov-cursor-point">
+                                            menu_book
+                                        </span>
+                                        <h1>Cardápio</h1><span id="arrow_drop_down"
+                                            class="material-symbols-outlined hov-cursor-point">
+                                            arrow_drop_down</span>
+                                    </section>
+                                </div>
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                        data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="div-desciption-gallery">
+                                <section>
+                                    <h5>Um cardápio delicioso e variado com todas as opções, tamanhos e sabores!</h5>
+                                    <h6><strong>Saboreie bolos inigualáveis, doces tentadores, pães fresquinhos e tortas
+                                            divinas, em uma explosão de sabores que vai te conquistar.</strong></h6>
+                                    <h6>
+                                        <ul>
+                                            <li><strong>Encomendas sob medida:</strong> Crie o bolo ou a torta dos seus
+                                                sonhos, com a sua cara e o seu sabor favorito.</li>
+                                            <li><strong>Variedade para todos os gostos:</strong> Do clássico brigadeiro
+                                                ao
+                                                inovador mousse de maracujá, temos opções para todos os paladares.</li>
+                                            <li><strong>Atendimento personalizado:</strong> Nossa equipe atenciosa está
+                                                pronta para te auxiliar na escolha perfeita para cada ocasião.</li>
+                                            <li><strong>Preços que cabem no bolso:</strong> Prazer sem culpa!</li>
+                                        </ul>
+                                    </h6>
                                 </section>
                             </div>
-                        </button>
-                    </h5>
-                </div>
-
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                    data-parent="#accordionExample">
-                    <div class="card-body">
-                        <div class="div-desciption-gallery">
-                            <section>
-                                <h5>Um cardápio delicioso e variado com todas as opções, tamanhos e sabores!</h5>
-                                <h6><strong>Saboreie bolos inigualáveis, doces tentadores, pães fresquinhos e tortas
-                                        divinas, em uma explosão de sabores que vai te conquistar.</strong></h6>
-                                <h6>
-                                    <ul>
-                                        <li><strong>Encomendas sob medida:</strong> Crie o bolo ou a torta dos seus
-                                            sonhos, com a sua cara e o seu sabor favorito.</li>
-                                        <li><strong>Variedade para todos os gostos:</strong> Do clássico brigadeiro ao
-                                            inovador mousse de maracujá, temos opções para todos os paladares.</li>
-                                        <li><strong>Atendimento personalizado:</strong> Nossa equipe atenciosa está
-                                            pronta para te auxiliar na escolha perfeita para cada ocasião.</li>
-                                        <li><strong>Preços que cabem no bolso:</strong> Prazer sem culpa!</li>
-                                    </ul>
-                                </h6>
-                            </section>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Alert -->
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <strong>Lembre-se!</strong> Pedidos somente via WhatsApp no momento, combinado?!
-            <i class="fa-regular fa-face-smile-wink"></i>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
+            <!-- Alert -->
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Lembre-se!</strong> Pedidos somente via WhatsApp no momento, combinado?!
+                <i class="fa-regular fa-face-smile-wink"></i>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
 
 
-        <!-- Modal adc ao carrinho -->
-
-        <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="cartModalLabel">Adicionar ao Carrinho</h5>
-                        <span id="shopping_cart" class="material-symbols-outlined">
-                            shopping_cart
-                        </span>
-                        <button id="btn_fechar_modal_cart_x" type="button" class="close" data-dismiss="modal"
-                            aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div id="div_modal_body_cart" class="modal-body">
-                        <span id="idModalProduct" style="display: block;"></span>
-                        <img id="imgSelecionada" src="" alt="Imagem Selecionada">
-                        <p id="produtoSelecionado"></p>
-                        <div style="display: block;">
-                            <div class="div_bottom_kg">
-                                <p>Quantidade em KG: </p>
-                                <div class="input-group" style="width: auto;">
-                                    <div class="input-group-prepend">
-                                        <button class="btn btn-outline-secondary btn_add_remove_cart" type="button"
-                                            onclick="alterarQuantidade(-1)">-</button>
-                                    </div>
-                                    <input type="text" id="quantidade" class="form-control text-center" value="1"
-                                        readonly style="max-width: 3rem;">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-outline-secondary btn_add_remove_cart" type="button"
-                                            onclick="alterarQuantidade(1)">+</button>
+            <!-- Modal adc ao carrinho -->
+            <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="cartModalLabel">Adicionar ao Carrinho</h5>
+                            <span id="shopping_cart" class="material-symbols-outlined">
+                                shopping_cart
+                            </span>
+                            <button id="btn_fechar_modal_cart_x" type="button" class="close" data-dismiss="modal"
+                                aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div id="div_modal_body_cart" class="modal-body">
+                            <span id="idModalProduct" style="display: block;"></span>
+                            <img id="imgSelecionada" src="" alt="Imagem Selecionada">
+                            <p id="produtoSelecionado"></p>
+                            <div style="display: block;">
+                                <div class="div_bottom_kg">
+                                    <p>Quantidade em KG: </p>
+                                    <div class="input-group" style="width: auto;">
+                                        <div class="input-group-prepend">
+                                            <button class="btn btn-outline-secondary btn_add_remove_cart" type="button"
+                                                onclick="alterarQuantidade(-1)">-</button>
+                                        </div>
+                                        <input type="text" id="quantidade" class="form-control text-center" value="1"
+                                            readonly style="max-width: 3rem;">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-outline-secondary btn_add_remove_cart" type="button"
+                                                onclick="alterarQuantidade(1)">+</button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div>
                                 <div>
-                                    <span>Valor Total: R$ </span>
-                                    <span id="valuePrice"></span>
-                                    <span id="newPrice"></span>
+                                    <div>
+                                        <span>Valor Total: R$ </span>
+                                        <span id="valuePrice"></span>
+                                        <span id="newPrice"></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button id="btn_fechar_modal_cart" type="button" class="btn btn-outline-danger"
-                            data-dismiss="modal">Fechar</button>
-                        <button id="addToCart" type="button" class="btn btn-primary btn_Produto">Adicionar ao
-                            Carrinho</button>
+                        <div class="modal-footer">
+                            <button id="btn_fechar_modal_cart" type="button" class="btn btn-outline-danger"
+                                data-dismiss="modal">Fechar</button>
+                            <button id="addToCart" type="button" class="btn btn-primary btn_Produto">Adicionar ao
+                                Carrinho</button>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Main Section -->
+            <main>
+
+
+
+                <!-- Bolos -->
+                <div id="bolos-prod">
+                    <section id="sect-title-cardapio" class="sect-tag-card-title aba-subtitle">
+                        <span class="material-symbols-outlined aba-subtitle">
+                            cake
+                        </span>
+                    </section>
+
+                    <section class="sect-flex-products">
+                        <div class="card-products">
+                            <span id="spanID">#B-001</span>
+                            <a href="./img/Gallery_Pic/Bolos/Heineken.png" target="_blank">
+                                <img id="urlImgProduct" src="./img/Gallery_Pic/Bolos/Heineken_transpa.png">
+                            </a>
+                            <p class="p_product_name">
+                                <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
+                                    onclick="abrirModal('B-001','./img/Gallery_Pic/Bolos/Heineken_transpa.png','Ninho c/ Morango', '50,00')">
+                                    Ninho c/ Morango
+                                </button>
+                            </p>
+                        </div>
+                        <div class="card-products">
+                            <span id="spanID">#B-002</span>
+                            <a href="./img/Gallery_Pic/Bolos/cocolate_c_morango_full.png" target="_blank">
+                                <img id="urlImgProduct" src="./img/Gallery_Pic/Bolos/Chocolate_c_morango.png">
+                            </a>
+                            <p class="p_product_name">
+                                <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
+                                    onclick="abrirModal('B-002','./img/Gallery_Pic/Bolos/Chocolate_c_morango.png','Chocolate com Morango', '60,00')">
+                                    Chocolate com Morango
+                                </button>
+                            </p>
+                        </div>
+                        <div class="card-products">
+                            <span id="spanID">#B-003</span>
+                            <a href="./img/Gallery_Pic/Bolos/choc_escorrido_c_morango.png" target="_blank">
+                                <img id="urlImgProduct"
+                                    src="./img/Gallery_Pic/Bolos/choc_escorrido_c_morango_transpa.png">
+                            </a>
+                            <p class="p_product_name">
+                                <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
+                                    style="font-size: x-small;"
+                                    onclick="abrirModal('B-003','./img/Gallery_Pic/Bolos/choc_escorrido_c_morango_transpa.png','Chocolate Branco c/ Morango', '60,00')">
+                                    Chocolate Branco c/ Morango
+                                </button>
+                            </p>
+                        </div>
+                        <div class="card-products">
+                            <span id="spanID">#B-004</span>
+                            <a href="./img/Gallery_Pic/Bolos/kit-kat_full.png" target="_blank">
+                                <img id="urlImgProduct" src="./img/Gallery_Pic/Bolos/kit-kat.png">
+                            </a>
+                            <p class="p_product_name">
+                                <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
+                                    style="font-size: x-small;"
+                                    onclick="abrirModal('B-004','./img/Gallery_Pic/Bolos/kit-kat.png',' Kit-Kat', '90,00')">
+                                    Kit-Kat
+                                </button>
+                            </p>
+                        </div>
+                        <div class="card-products">
+                            <span id="spanID">#B-005</span>
+                            <a href="./img/Gallery_Pic/Bolos/ninho-c-mor-choc-bran-full.png" target="_blank">
+                                <img src="./img/Gallery_Pic/Bolos/ninho-c-mor-choc-bran-transp.png">
+                            </a>
+                            <p class="p_product_name">
+                                <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
+                                    style="font-size: x-small;"
+                                    onclick="abrirModal('B-005','./img/Gallery_Pic/Bolos/ninho-c-mor-choc-bran-transp.png',' Ninho c/ Choc Branco', '80,00')">
+                                    Ninho c/ Choc Branco
+                                </button>
+                            </p>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Doces -->
+                <div id="doces-prod">
+                    <section id="sect-title-cardapio" class="sect-tag-card-title aba-subtitle">
+                        <span class="material-symbols-outlined aba-subtitle">
+                            cookie
+                        </span>
+                    </section>
+
+                    <section class="sect-flex-products">
+                        <div class="card-products">
+                            <span id="spanID">#D-001</span>
+                            <a href="./img/card/Doces/teste-sobre.png" target="_blank">
+                                <img id="urlImgProduct" src="./img/card/Doces/teste-sobre.png">
+                            </a>
+                            <p class="p_product_name">
+                                <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
+                                    onclick="abrirModal('D-001','./img/card/Doces/teste-sobre.png','Travessa de Morango', '15,00')">
+                                    Travessa de Morango
+                                </button>
+                            </p>
+                        </div>
+                        <div class="card-products">
+                            <span id="spanID">#D-002</span>
+                            <a href="./img/Gallery_Pic/Doces/doce_de_leite_full.png" target="_blank">
+                                <img id="urlImgProduct" src="./img/Gallery_Pic/Doces/doce_de_leite_transp.png">
+                            </a>
+                            <p class="p_product_name">
+                                <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
+                                    onclick="abrirModal('D-002','./img/Gallery_Pic/Doces/doce_de_leite_transp.png','Banana c/ Canela', '15,00')">
+                                    Banana c/ Canela
+                                </button>
+                            </p>
+                        </div>
+                        <div class="card-products">
+                            <span id="spanID">#D-003</span>
+                            <a href="./img/Gallery_Pic/Doces/Brigadeiro.JPG" target="_blank">
+                                <img id="urlImgProduct" src="./img/Gallery_Pic/Doces/Brigadeiro.PNG">
+                            </a>
+                            <p class="p_product_name">
+                                <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
+                                    onclick="abrirModal('D-003','./img/Gallery_Pic/Doces/Brigadeiro.PNG','Cx c/ Beijinho + Brigadeiro', '30,00')">
+                                    Cx c/ Beijinho + Brigadeiro
+                                </button>
+                            </p>
+                        </div>
+                        <div class="card-products">
+                            <span id="spanID">#D-004</span>
+                            <a href="./img/Gallery_Pic/Doces/Donuts.JPG" target="_blank">
+                                <img id="urlImgProduct" src="./img/Gallery_Pic/Doces/donuts.png">
+                            </a>
+                            <p class="p_product_name">
+                                <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
+                                    onclick="abrirModal('D-004','./img/Gallery_Pic/Doces/donuts.png','Donuts', '10,00')">
+                                    Donuts
+                                </button>
+                            </p>
+                        </div>
+                        <div class="card-products">
+                            <span id="spanID">#D-005</span>
+                            <a href="./img/Gallery_Pic/Doces/bem_casado_embrulhado.png" target="_blank">
+                                <img id="urlImgProduct" class="quadrado"
+                                    src="./img/Gallery_Pic/Doces/bem_casado_embrulhado.png">
+                            </a>
+                            <p class="p_product_name">
+                                <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
+                                    onclick="abrirModal('D-005','./img/Gallery_Pic/Doces/bem_casado_embrulhado.png','Bem Casado (Casamento)', '30,00')">
+                                    Bem Casado (Casamento)
+                                </button>
+                            </p>
+                        </div>
+                        <div class="card-products">
+                            <span id="spanID">#D-006</span>
+                            <a href="./img/Gallery_Pic/Doces/Outros/bolinhos_formato_pizza.png" target="_blank">
+                                <img id="urlImgProduct" class="quadrado"
+                                    src="./img/Gallery_Pic/Doces/Outros/bolinhos_formato_pizza.png">
+                            </a>
+                            <p class="p_product_name">
+                                <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
+                                    onclick="abrirModal('D-006','./img/Gallery_Pic/Doces/Outros/bolinhos_formato_pizza.png','Fatia Trufada - Sabores', '30,00')">
+                                    Fatia Trufada - Sabores
+                                </button>
+                            </p>
+                        </div>
+                        <div class="card-products">
+                            <span id="spanID">#D-007</span>
+                            <a href="./img/Gallery_Pic/Doces/Bicho de pé.JPG" target="_blank">
+                                <img id="urlImgProduct" class="quadrado" src="./img/Gallery_Pic/Doces/Bicho de pé.JPG">
+                            </a>
+                            <p class="p_product_name">
+                                <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
+                                    onclick="abrirModal('D-007','./img/Gallery_Pic/Doces/Outros/bolinhos_formato_pizza.png','Bicho de Pé', '30,00')">
+                                    Bicho de Pé
+                                </button>
+                            </p>
+                        </div>
+                        <div class="card-products-gallery ga-ma-pa">
+                            <a href="./img/Gallery_Pic/Doces//meio_a_meio_beijnhoebrig.png" target="_blank">
+                                <img src="./img/Gallery_Pic/Doces/meio_a_meio_beijnhoebrig.png">
+                            </a>
+                            <p>Docinho de Morango</p>
+                        </div>
+                        <div class="card-products-gallery ga-ma-pa">
+                            <a href="./img/Gallery_Pic/Doces/brigadeiros.png" target="_blank">
+                                <img src="./img/Gallery_Pic/Doces/brigadeiros.png">
+                            </a>
+                            <p>Brigadeiros</p>
+                        </div>
+                        <div class="card-products-gallery ga-ma-pa">
+                            <a href="./img/Gallery_Pic/Doces/combo_cafe.png" target="_blank">
+                                <img src="./img/Gallery_Pic/Doces/combo_cafe.png">
+                            </a>
+                            <p>Café da tarde em família</p>
+                        </div>
+                        <div class="card-products-gallery ga-ma-pa">
+                            <a href="./img/Gallery_Pic/Doces/docinhos.png" target="_blank">
+                                <img src="./img/Gallery_Pic/Doces/docinhos.png">
+                            </a>
+                            <p>Docinhos</p>
+                        </div>
+                        <div class="card-products-gallery ga-ma-pa">
+                            <a href="./img/Gallery_Pic/Doces/doce_no_pote.png" target="_blank">
+                                <img src="./img/Gallery_Pic/Doces/doce_no_pote.png">
+                            </a>
+                            <p>Bolinho da felicidade</p>
+                        </div>
+                        <div class="card-products-gallery ga-ma-pa">
+                            <a href="./img/Gallery_Pic/Doces/doce_no_pote_02.png" target="_blank">
+                                <img src="./img/Gallery_Pic/Doces/doce_no_pote_02.png">
+                            </a>
+                            <p>Bolinho da felicidade 2</p>
+                        </div>
+                        <div class="card-products-gallery ga-ma-pa">
+                            <a href="./img/Gallery_Pic/Doces//meio_a_meio_beijnhoebrig.png" target="_blank">
+                                <img src="./img/Gallery_Pic/Doces/meio_a_meio_beijnhoebrig.png">
+                            </a>
+                            <p>Meio a Meio - Beij + Brig</p>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Paes -->
+                <div id="paes-prod">
+                    <section id="sect-title-cardapio" class="sect-tag-card-title aba-subtitle">
+                        <span class="material-symbols-outlined aba-subtitle">
+                            bakery_dining
+                        </span>
+                    </section>
+                    <section class="sect-flex-products">
+                        <div class="card-products">
+                            <span id="spanID">#P-001</span>
+                            <a href="./img/Gallery_Pic/Paes/pao1.png" target="_blank">
+                                <img id="urlImgProduct" src="./img/Gallery_Pic/Paes/pao1.png">
+                            </a>
+                            <p class="p_product_name">
+                                <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
+                                    onclick="abrirModal('P-001','./img/Gallery_Pic/Paes/pao1.png','Pão 1', '15,00')">
+                                    Pão 1
+                                </button>
+                            </p>
+                        </div>
+                        <div class="card-products">
+                            <span id="spanID">#P-002</span>
+                            <a href="./img/Gallery_Pic/Paes/pao2.png" target="_blank">
+                                <img id="urlImgProduct" src="./img/Gallery_Pic/Paes/pao2.png">
+                            </a>
+                            <p class="p_product_name">
+                                <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
+                                    onclick="abrirModal('P-002','./img/Gallery_Pic/Paes/pao2.png','Pão 2', '15,00')">
+                                    Pão 2
+                                </button>
+                            </p>
+                        </div>
+                        <div class="card-products">
+                            <span id="spanID">#P-003</span>
+                            <a href="./img/Gallery_Pic/Paes/pao3.png" target="_blank">
+                                <img id="urlImgProduct" src="./img/Gallery_Pic/Paes/pao3.png">
+                            </a>
+                            <p class="p_product_name">
+                                <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
+                                    onclick="abrirModal('P-003','./img/Gallery_Pic/Paes/pao3.png','Pão 3', '15,00')">
+                                    Pão 3
+                                </button>
+                            </p>
+                        </div>
+                        <div class="card-products">
+                            <span id="spanID">#P-004</span>
+                            <a href="./img/Gallery_Pic/Paes/pao_doce_full.png" target="_blank">
+                                <img id="urlImgProduct" src="./img/Gallery_Pic/Paes/pao_de_coco.PNG">
+                            </a>
+                            <p class="p_product_name">
+                                <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
+                                    onclick="abrirModal('P-004','./img/Gallery_Pic/Paes/pao_de_coco.PNG','Pão 4', '15,00')">
+                                    Pão 4
+                                </button>
+                            </p>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Tortas -->
+                <div id="tortas-prod">
+                    <section id="sect-title-cardapio" class="sect-tag-card-title aba-subtitle">
+                        <span class="material-symbols-outlined aba-subtitle">
+                            breakfast_dining
+                        </span>
+                    </section>
+                    <section class="sect-flex-products">
+
+                        <div class="card-products">
+                            <span id="spanID">#T-001</span>
+                            <a href="./img/Gallery_Pic/Tortas/Photoroom_20240519_201540.png" target="_blank">
+                                <img id="urlImgProduct" src="./img/Gallery_Pic/Tortas/Photoroom_20240519_201540.png">
+                            </a>
+                            <p class="p_product_name">
+                                <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
+                                    onclick="abrirModal('T-001','./img/Gallery_Pic/Tortas/Photoroom_20240519_201540.png',' Torta 1', '15,00')">
+                                    Torta 1
+                                </button>
+                            </p>
+                        </div>
+                        <div class="card-products">
+                            <span id="spanID">#T-002</span>
+                            <a href="./img/Gallery_Pic/Tortas/Photoroom_20240526_184845.png" target="_blank">
+                                <img id="urlImgProduct" src="./img/Gallery_Pic/Tortas/Photoroom_20240526_184845.png">
+
+                            </a>
+                            <p class="p_product_name">
+                                <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
+                                    onclick="abrirModal('T-002','./img/Gallery_Pic/Tortas/Photoroom_20240526_184845.png',' Torta 2', '15,00')">
+                                    Torta 2
+                                </button>
+                            </p>
+                        </div>
+                        <div class="card-products">
+                            <span id="spanID">#T-003</span>
+                            <a href="./img/Gallery_Pic/Tortas/Photoroom_20240526_185040.png" target="_blank">
+                                <img id="urlImgProduct" src="./img/Gallery_Pic/Tortas/Photoroom_20240526_185040.png">
+                            </a>
+                            <p class="p_product_name">
+                                <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
+                                    onclick="abrirModal('T-003','./img/Gallery_Pic/Tortas/Photoroom_20240526_185040.png',' Torta 3', '15,00')">
+                                    Torta 3
+                                </button>
+                            </p>
+                        </div>
+                        <div class="card-products">
+                            <span id="spanID">#T-004</span>
+                            <a href="./img/Gallery_Pic/Tortas/torta_de_morango.png" target="_blank">
+                                <img id="urlImgProduct" class="quadrado"
+                                    style="padding: 30px; height: fit-content; top: -5px;"
+                                    src="./img/Gallery_Pic/Tortas/torta_de_morango.png">
+                            </a>
+                            <p class="p_product_name">
+                                <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
+                                    onclick="abrirModal('T-004','./img/Gallery_Pic/Tortas/torta_de_morango.png','  Torta de Morango', '15,00')">
+                                    Torta de Morango
+                                </button>
+                            </p>
+                        </div>
+                    </section>
+
+                </div>
+            </main>
         </div>
-
-        <!-- Main Section -->
-        <main>
-            <!-- Bolos -->
-            <div id="bolos-prod">
-                <section id="sect-title-cardapio" class="sect-tag-card-title aba-subtitle">
-                    <span class="material-symbols-outlined aba-subtitle">
-                        cake
-                    </span>
-                </section>
-
-                <section class="sect-flex-products">
-                    <div class="card-products">
-                        <span id="spanID">#B-001</span>
-                        <a href="./img/Gallery_Pic/Bolos/Heineken.png" target="_blank">
-                            <img id="urlImgProduct" src="./img/Gallery_Pic/Bolos/Heineken_transpa.png">
-                        </a>
-                        <p class="p_product_name">
-                            <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
-                                onclick="abrirModal('B-001','./img/Gallery_Pic/Bolos/Heineken_transpa.png','Ninho c/ Morango', '50,00')">
-                                Ninho c/ Morango
-                            </button>
-                        </p>
-                    </div>
-                    <div class="card-products">
-                        <span id="spanID">#B-002</span>
-                        <a href="./img/Gallery_Pic/Bolos/cocolate_c_morango_full.png" target="_blank">
-                            <img id="urlImgProduct" src="./img/Gallery_Pic/Bolos/Chocolate_c_morango.png">
-                        </a>
-                        <p class="p_product_name">
-                            <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
-                                onclick="abrirModal('B-002','./img/Gallery_Pic/Bolos/Chocolate_c_morango.png','Chocolate com Morango', '60,00')">
-                                Chocolate com Morango
-                            </button>
-                        </p>
-                    </div>
-                    <div class="card-products">
-                        <span id="spanID">#B-003</span>
-                        <a href="./img/Gallery_Pic/Bolos/choc_escorrido_c_morango.png" target="_blank">
-                            <img id="urlImgProduct" src="./img/Gallery_Pic/Bolos/choc_escorrido_c_morango_transpa.png">
-                        </a>
-                        <p class="p_product_name">
-                            <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
-                                style="font-size: x-small;"
-                                onclick="abrirModal('B-003','./img/Gallery_Pic/Bolos/choc_escorrido_c_morango_transpa.png','Chocolate Branco c/ Morango', '60,00')">
-                                Chocolate Branco c/ Morango
-                            </button>
-                        </p>
-                    </div>
-                    <div class="card-products">
-                        <span id="spanID">#B-004</span>
-                        <a href="./img/Gallery_Pic/Bolos/kit-kat_full.png" target="_blank">
-                            <img id="urlImgProduct" src="./img/Gallery_Pic/Bolos/kit-kat.png">
-                        </a>
-                        <p class="p_product_name">
-                            <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
-                                style="font-size: x-small;"
-                                onclick="abrirModal('B-004','./img/Gallery_Pic/Bolos/kit-kat.png',' Kit-Kat', '90,00')">
-                                Kit-Kat
-                            </button>
-                        </p>
-                    </div>
-                    <div class="card-products">
-                        <span id="spanID">#B-005</span>
-                        <a href="./img/Gallery_Pic/Bolos/ninho-c-mor-choc-bran-full.png" target="_blank">
-                            <img src="./img/Gallery_Pic/Bolos/ninho-c-mor-choc-bran-transp.png">
-                        </a>
-                        <p class="p_product_name">
-                            <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
-                                style="font-size: x-small;"
-                                onclick="abrirModal('B-005','./img/Gallery_Pic/Bolos/ninho-c-mor-choc-bran-transp.png',' Ninho c/ Choc Branco', '80,00')">
-                                Ninho c/ Choc Branco
-                            </button>
-                        </p>
-                    </div>
-                </section>
+        <div id="conferirPedido">
+            <section id="sect-title-cardapio" class="sect-tag-card-title aba-subtitle">
+                <span class="material-symbols-outlined aba-subtitle">
+                    receipt_long
+                </span>
+            </section>
+            <article style="margin-top: 3rem;" class="article-bottom-banner">
+                <h1>Finalize seu pedido</h1>
+            </article>
+            <section id="sect_check_cart">
+                <div id="check_Cart">
+                    <p id="id_p_check_order"></p>
+                </div>
+            </section>
+            <div id="footer_check_order">
+                <button id="btn_back_check_order" type="button" class="btn btn-outline-danger">Voltar</button>
+                <button id="btn_sent_order" type="button" class="btn btn-outline-success">Finalizar</button>
             </div>
-
-            <!-- Doces -->
-            <div id="doces-prod">
-                <section id="sect-title-cardapio" class="sect-tag-card-title aba-subtitle">
-                    <span class="material-symbols-outlined aba-subtitle">
-                        cookie
-                    </span>
-                </section>
-
-                <section class="sect-flex-products">
-                    <div class="card-products">
-                        <span id="spanID">#D-001</span>
-                        <a href="./img/card/Doces/teste-sobre.png" target="_blank">
-                            <img id="urlImgProduct" src="./img/card/Doces/teste-sobre.png">
-                        </a>
-                        <p class="p_product_name">
-                            <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
-                                onclick="abrirModal('D-001','./img/card/Doces/teste-sobre.png','Travessa de Morango', '15,00')">
-                                Travessa de Morango
-                            </button>
-                        </p>
-                    </div>
-                    <div class="card-products">
-                        <span id="spanID">#D-002</span>
-                        <a href="./img/Gallery_Pic/Doces/doce_de_leite_full.png" target="_blank">
-                            <img id="urlImgProduct" src="./img/Gallery_Pic/Doces/doce_de_leite_transp.png">
-                        </a>
-                        <p class="p_product_name">
-                            <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
-                                onclick="abrirModal('D-002','./img/Gallery_Pic/Doces/doce_de_leite_transp.png','Banana c/ Canela', '15,00')">
-                                Banana c/ Canela
-                            </button>
-                        </p>
-                    </div>
-                    <div class="card-products">
-                        <span id="spanID">#D-003</span>
-                        <a href="./img/Gallery_Pic/Doces/Brigadeiro.JPG" target="_blank">
-                            <img id="urlImgProduct" src="./img/Gallery_Pic/Doces/Brigadeiro.PNG">
-                        </a>
-                        <p class="p_product_name">
-                            <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
-                                onclick="abrirModal('D-003','./img/Gallery_Pic/Doces/Brigadeiro.PNG','Cx c/ Beijinho + Brigadeiro', '30,00')">
-                                Cx c/ Beijinho + Brigadeiro
-                            </button>
-                        </p>
-                    </div>
-                    <div class="card-products">
-                        <span id="spanID">#D-004</span>
-                        <a href="./img/Gallery_Pic/Doces/Donuts.JPG" target="_blank">
-                            <img id="urlImgProduct" src="./img/Gallery_Pic/Doces/donuts.png">
-                        </a>
-                        <p class="p_product_name">
-                            <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
-                                onclick="abrirModal('D-004','./img/Gallery_Pic/Doces/donuts.png','Donuts', '10,00')">
-                                Donuts
-                            </button>
-                        </p>
-                    </div>
-                    <div class="card-products">
-                        <span id="spanID">#D-005</span>
-                        <a href="./img/Gallery_Pic/Doces/bem_casado_embrulhado.png" target="_blank">
-                            <img id="urlImgProduct" class="quadrado"
-                                src="./img/Gallery_Pic/Doces/bem_casado_embrulhado.png">
-                        </a>
-                        <p class="p_product_name">
-                            <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
-                                onclick="abrirModal('D-005','./img/Gallery_Pic/Doces/bem_casado_embrulhado.png','Bem Casado (Casamento)', '30,00')">
-                                Bem Casado (Casamento)
-                            </button>
-                        </p>
-                    </div>
-                    <div class="card-products">
-                        <span id="spanID">#D-006</span>
-                        <a href="./img/Gallery_Pic/Doces/Outros/bolinhos_formato_pizza.png" target="_blank">
-                            <img id="urlImgProduct" class="quadrado"
-                                src="./img/Gallery_Pic/Doces/Outros/bolinhos_formato_pizza.png">
-                        </a>
-                        <p class="p_product_name">
-                            <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
-                                onclick="abrirModal('D-006','./img/Gallery_Pic/Doces/Outros/bolinhos_formato_pizza.png','Fatia Trufada - Sabores', '30,00')">
-                                Fatia Trufada - Sabores
-                            </button>
-                        </p>
-                    </div>
-                    <div class="card-products">
-                        <span id="spanID">#D-007</span>
-                        <a href="./img/Gallery_Pic/Doces/Bicho de pé.JPG" target="_blank">
-                            <img id="urlImgProduct" class="quadrado" src="./img/Gallery_Pic/Doces/Bicho de pé.JPG">
-                        </a>
-                        <p class="p_product_name">
-                            <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
-                                onclick="abrirModal('D-007','./img/Gallery_Pic/Doces/Outros/bolinhos_formato_pizza.png','Bicho de Pé', '30,00')">
-                                Bicho de Pé
-                            </button>
-                        </p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <a href="./img/Gallery_Pic/Doces//meio_a_meio_beijnhoebrig.png" target="_blank">
-                            <img src="./img/Gallery_Pic/Doces/meio_a_meio_beijnhoebrig.png">
-                        </a>
-                        <p>Docinho de Morango</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <a href="./img/Gallery_Pic/Doces/brigadeiros.png" target="_blank">
-                            <img src="./img/Gallery_Pic/Doces/brigadeiros.png">
-                        </a>
-                        <p>Brigadeiros</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <a href="./img/Gallery_Pic/Doces/combo_cafe.png" target="_blank">
-                            <img src="./img/Gallery_Pic/Doces/combo_cafe.png">
-                        </a>
-                        <p>Café da tarde em família</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <a href="./img/Gallery_Pic/Doces/docinhos.png" target="_blank">
-                            <img src="./img/Gallery_Pic/Doces/docinhos.png">
-                        </a>
-                        <p>Docinhos</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <a href="./img/Gallery_Pic/Doces/doce_no_pote.png" target="_blank">
-                            <img src="./img/Gallery_Pic/Doces/doce_no_pote.png">
-                        </a>
-                        <p>Bolinho da felicidade</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <a href="./img/Gallery_Pic/Doces/doce_no_pote_02.png" target="_blank">
-                            <img src="./img/Gallery_Pic/Doces/doce_no_pote_02.png">
-                        </a>
-                        <p>Bolinho da felicidade 2</p>
-                    </div>
-                    <div class="card-products-gallery ga-ma-pa">
-                        <a href="./img/Gallery_Pic/Doces//meio_a_meio_beijnhoebrig.png" target="_blank">
-                            <img src="./img/Gallery_Pic/Doces/meio_a_meio_beijnhoebrig.png">
-                        </a>
-                        <p>Meio a Meio - Beij + Brig</p>
-                    </div>
-                </section>
-            </div>
-
-            <!-- Paes -->
-            <div id="paes-prod">
-                <section id="sect-title-cardapio" class="sect-tag-card-title aba-subtitle">
-                    <span class="material-symbols-outlined aba-subtitle">
-                        bakery_dining
-                    </span>
-                </section>
-                <section class="sect-flex-products">
-                    <div class="card-products">
-                        <span id="spanID">#P-001</span>
-                        <a href="./img/Gallery_Pic/Paes/pao1.png" target="_blank">
-                            <img id="urlImgProduct" src="./img/Gallery_Pic/Paes/pao1.png">
-                        </a>
-                        <p class="p_product_name">
-                            <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
-                                onclick="abrirModal('P-001','./img/Gallery_Pic/Paes/pao1.png','Pão 1', '15,00')">
-                                Pão 1
-                            </button>
-                        </p>
-                    </div>
-                    <div class="card-products">
-                        <span id="spanID">#P-002</span>
-                        <a href="./img/Gallery_Pic/Paes/pao2.png" target="_blank">
-                            <img id="urlImgProduct" src="./img/Gallery_Pic/Paes/pao2.png">
-                        </a>
-                        <p class="p_product_name">
-                            <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
-                                onclick="abrirModal('P-002','./img/Gallery_Pic/Paes/pao2.png','Pão 2', '15,00')">
-                                Pão 2
-                            </button>
-                        </p>
-                    </div>
-                    <div class="card-products">
-                        <span id="spanID">#P-003</span>
-                        <a href="./img/Gallery_Pic/Paes/pao3.png" target="_blank">
-                            <img id="urlImgProduct" src="./img/Gallery_Pic/Paes/pao3.png">
-                        </a>
-                        <p class="p_product_name">
-                            <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
-                                onclick="abrirModal('P-003','./img/Gallery_Pic/Paes/pao3.png','Pão 3', '15,00')">
-                                Pão 3
-                            </button>
-                        </p>
-                    </div>
-                    <div class="card-products">
-                        <span id="spanID">#P-004</span>
-                        <a href="./img/Gallery_Pic/Paes/pao_doce_full.png" target="_blank">
-                            <img id="urlImgProduct" src="./img/Gallery_Pic/Paes/pao_de_coco.PNG">
-                        </a>
-                        <p class="p_product_name">
-                            <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
-                                onclick="abrirModal('P-004','./img/Gallery_Pic/Paes/pao_de_coco.PNG','Pão 4', '15,00')">
-                                Pão 4
-                            </button>
-                        </p>
-                    </div>
-                </section>
-            </div>
-
-            <!-- Tortas -->
-            <div id="tortas-prod">
-                <section id="sect-title-cardapio" class="sect-tag-card-title aba-subtitle">
-                    <span class="material-symbols-outlined aba-subtitle">
-                        breakfast_dining
-                    </span>
-                </section>
-                <section class="sect-flex-products">
-
-                    <div class="card-products">
-                        <span id="spanID">#T-001</span>
-                        <a href="./img/Gallery_Pic/Tortas/Photoroom_20240519_201540.png" target="_blank">
-                            <img id="urlImgProduct" src="./img/Gallery_Pic/Tortas/Photoroom_20240519_201540.png">
-                        </a>
-                        <p class="p_product_name">
-                            <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
-                                onclick="abrirModal('T-001','./img/Gallery_Pic/Tortas/Photoroom_20240519_201540.png',' Torta 1', '15,00')">
-                                Torta 1
-                            </button>
-                        </p>
-                    </div>
-                    <div class="card-products">
-                        <span id="spanID">#T-002</span>
-                        <a href="./img/Gallery_Pic/Tortas/Photoroom_20240526_184845.png" target="_blank">
-                            <img id="urlImgProduct" src="./img/Gallery_Pic/Tortas/Photoroom_20240526_184845.png">
-
-                        </a>
-                        <p class="p_product_name">
-                            <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
-                                onclick="abrirModal('T-002','./img/Gallery_Pic/Tortas/Photoroom_20240526_184845.png',' Torta 2', '15,00')">
-                                Torta 2
-                            </button>
-                        </p>
-                    </div>
-                    <div class="card-products">
-                        <span id="spanID">#T-003</span>
-                        <a href="./img/Gallery_Pic/Tortas/Photoroom_20240526_185040.png" target="_blank">
-                            <img id="urlImgProduct" src="./img/Gallery_Pic/Tortas/Photoroom_20240526_185040.png">
-                        </a>
-                        <p class="p_product_name">
-                            <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
-                                onclick="abrirModal('T-003','./img/Gallery_Pic/Tortas/Photoroom_20240526_185040.png',' Torta 3', '15,00')">
-                                Torta 3
-                            </button>
-                        </p>
-                    </div>
-                    <div class="card-products">
-                        <span id="spanID">#T-004</span>
-                        <a href="./img/Gallery_Pic/Tortas/torta_de_morango.png" target="_blank">
-                            <img id="urlImgProduct" class="quadrado"
-                                style="padding: 30px; height: fit-content; top: -5px;"
-                                src="./img/Gallery_Pic/Tortas/torta_de_morango.png">
-                        </a>
-                        <p class="p_product_name">
-                            <button id="btn_abrir_modal_cart" class="btn btn-outline-primary"
-                                onclick="abrirModal('T-004','./img/Gallery_Pic/Tortas/torta_de_morango.png','  Torta de Morango', '15,00')">
-                                Torta de Morango
-                            </button>
-                        </p>
-                    </div>
-                </section>
-
-            </div>
-        </main>
+        </div>
     </div>
 
     <footer class="style-footer">
