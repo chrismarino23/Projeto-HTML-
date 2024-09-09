@@ -1719,7 +1719,7 @@ btn_Produto_addCart {
   text-align: center;
   align-content: center;
   margin: 0 auto;
-  background-image: url(/img/img_empty_cart.png);
+  background-image: url(../img/img_empty_cart.png);
   background-repeat: round;
 }
 

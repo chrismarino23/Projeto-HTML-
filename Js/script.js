@@ -431,7 +431,7 @@ if (
     var finalCart = JSON.parse(localStorage.getItem("carrinho"));
 
     let mensagem =
-      "Olá, vim pelo site do Divino Sabor da Alice, e gostaria de fazer o pedido abaixo:\n";
+      "Olá vim pelo site do Divino Sabor da Alice, e gostaria de fazer o pedido abaixo:\n";
 
     finalCart.forEach((produto) => {
       mensagem += `${produto.nameProduct} - Quantidade: ${produto.qtdKG}KG\n
@@ -444,6 +444,7 @@ if (
     var urlWhatsApp = `https://api.whatsapp.com/send?1=pt_BR&phone=${numeroTelefone}&text=${mensagemCodificada}`;
 
     window.open(urlWhatsApp, "_blank");
+    // console.log(urlWhatsApp);
   };
 }
 
