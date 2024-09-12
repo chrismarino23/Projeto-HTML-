@@ -32,6 +32,15 @@ body {
 
 /* Smaller Smarphones */
 @media only screen and (max-width: 480px) {
+  #section_description_about {
+    display: block !important;
+  }
+
+  #separation_content {
+    margin: 1rem auto !important;
+    transform: none !important;
+  }
+
   .product_name {
     font-size: 0.9rem;
   }
@@ -111,6 +120,15 @@ body {
 
 /* Tablets & Larger Smartphones */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
+  #section_description_about {
+    display: block !important;
+  }
+
+  #separation_content {
+    margin: 1rem auto !important;
+    transform: none !important;
+  }
+
   .product_name {
     font-size: 0.9rem;
   }
@@ -811,6 +829,81 @@ nav ul li:hover ul.submenu {
   text-align: center;
   list-style: armenian;
   margin-bottom: 0.5rem;
+}
+
+#section_description_about {
+  display: flex;
+  justify-content: space-evenly;
+  border: 0.1px solid #dee2e6;
+  border-radius: 15px;
+  margin: 2rem 0;
+}
+
+#div_work_with {
+  display: block;
+  text-align: center;
+  align-content: center;
+}
+
+#separation_content {
+  display: flex;
+  transform: rotate(90deg);
+  width: 12rem;
+  margin: auto 0;
+}
+
+#title_description_aboutUs {
+  text-align: center;
+  align-content: center;
+}
+
+.div_work_and_nWork_with {
+  margin-top: 1rem;
+  padding: 5px;
+  display: block;
+  text-align: center;
+}
+
+.checklist_description {
+  list-style-type: none; /* Remove os números padrão da lista ordenada */
+  counter-reset: item; /* Reseta o contador */
+}
+
+.dont_checklist_description {
+  list-style-type: none; /* Remove os números padrão da lista ordenada */
+  counter-reset: item; /* Reseta o contador */
+}
+
+.checklist_description li {
+  text-align: left;
+  counter-increment: item; /* Incrementa o contador para cada item da lista */
+  position: relative; /* Necessário para posicionar o pseudo-elemento */
+  padding-right: 25px; /* Espaço para o símbolo de check */
+  font-size: 0.9em;
+}
+
+.dont_checklist_description li {
+  text-align: left;
+  counter-increment: item; /* Incrementa o contador para cada item da lista */
+  position: relative; /* Necessário para posicionar o pseudo-elemento */
+  padding-right: 25px; /* Espaço para o símbolo de check */
+  font-size: 0.9em;
+}
+
+.checklist_description li::before {
+  content: "✔"; /* Símbolo de check */
+  position: absolute; /* Posiciona o símbolo de check */
+  right: 0; /* Alinha o símbolo à esquerda */
+  color: green; /* Cor do símbolo de check */
+  font-weight: bold; /* Negrito para o símbolo de check */
+}
+
+.dont_checklist_description li::before {
+  content: "✖"; /* Símbolo de check */
+  position: absolute; /* Posiciona o símbolo de check */
+  right: 0; /* Alinha o símbolo à esquerda */
+  color: red; /* Cor do símbolo de check */
+  font-weight: bold; /* Negrito para o símbolo de check */
 }
 
 .div_cart_footer {
