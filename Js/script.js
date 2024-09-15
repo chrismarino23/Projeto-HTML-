@@ -97,8 +97,6 @@ document.addEventListener("DOMContentLoaded", function () {
   ) {
     initMap();
   }
-  //verifica se ta vazio pra mostrar BG do carrinho
-  show_cart_BG();
 
   // Verifica se há um hash na URL
   if (window.location.hash) {
@@ -120,15 +118,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     mostraCarrinho.onclick = () => {
       show_cart_BG();
+      changeMenuBtn();
     };
 
     const mostraCarrinho_disp_maiores = document.getElementById(
       "mostraCarrinho_disp_maiores"
     );
 
+    //verifica se ta vazio pra mostrar BG do carrinho
+    show_cart_BG();
     mostraCarrinho_disp_maiores.onclick = () => {
       show_cart_BG();
     };
+
     //close cart's modal at products screen.
     btn_fechar_modal_cart_x.addEventListener("click", () => {
       resetNewPrice();
@@ -325,13 +327,21 @@ btnAddtoCart.forEach((btnClicked) => {
       };
 
       const btnRemoveCart = licart.querySelector(".color_red");
+
       btnRemoveCart.onclick = () => {
+        const clean_OrderList = document.querySelectorAll(".width50prct");
+
+        clean_OrderList.forEach((element) => {
+          element.remove();
+        });
+
         licart.remove();
 
         const index = carrinho.findIndex((item) => item.id === productId);
 
         if (index > -1) {
           carrinho.splice(index, 1);
+          products_order.splice(index, 1);
           localStorage.setItem("carrinho", JSON.stringify(carrinho));
         }
         verifyCartWarn();
@@ -375,13 +385,15 @@ if (
     document.getElementById("conferirPedido").style.display = "block";
 
     $("#offcanvasRight").offcanvas("hide");
-    changeMenuBtn();
+    // changeMenuBtn();
 
     check_Cart = document.getElementById("check_Cart");
 
+    // remover_order_list();
+
     products_order = copiarEVerificar(carrinho, products_order);
 
-    console.log(products_order);
+    // console.log(products_order);
 
     for (let i = 0; i < products_order.length; i++) {
       const element = products_order[i];
@@ -394,19 +406,19 @@ if (
       if (!productInOrder) {
         // Cria um novo elemento <li>
         const li_check_order = document.createElement("li");
-        li_check_order.classList.add("li_cart_list");
+        li_check_order.classList.add("li_order_list");
         li_check_order.classList.add("width50prct");
         li_check_order.setAttribute("data-id", element.id); // Adiciona um atributo data-id para identificação
 
         // Define o conteúdo HTML do <li>
         li_check_order.innerHTML = `
-          <div class="div_img_cart">
+          <div class="div_img_order">
             <img class="img_product" src="${element.url}" alt="Produto ${element.id}">
           </div>
-          <div class="div_body">
-            <h5 class="product_name">${element.nameProduct}</h5>
-            <p id="id_p_check_order">${element.id}</p>
-            <span class="span_product">
+          <div class="div_body_order">
+            <h5 class="product_name_order">${element.nameProduct}</h5>
+            <p id="id_p_check_order">Código: ${element.id}</p>
+            <span class="span_product_order">
               Preço:
               <strong>
                 <p class="p_cart_price">R$ ${element.finalPrice}</p>
@@ -431,28 +443,42 @@ if (
   document.getElementById("btn_sent_order").onclick = () => {
     var finalCart = JSON.parse(localStorage.getItem("carrinho"));
 
-    let mensagem =
-      "Olá vim pelo site do Divino Sabor da Alice, e gostaria de fazer o pedido abaixo:\n";
+    if (products_order.length > 0) {
+      let mensagem =
+        "Olá vim pelo site do Divino Sabor da Alice, e gostaria de fazer o pedido abaixo:\n";
 
-    finalCart.forEach((produto) => {
-      mensagem += `\n${produto.nameProduct}\n
+      finalCart.forEach((produto) => {
+        mensagem += `\n${produto.nameProduct}\n
       \n- Quantidade: ${produto.qtdKG}KG\n
       \n- Link da imagem: ${produto.url}\n`;
-    });
-    const mensagemCodificada = encodeURIComponent(mensagem);
+      });
+      const mensagemCodificada = encodeURIComponent(mensagem);
 
-    const numeroTelefone = "5511961944937";
+      const numeroTelefone = "5511961944937";
 
-    var urlWhatsApp = `https://api.whatsapp.com/send?1=pt_BR&phone=${numeroTelefone}&text=${mensagemCodificada}`;
+      var urlWhatsApp = `https://api.whatsapp.com/send?1=pt_BR&phone=${numeroTelefone}&text=${mensagemCodificada}`;
 
-    window.open(urlWhatsApp, "_blank");
-    // console.log(urlWhatsApp);
+      window.open(urlWhatsApp, "_blank");
+      // console.log(urlWhatsApp);
+    } else {
+      ToastWarning("Pedido vazio, verifique o carrinho", 3000);
+      // alert("Por favor, adicione itens ao seu pedido!");
+    }
   };
 }
 
 document.getElementById("btn_back_check_order").onclick = () => {
   document.getElementById("catalog").style.display = "";
   document.getElementById("conferirPedido").style.display = "none";
+
+  remover_order_list();
+};
+
+const remover_order_list = () => {
+  let rmv_li_content = document.querySelectorAll(".width50prct");
+  rmv_li_content.forEach((element) => {
+    element.remove();
+  });
 };
 
 function atualizarPreco(produto, qtd, pCartPrice) {
@@ -517,14 +543,14 @@ function ToastWarning(message, time) {
   }).showToast();
 }
 
-function generateProductId() {
-  // Gera uma parte aleatória do ID
-  const randomPart = Math.random().toString(36).substring(2, 9);
-  // Gera uma parte baseada no timestamp atual
-  const timestampPart = Date.now().toString(36);
-  // Combina as duas partes para formar o ID único
-  return `${timestampPart}-${randomPart}`;
-}
+// function generateProductId() {
+//   // Gera uma parte aleatória do ID
+//   const randomPart = Math.random().toString(36).substring(2, 9);
+//   // Gera uma parte baseada no timestamp atual
+//   const timestampPart = Date.now().toString(36);
+//   // Combina as duas partes para formar o ID único
+//   return `${timestampPart}-${randomPart}`;
+// }
 
 const show_cart_BG = () => {
   const offCanvasFooter = document.getElementById("offcanvas_footer");
@@ -547,15 +573,13 @@ if (
   clean_cart.onclick = () => {
     carrinho = [];
     newcartItem = [];
+    products_order = [];
     json_carrinho = JSON.stringify(carrinho);
     localStorage.setItem("carrinho", json_carrinho);
     show_cart_BG();
 
-    let divToRemove = document.querySelectorAll(".li_cart_list");
-    divToRemove.forEach((element) => {
-      element.remove();
-    });
-    // showFinishbtn();
+    del_li_order_list();
+
     verifyCartWarn();
   };
 
@@ -564,7 +588,15 @@ if (
       return products_order.some((produto) => produto.id === id);
     }
 
-    // Adicionar produtos do carrinho ao products_order se o id não existir
+    carrinho.forEach((produto) => {
+      if (idExiste(produto.id)) {
+        let att_order_li = document.querySelector(".width50prct");
+        if (att_order_li) {
+          att_order_li.remove();
+        }
+      }
+    });
+
     carrinho.forEach((produto) => {
       if (!idExiste(produto.id)) {
         products_order.push(produto);
@@ -573,4 +605,12 @@ if (
 
     return products_order;
   }
+
+  //clean all itens from cart or order_list
+  const del_li_order_list = () => {
+    let divToRemove = document.querySelectorAll(".li_order_list");
+    divToRemove.forEach((element) => {
+      element.remove();
+    });
+  };
 }

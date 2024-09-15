@@ -32,6 +32,18 @@ body {
 
 /* Smaller Smarphones */
 @media only screen and (max-width: 480px) {
+  .li_order_list {
+    width: 100% !important;
+  }
+
+  .product_name_order {
+    font-size: 1.4em !important;
+  }
+  .div_img_order {
+    max-height: 115px !important;
+    max-width: 115px !important;
+  }
+
   #section_description_about {
     display: block !important;
   }
@@ -120,6 +132,18 @@ body {
 
 /* Tablets & Larger Smartphones */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
+  .li_order_list {
+    width: 100% !important;
+  }
+
+  .product_name_order {
+    font-size: 1.4em !important;
+  }
+  .div_img_order {
+    max-height: 115px !important;
+    max-width: 115px !important;
+  }
+
   #section_description_about {
     display: block !important;
   }
@@ -781,7 +805,10 @@ nav ul li:hover ul.submenu {
   display: block;
 }
 #check_Cart {
-  padding: 5px;
+  flex-wrap: wrap;
+  display: flex;
+  padding: 2rem;
+  justify-content: center;
 }
 #conferirPedido {
   display: none;
@@ -792,12 +819,21 @@ nav ul li:hover ul.submenu {
 
 .width50prct {
   width: 50%;
+  /* padding: 1rem; */
+}
+.product_name_order {
+  font-family: "Berkshire Swash", serif;
+  font-size: 2em;
+  color: rgb(83 48 38 / 96%);
 }
 
+.div_body_order {
+  font-size: 1.2em;
+}
 #footer_check_order {
   display: flex;
   padding: 10px;
-  gap: 1%;
+  gap: 10%;
   width: 50%;
   justify-content: center;
   align-items: center;
@@ -823,12 +859,32 @@ nav ul li:hover ul.submenu {
   border-radius: 15px;
   border: 1px solid var(--brown);
   align-items: center;
-  /* gap: 2%; */
   width: 100%;
-  padding: 5px;
+  /* padding: 2rem; */
   text-align: center;
   list-style: armenian;
   margin-bottom: 0.5rem;
+}
+
+.div_img_order {
+  display: flex;
+  margin: 0 1px;
+  justify-content: center;
+  max-height: 200px;
+  max-width: 200px;
+}
+
+.li_order_list {
+  background-color: white;
+  display: flex;
+  justify-content: space-evenly;
+  border-radius: 15px;
+  align-items: center;
+  width: 60%;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  padding-top: 5px;
+  box-shadow: 0 0 15px rgb(255 99 99 / 60%);
 }
 
 #section_description_about {
@@ -855,6 +911,10 @@ nav ul li:hover ul.submenu {
 #title_description_aboutUs {
   text-align: center;
   align-content: center;
+}
+
+.gmnoprint .gm-bundled-control .gm-bundled-control-on-bottom button div {
+  background-image: url(../img/runway-1x.png);
 }
 
 .div_work_and_nWork_with {
@@ -939,7 +999,8 @@ btn_Produto_addCart {
 }
 
 .btn_footer_offcanvas {
-  padding: 10px;
+  gap: 4%;
+  padding: 2rem;
   display: flex;
   justify-content: space-between;
 }
@@ -2038,6 +2099,15 @@ btn_Produto_addCart {
 
   display: flex;
   justify-content: space-evenly;
+  p {
+    color: rgb(25, 164, 25);
+    margin: 0;
+  }
+}
+
+.span_product_order {
+  display: flex;
+  justify-content: center;
   p {
     color: rgb(25, 164, 25);
     margin: 0;
