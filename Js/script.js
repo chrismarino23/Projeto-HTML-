@@ -458,8 +458,30 @@ if (
 
       var urlWhatsApp = `https://api.whatsapp.com/send?1=pt_BR&phone=${numeroTelefone}&text=${mensagemCodificada}`;
 
-      window.open(urlWhatsApp, "_blank");
+      setTimeout(() => {
+        window.open(urlWhatsApp, "_blank");
+      }, 3000);
       // console.log(urlWhatsApp);
+
+      products_order = [];
+      carrinho = [];
+
+      const finished_order = document.querySelectorAll(".li_order_list");
+      const finished_cart = document.querySelectorAll(".li_cart_list");
+      // finished_order.forEach((element) => {
+      //   element.remove();
+      // });
+
+      for (let i = 0; i < finished_cart.length; i++) {
+        const element = finished_cart[i];
+        element.remove();
+
+        const element_order = finished_order[i];
+        element_order.remove();
+      }
+      if (products_order.length === 0) {
+        show_order_BG();
+      }
     } else {
       ToastWarning("Pedido vazio, verifique o carrinho", 3000);
       // alert("Por favor, adicione itens ao seu pedido!");
@@ -475,8 +497,20 @@ if (
     document.getElementById("conferirPedido").style.display = "none";
 
     remover_order_list();
+    if (products_order.length === 0) {
+      show_order_BG();
+    }
   };
 }
+
+const show_order_BG = () => {
+  const empty_order_bg = document.querySelector(".empty_order_bg");
+
+  setTimeout(() => {
+    empty_order_bg.style.display =
+      empty_order_bg.style.display === "block" ? "none" : "block";
+  }, 5000);
+};
 
 const remover_order_list = () => {
   let rmv_li_content = document.querySelectorAll(".width50prct");
@@ -582,6 +616,10 @@ if (
     clean_li_cart.forEach((element) => {
       element.remove();
     });
+
+    if (products_order.length === 0) {
+      show_order_BG();
+    }
   };
 
   function copiarEVerificar(carrinho, products_order) {
