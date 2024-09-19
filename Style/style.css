@@ -888,7 +888,7 @@ nav ul li:hover ul.submenu {
   width: 100%;
   filter: opacity(0.5);
   /* background-position-x: center; */
-  background-image: url("/img/empty_order_BG.png");
+  background-image: url(../img/empty_order_BG.png);
   background-position: center;
   background-repeat: no-repeat;
 }
