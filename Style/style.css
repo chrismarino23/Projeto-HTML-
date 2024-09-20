@@ -893,6 +893,47 @@ nav ul li:hover ul.submenu {
   background-repeat: no-repeat;
 }
 
+#div_thanks_order {
+  display: none;
+  width: 80%;
+  text-align: center;
+  margin: 1rem auto;
+
+  h5 {
+    /* font-family: "Berkshire Swash", serif; */
+    font-size: 1.5em;
+  }
+}
+
+#sect_thanks_order {
+  display: flex;
+  gap: 4%;
+  justify-content: center;
+}
+
+.spinner-border {
+  --bs-spinner-width: 2rem !important;
+  --bs-spinner-height: 2rem !important;
+  --bs-spinner-vertical-align: -0.125em !important;
+  --bs-spinner-border-width: 0.25em !important;
+  --bs-spinner-animation-speed: 0.75s !important;
+  --bs-spinner-animation-name: spinner-border !important;
+  border: var(--bs-spinner-border-width) solid var(--bs-danger-border-subtle) !important;
+  border-right-color: transparent !important;
+}
+
+#thanks_order {
+  display: flex;
+  border: 1px solid;
+  height: 42vh;
+  width: auto;
+  background-size: cover;
+  background-image: url(../img/thanks_order.png);
+  background-repeat: no-repeat;
+  background-position-x: center;
+  border-radius: 15px;
+}
+
 .li_order_list {
   background-color: white;
   display: flex;
